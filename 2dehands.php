@@ -14,7 +14,7 @@
 <body id="home">
 	<section class="container">
         <div class="content row container">
-         	<?php include "_/components/php/header.php"; ?>
+         	<?php //include "_/components/php/header.php"; ?>
         	<h1 class="page-header">2dehands</h1>
 		    <div class="row news">
 				  <div class="col-md-4"> 
