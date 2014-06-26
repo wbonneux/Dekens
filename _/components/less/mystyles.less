@@ -1,0 +1,310 @@
+//my colors
+
+
+@red: 				#BA83D4;
+@magenta: 		#FDF5E3;
+@beige: 			#FDF5E3;
+@yellow:			#FDAD22;
+@purple:			#475C98;
+@darkblue: 		#586E75;
+@pink:				#D33682;
+
+@green:		#92CD00; 
+@satin:     #FFCF79;
+@gray: 		#E5E4D7;
+@darkgreen:	#2C6700;
+
+
+@headlineFontFamily:			 'Advent Pro', sans-serif;
+@copyFontFamily:			      Merriweather,Georgia, "Times New Roman", Times, serif;
+
+h1, h2, h3, h4, h5, h6{
+	font-family: @headlineFontFamily;
+	color: @darkgreen;
+	a{
+		color:@darkgreen;
+	}
+	a:hover{
+		color:lighten(@darkgreen,10%);
+		text-decoration:none;
+	}
+	a:active{
+		color:lighten(@darkgreen,10%);
+		text-decoration:none;
+	}
+}
+
+h1, h2, h3 {
+margin-top: 10px;
+margin-bottom: 5px;
+}
+
+
+.content
+{
+	margin-bottom:10px;
+}
+
+.btn-primary
+{
+	background-color:darken(@darkgreen,5%);
+	border-color:@darkgreen;	
+}
+.btn-primary:hover
+{
+	background-color:lighten(@darkgreen,5%);
+	border-color:@darkgreen;	
+}
+.btn-primary:active
+{
+	background-color:darken(@darkgreen,5%);
+	border-color:@darkgreen;
+}
+
+
+.thumbnail{
+	background-color:darken(@gray,5%);
+}
+
+
+p {
+	font-family: @copyFontFamily;
+	font-size: 14px;
+	line-height: 1.4em;
+	color: @darkblue;
+	padding: 0 2%;
+	a{
+		color:@darkgreen;
+	}
+	a:hover{
+		color:lighten(@darkgreen,10%);
+		text-decoration:none;
+	}
+	a:active{
+		color:lighten(@darkgreen,10%);
+		text-decoration:none;
+	}
+}
+
+body {
+	background: @purple url(../../images/misc/BackGround.jpg);
+	margin-top: 30px;
+	font-family: @headlineFontFamily;
+	font-size:14px;
+}
+
+.navbar{
+	background-color: darken(@green,10%);
+	margin-bottom:0px;
+	font-size:16px;
+	
+}
+
+.page-header{
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+	border-bottom:2px solid @gray;
+}
+
+.container {
+	background: lighten(@green,50%);
+}
+
+footer{
+	margin-top:10px;
+	padding-top:20px;
+	color:white;
+	background:darken(@darkgreen,5%);
+	.container{
+		background:darken(@darkgreen,5%);
+		text-align:center;
+	}
+	font-family:@copyFontFamily;
+}
+
+.news{
+	padding-bottom:5px;
+	
+	hr{
+		border:3px;
+	}
+}
+
+.navbar {
+	li a {
+		color: white;
+	}
+
+	li.active a {
+		background: @beige;
+	}
+
+	li a:hover {
+		background: @green;
+		color: white;
+	}
+	a:focus{
+		background: @green;
+		color: white;
+	}
+	li.dropdown.open
+	{
+		background: @green;
+		color: white;
+	}
+}
+
+.nav{
+	.open
+	{
+		a a:hover a:focus{
+			background: @green;
+		color: white;
+		}
+	}
+}
+
+
+.navbar{
+	li.dropdown-menu
+	{
+		ul
+		{
+			background: darken(@green,10%);
+		}
+		
+	}
+}
+.dropdown-menu{
+	li a{
+		color: white;
+		background: darken(@green,10%);
+		font-size:16px;
+		font-family: @headlineFontFamily;
+	}
+}
+
+.dropdown-menu
+{
+		color: white;
+		background: darken(@green,10%);
+}
+
+.navbar li.active {
+	a {
+		color: white;
+		background: @green;
+		font-weight: bold;
+	}
+}
+
+.nav{
+	.caret{	 
+	border-top-color:white;
+	border-bottom-color:white;
+	}
+} 
+
+
+
+
+.portfolio-item{
+	
+	/*padding:10px;
+	display:table-cell;
+	
+    margin-left: auto;
+    margin-right: auto;
+    background-color:lighten(@green,50%);
+    
+    margin-top: auto;
+    margin-bottom:auto;*/
+
+}
+
+
+.well
+{       
+    position:absolute;      
+    top: 50%;
+    left: 50%;
+    margin-top:-100px; /* negative number 1/2 height */
+    margin-left:-100px; /* negative number 1/2 width */
+    outline:1px solid #CCC;
+}
+
+section
+{
+	padding: 5px 10px;
+}
+
+.news-sep{
+	border: 2px solid darken(@gray,30%);
+}
+
+.navbar-toggle
+{
+	
+}
+
+.icon-bar
+{
+	background-color:@green;	
+}
+
+.table-responsive
+{
+	
+}
+.tractor
+{
+	//background: lighten(@green,40%);
+	//border:1px solid black;
+}
+
+.panel-body
+{
+	text-align:center;
+	background: lighten(@green,50%);
+
+}
+
+.img-responsive
+{}
+
+.merk-image{
+	height:150px;
+	width:150px;
+}
+
+merk-index{
+	max-width: 100px;
+}
+
+#wrap{
+	margin: 0px auto;
+	padding: 15px;
+	width: 750px;
+	//background: #FFFFFF;
+	//border: 1px solid #0099FF;
+}
+
+.merken-titel{
+	text-align: center;
+	
+}
+
+.newsflash-item{
+	/*background-color: @green;*/
+}
+
+.myImage{
+	height:200px;
+}
+
+
+.img-responsive.img-center {
+  margin: 0 auto;
+}

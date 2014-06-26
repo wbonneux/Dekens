@@ -1,0 +1,267 @@
+/* line 21, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Advent Pro', sans-serif;
+  color: #2c6700;
+}
+/* line 24, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #2c6700;
+}
+/* line 27, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #429a00;
+  text-decoration: none;
+}
+/* line 31, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h5 a:active,
+h6 a:active {
+  color: #429a00;
+  text-decoration: none;
+}
+/* line 37, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+h1,
+h2,
+h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+/* line 43, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.content {
+  margin-bottom: 10px;
+}
+/* line 48, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.btn-primary {
+  background-color: #214e00;
+  border-color: #2c6700;
+}
+/* line 53, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.btn-primary:hover {
+  background-color: #378100;
+  border-color: #2c6700;
+}
+/* line 58, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.btn-primary:active {
+  background-color: #214e00;
+  border-color: #2c6700;
+}
+/* line 65, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.thumbnail {
+  background-color: #dbdac8;
+}
+/* line 70, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+p {
+  font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #586e75;
+  padding: 0 2%;
+}
+/* line 76, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+p a {
+  color: #2c6700;
+}
+/* line 79, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+p a:hover {
+  color: #429a00;
+  text-decoration: none;
+}
+/* line 83, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+p a:active {
+  color: #429a00;
+  text-decoration: none;
+}
+/* line 89, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+body {
+  background: #475c98 url(../../images/misc/BackGround.jpg);
+  margin-top: 30px;
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 14px;
+}
+/* line 96, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar {
+  background-color: #6e9a00;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+/* line 103, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.page-header {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #e5e4d7;
+}
+/* line 111, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.container {
+  background: #f1ffcd;
+}
+/* line 115, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+footer {
+  margin-top: 10px;
+  padding-top: 20px;
+  color: white;
+  background: #214e00;
+  font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+}
+/* line 120, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+footer .container {
+  background: #214e00;
+  text-align: center;
+}
+/* line 127, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.news {
+  padding-bottom: 5px;
+}
+/* line 130, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.news hr {
+  border: 3px;
+}
+/* line 136, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li a {
+  color: white;
+}
+/* line 140, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li.active a {
+  background: #fdf5e3;
+}
+/* line 144, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li a:hover {
+  background: #92cd00;
+  color: white;
+}
+/* line 148, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar a:focus {
+  background: #92cd00;
+  color: white;
+}
+/* line 152, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li.dropdown.open {
+  background: #92cd00;
+  color: white;
+}
+/* line 162, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.nav .open a a:hover a:focus {
+  background: #92cd00;
+  color: white;
+}
+/* line 173, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li.dropdown-menu ul {
+  background: #6e9a00;
+}
+/* line 181, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.dropdown-menu li a {
+  color: white;
+  background: #6e9a00;
+  font-size: 16px;
+  font-family: 'Advent Pro', sans-serif;
+}
+/* line 189, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.dropdown-menu {
+  color: white;
+  background: #6e9a00;
+}
+/* line 196, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.navbar li.active a {
+  color: white;
+  background: #92cd00;
+  font-weight: bold;
+}
+/* line 204, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.nav .caret {
+  border-top-color: white;
+  border-bottom-color: white;
+}
+/* line 213, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.portfolio-item {
+  /*padding:10px;
+	display:table-cell;
+	
+    margin-left: auto;
+    margin-right: auto;
+    background-color:lighten(@green,50%);
+    
+    margin-top: auto;
+    margin-bottom:auto;*/
+
+}
+/* line 228, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.well {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  /* negative number 1/2 height */
+
+  margin-left: -100px;
+  /* negative number 1/2 width */
+
+  outline: 1px solid #CCC;
+}
+/* line 238, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+section {
+  padding: 5px 10px;
+}
+/* line 243, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.news-sep {
+  border: 2px solid #a9a57a;
+}
+/* line 252, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.icon-bar {
+  background-color: #92cd00;
+}
+/* line 267, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.panel-body {
+  text-align: center;
+  background: #f1ffcd;
+}
+/* line 277, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.merk-image {
+  height: 150px;
+  width: 150px;
+}
+/* line 282, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+merk-index {
+  max-width: 100px;
+}
+/* line 286, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+#wrap {
+  margin: 0px auto;
+  padding: 15px;
+  width: 750px;
+}
+/* line 294, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.merken-titel {
+  text-align: center;
+}
+/* line 299, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.newsflash-item {
+  /*background-color: @green;*/
+
+}
+/* line 303, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.myImage {
+  height: 200px;
+}
+/* line 308, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
+.img-responsive.img-center {
+  margin: 0 auto;
+}

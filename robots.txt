@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /administration/
+Disallow: /_/
+Disallow: /backup/
