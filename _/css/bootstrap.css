@@ -5075,7 +5075,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 /* line 14, D:\xampp\htdocs\WebSites\Dekens\_\components\less\breadcrumbs.less */
 .breadcrumb > li + li:before {
-  content: "/\00a0";
   padding: 0 5px;
   color: #cccccc;
 }

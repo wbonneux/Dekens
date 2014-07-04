@@ -9,6 +9,13 @@ class DAOFactory{
 	
 	
 	/*
+	 * @return SecondHandDAO
+	*/
+	public static function getSecondHandDAO(){
+		return new SecondHandMySqlDAO();
+	}
+	
+	/*
 	 * @return UserDAO
 	 */
 	public static function getUserDAO(){

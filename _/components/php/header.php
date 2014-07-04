@@ -23,20 +23,9 @@
     <ul class="nav navbar-nav navbar">
       <li><a href="index.php">Home</a></li>
       <!--<li><a href="overons.php">Over ons</a></li>-->
-      <li><a href="nieuws.php">Nieuws</a></li>
         <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>
-        <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="producten.php">Producten</a></li>
         <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>
-        <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Het bedrijf <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="merken.php">Merken</a></li>
-            <li><a href="producten.php">Producten</a></li>
-            <li><a href="service.php">Service</a></li>
-          </ul>
-        </li>
-      <li><a href="2dehands.php">2dehands</a></li>
-      <li><a href="fotoalbum.php">Fotoalbum</a></li>
+<!--       <li><a href="2dehands.php">2dehands</a></li> -->
       <li><a href="contact.php">Contacteer ons</a></li>
     </ul>
     <!--

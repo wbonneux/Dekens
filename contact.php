@@ -1,3 +1,10 @@
+<?php 
+include_once '_/components/lang/lang.nl.php';
+session_start();
+$required = null;
+$errors = null;
+require_once '_/components/classes/FormValidator.class.php';
+?>
 <!DOCTYPE>
 <html>  
 	<head>
@@ -23,38 +30,15 @@
             <div class="col-sm-8">
               
               <p>Als u enige vragen hebt of een inlichting nodig hebt kan u ons altijd tijdens de kantooruren bereiken via telefoon/fax/email. U kan ook vrijblijvend het contactformulier invullen. Onze medewerkers zullen u dan zo snel mogelijk een antwoord bieden.</p>
-              <?php  
-
-                        // check for a successful form post  
-                        if (isset($_GET['s'])) echo "<div class=\"alert alert-success\">".$_GET['s']."</div>";  
-                  
-                        // check for a form error  
-                        elseif (isset($_GET['e'])) echo "<div class=\"alert alert-danger\">".$_GET['e']."</div>";  
-
+              <?php 
+              if(isset($_POST['send']))
+              {
+              	include '_/components/php/contact.action.php';
+              	include '_/components/php/contact.form.php';
+              }else{
+              	include '_/components/php/contact.form.php';
+              } 
                     ?>
-              <form role="form" method="POST" action="contact-form-submission.php">
-                <div class="form-group col-lg-4">
-                  <label for="input1">Naam</label>
-                  <input type="text" name="contact_name" class="form-control" id="input1">
-                </div>
-                <div class="form-group col-lg-4">
-                  <label for="input2">Email adres</label>
-                  <input type="email" name="contact_email" class="form-control" id="input2">
-                </div>
-                <div class="form-group col-lg-4">
-                  <label for="input3">Telefoon</label>
-                  <input type="phone" name="contact_phone" class="form-control" id="input3">
-                </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-lg-12">
-                  <label for="input4">Vraag/Inlichting</label>
-                  <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
-                </div>
-                <div class="form-group col-lg-12">
-                  <input type="hidden" name="save" value="contact">
-                  <button type="submit" class="btn btn-primary">Verzenden</button>
-                </div>
-              </form>
             </div>
             <div class="col-sm-4">
               <h2>Dekens Agri Technics</h2>

@@ -42,7 +42,7 @@
                         We hopen u vlug te mogen verwelkomen als klant. Maar ook indien u meer informatie wenst over onze diensten of graag een offerte had gekregen, twijfel dan niet en contacteer ons.
                     </p>
                     <p>
-                        <?php include '_/components/newsTicker/index_module.php'; ?>
+                        <?php //include '_/components/newsTicker/index_module.php'; ?>
                     <p>
                 </div>
                 <div class="col-lg-6 col-md-6 hidden-sm hidden-xs visible-lg visible-md">

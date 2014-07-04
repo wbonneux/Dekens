@@ -1,4 +1,8 @@
- <!DOCTYPE html>
+<?php
+set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '_/components/php/include_dao.php'; 
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<!--
@@ -18,7 +22,9 @@
 	<meta name="author" content="Muhammad Usman">
 
 	<!-- The styles -->
+	<link id="bs-css" href="../_/components/administration/css/bootstrap.css" rel="stylesheet">
 	<link id="bs-css" href="../_/components/administration/css/bootstrap-cerulean.css" rel="stylesheet">
+     
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -131,11 +137,12 @@
 						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
 						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
 						 -->
-						 <li><a class="ajax-link" href="fotoalbum.php"><i class="icon-picture"></i><span class="hidden-tablet"> Albums & Foto's</span></a></li>
+<!-- 						 <li><a class="ajax-link" href="fotoalbum.php"><i class="icon-picture"></i><span class="hidden-tablet"> Albums & Foto's</span></a></li> -->
 						
 						<!-- <li class="nav-header hidden-tablet">Sample Section</li>
 					-->
 						<li><a class="ajax-link" href="nieuws.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Nieuws</span></a></li>
+						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> 2deHands</span></a></li>
 						<!--
 						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
 						<li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
