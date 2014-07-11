@@ -1,3 +1,12 @@
+<?php
+set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '_/components/php/include_dao.php';
+$secondHandDAO = DAOFactory::getSecondHandDAO();
+$secondHandArr =$secondHandDAO->getActiveSecondHand();
+foreach ($secondHandArr as $secondHand){
+	
+}
+?>
 <html>
 	<head>	
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -16,6 +25,28 @@
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
         	<h1 class="page-header">2dehands</h1>
+        	<div class="row news">
+				  <div class="col-md-4"> 
+				  	<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws"  title="2dehands - Klik op de foto voor details">
+				  		<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" class="myImage img-responsive img-center">
+				  		<h2 style="text-align:center;"><a href="2dehandsDetail.php?id=<?php echo $secondHand->id; ?>"><?php echo $secondHand->title; if($secondHand->sold){echo "<br/>VERKOCHT";} ?></a></h2>
+				  	</a> 
+				  </div>
+				<div class="col-md-4"> 
+					<a href="images/nieuws/blog-item2.jpg" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
+						<img src="images/nieuws/blog-item2.jpg" class="myImage img-responsive img-center	">
+						<h2 style="text-align:center;"><a href="NieuwsDetail.php">Nieuwe 2dehands tractor te koop!</a></h2>
+					</a> 
+					
+				</div>
+				<div class="col-md-4"> 
+					<a href="images/nieuws/blog-item2.jpg" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
+						<img src="images/nieuws/blog-item2.jpg" class="myImage img-responsive img-center	">
+						<h2 style="text-align:center;"><a href="NieuwsDetail.php">Nieuwe 2dehands tractor te koop!</a></h2>
+					</a> 
+					
+				</div>
+			</div>
 		    <div class="row news">
 				  <div class="col-md-4"> 
 				  	<a class="media" href="images/nieuws/blog-item1.jpg" data-lightbox="Nieuws"  title="2dehands - Klik op de foto voor details">
@@ -61,6 +92,8 @@
 					
 				</div>
 			</div>
+
+			
 		  	
 			
         </div><!-- content -->
