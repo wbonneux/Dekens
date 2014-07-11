@@ -143,6 +143,7 @@ include_once '_/components/php/include_dao.php';
 					-->
 						<li><a class="ajax-link" href="nieuws.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Nieuws</span></a></li>
 						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> 2deHands</span></a></li>
+						<li><a class="ajax-link" href="verhuur.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Verhuur</span></a></li>
 						<!--
 						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
 						<li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>

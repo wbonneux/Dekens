@@ -10,8 +10,12 @@
 	require_once('_/components/core/ArrayList.class.php');
 	require_once('_/components/dao/DAOFactory.class.php');
  	
+	require_once('_/components/dao/RentalDAO.class.php');
+	require_once('_/components/mysql/RentalMySqlDAO.class.php');
+	require_once('_/components/dto/Rental.class.php');
 	require_once('_/components/dao/SecondHandDAO.class.php');
 	require_once('_/components/mysql/SecondHandMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/SecondHandMySqlExtDAO.class.php');
 	require_once('_/components/dto/SecondHand.class.php');
 	require_once('_/components/dao/BannerDAO.class.php');
 	require_once('_/components/dto/Banner.class.php');

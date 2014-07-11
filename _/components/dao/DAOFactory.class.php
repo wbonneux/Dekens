@@ -9,10 +9,17 @@ class DAOFactory{
 	
 	
 	/*
+	 * @return RentalDAO
+	*/
+	public static function getRentalDAO(){
+		return new RentalMySqlDAO();
+	}
+	
+	/*
 	 * @return SecondHandDAO
 	*/
 	public static function getSecondHandDAO(){
-		return new SecondHandMySqlDAO();
+		return new SecondHandMySqlExtDAO();
 	}
 	
 	/*

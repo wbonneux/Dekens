@@ -11,18 +11,6 @@
 					<?php if(isset($_SESSION['sh_active'])){if($_SESSION['sh_active'] == 1){echo 'checked';}else{echo '';}}else{echo '';}?>>
 			</div>
 		</div>
-		<div class="col-lg-1">
-			<div class="form-group">
-		                <?php
-							check_label ( 'sh_sold', $required, $errors, $lang );
-						?>
-		                  <input type="checkbox" name="sh_sold"
-					class="form-control" id="sh_sold"
-					<?php if(isset($_SESSION['sh_sold'])){if($_SESSION['sh_sold'] == 1){echo 'checked';}else{echo '';}}else{echo '';}?>>
-			</div>
-		</div>
-	</div>
-	<div class="row">
 		<div class="col-lg-6">
 			<div class="form-group">
 		                <?php
@@ -33,56 +21,37 @@
 					value="<?php if(isset($_SESSION['sh_title'])){echo $_SESSION['sh_title'];}?>">
 			</div>
 		</div>
-		<div class="col-lg-2">
-			<div class="form-group">
-		                <?php
-							check_label ( 'sh_price', $required, $errors, $lang );
-						?>
-		                  <input type="text" name="sh_price"
-					class="form-control" id="sh_price"
-					value="<?php if(isset($_SESSION['sh_price'])){echo $_SESSION['sh_price'];}?>">
-			</div>
-		</div>
 	</div>
 	<div class="row">
+		
 		<div class="col-lg-2">
 			<div class="form-group">
 		                <?php
-							check_label ( 'sh_sizetirefront', $required, $errors, $lang );
+							check_label ( 'sh_price_day', $required, $errors, $lang );
 						?>
-		                  <input type="text" name="sh_sizetirefront"
-					class="form-control" id="sh_sizetirefront"
-					value="<?php if(isset($_SESSION['sh_sizetirefront'])){echo $_SESSION['sh_sizetirefront'];}?>">
+		                  <input type="text" name="sh_price_day"
+					class="form-control" id="sh_price_day"
+					value="<?php if(isset($_SESSION['sh_price_day'])){echo $_SESSION['sh_price_day'];}?>">
 			</div>
 		</div>
 		<div class="col-lg-2">
 			<div class="form-group">
 		                <?php
-							check_label ( 'sh_sizetireback', $required, $errors, $lang );
+							check_label ( 'sh_price_weekend', $required, $errors, $lang );
 						?>
-		                  <input type="text" name="sh_sizetireback"
-					class="form-control" id="sh_sizetireback"
-					value="<?php if(isset($_SESSION['sh_sizetireback'])){echo $_SESSION['sh_sizetireback'];}?>">
+		                  <input type="text" name="sh_price_weekend"
+					class="form-control" id="sh_price_weekend"
+					value="<?php if(isset($_SESSION['sh_price_weekend'])){echo $_SESSION['sh_price_weekend'];}?>">
 			</div>
 		</div>
 		<div class="col-lg-2">
 			<div class="form-group">
 		                <?php
-							check_label ( 'sh_hourswork', $required, $errors, $lang );
+							check_label ( 'sh_price_week', $required, $errors, $lang );
 						?>
-		                  <input type="text" name="sh_hourswork"
-					class="form-control" id="sh_hourswork"
-					value="<?php if(isset($_SESSION['sh_hourswork'])){echo $_SESSION['sh_hourswork'];}?>">
-			</div>
-		</div>
-		<div class="col-lg-2">
-			<div class="form-group">
-		                <?php
-							check_label ( 'sh_buildyear', $required, $errors, $lang );
-						?>
-		                  <input type="text" name="sh_buildyear" style="width:100%"
-							class="form-control" id="sh_buildyear"
-							value="<?php if(isset($_SESSION['sh_buildyear'])){echo $_SESSION['sh_buildyear'];}?>">
+		                  <input type="text" name="sh_price_week"
+					class="form-control" id="sh_price_week"
+					value="<?php if(isset($_SESSION['sh_price_week'])){echo $_SESSION['sh_price_week'];}?>">
 			</div>
 		</div>
 	</div>

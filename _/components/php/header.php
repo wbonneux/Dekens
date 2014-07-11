@@ -1,3 +1,7 @@
+<?php 
+set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '_/components/php/include_dao.php';
+?>
 <header class="clearfix">
 	<section id="branding">
 		<a href="index.php">
@@ -25,7 +29,7 @@
       <!--<li><a href="overons.php">Over ons</a></li>-->
         <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>
         <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>
-<!--       <li><a href="2dehands.php">2dehands</a></li> -->
+      <li><a href="2dehands.php">2dehands</a></li>
       <li><a href="contact.php">Contacteer ons</a></li>
     </ul>
     <!--
