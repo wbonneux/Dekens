@@ -90,7 +90,7 @@
 				}
 			echo '</div>';
 			echo '<div class="col-lg-3">';
-				if(isset($_SESSION['sh_image_2_location'])){
+				if(isset($_SESSION['sh_image_2_location'])&&$_SESSION['sh_image_2_location'] != ""){
 					echo '<img src="'.$_SESSION['sh_image_2_location'].'" height="100px">';
 				}
 			echo '</div>';

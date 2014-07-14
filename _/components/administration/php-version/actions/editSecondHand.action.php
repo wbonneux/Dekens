@@ -10,9 +10,8 @@ $sanitize = array ();
 $validator = new FormValidator ( $validation, $mandatory, $sanitize );
 $errors = array();
 $required = array();
-
 //setting the input vars in session
-if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
+//if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
 if(isset($_POST['sh_title'])){ $_SESSION['sh_title'] = $_POST["sh_title"];}
 if(isset($_POST['sh_description'])){ $_SESSION['sh_description'] = $_POST["sh_description"];}
 if(isset($_POST['sh_price'])){ $_SESSION['sh_price'] = $_POST["sh_price"];}
@@ -45,7 +44,7 @@ if ($validator->validate ( $_POST )) {
 	$secondHand = new SecondHand();
 	$secondHandDAO = DAOFactory::getSecondHandDAO();
 	
-	$secondHand->id					= $_POST['sh_id'];
+	$secondHand->id					= $_SESSION['sh_id'];
 	$secondHand->title 				= $_POST['sh_title'];
 	$secondHand->description 		= $_POST['sh_description'];
 	$secondHand->buildYear			= $_POST['sh_buildyear'];
@@ -76,7 +75,7 @@ if ($validator->validate ( $_POST )) {
 	
 	
 	
-	
+// 	echo 'ses-id: '.$_SESSION['sh_id'].'<br>';
 	$secondHandDAO->update($secondHand);
 	//save the images in the folder images/secondHand/[$id]/[imageName]
 	//remove the session folder

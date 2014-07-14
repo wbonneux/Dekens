@@ -130,7 +130,7 @@ include_once '_/components/php/include_dao.php';
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">Main</li>
-						<li><a class="ajax-link" href="index.php"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+<!-- 						<li><a class="ajax-link" href="index.php"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li> -->
 						<!-- 
 						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
@@ -141,7 +141,8 @@ include_once '_/components/php/include_dao.php';
 						
 						<!-- <li class="nav-header hidden-tablet">Sample Section</li>
 					-->
-						<li><a class="ajax-link" href="nieuws.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Nieuws</span></a></li>
+<!-- 						<li><a class="ajax-link" href="nieuws.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Nieuws</span></a></li> -->
+						<li><a class="ajax-link" href="voorpagina.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Voorpagina</span></a></li>
 						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> 2deHands</span></a></li>
 						<li><a class="ajax-link" href="verhuur.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Verhuur</span></a></li>
 						<!--

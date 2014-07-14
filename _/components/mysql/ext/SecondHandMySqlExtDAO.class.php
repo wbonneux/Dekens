@@ -28,7 +28,7 @@ class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 
 	
 	public function getActiveSecondHand(){
-		$sql = "SELECT * FROM PROD_SECONDHAND WHERE L_I_ACTIVE = ?";
+		$sql = "SELECT * FROM PROD_SECONDHAND WHERE L_I_ACTIVE = ? ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber(1);
 		return $this->getList($sqlQuery);

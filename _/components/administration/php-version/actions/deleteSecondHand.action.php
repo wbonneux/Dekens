@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST['sh_id'])){
-	$secondHandDAO = DAOFactory::getSecondHandDAO();
-	$secondHandDAO->delete($_POST['sh_id']);
+if(isset($_POST['fp_id'])){
+	$frontPageDAO = DAOFactory::getContentFrontPageDAO();
+	$frontPageDAO->delete($_POST['fp_id']);
 }
 ?>

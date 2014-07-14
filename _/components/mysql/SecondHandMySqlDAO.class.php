@@ -86,7 +86,6 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
  	 * @param ContentMySql content
  	 */
 	public function update(SecondHand $secondHand){
-		
 		$sql = 'UPDATE prod_secondhand SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, N_I_BUILD_YEAR = ?, T_I_SIZE_TIRE_FRONT = ?, T_I_SIZE_TIRE_BACK = ?, N_I_HOURS_WORK = ?, C_I_PRICE = ?,  L_I_ACTIVE = ?, L_I_SOLD = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		

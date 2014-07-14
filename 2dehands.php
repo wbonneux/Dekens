@@ -4,7 +4,7 @@ include_once '_/components/php/include_dao.php';
 $secondHandDAO = DAOFactory::getSecondHandDAO();
 $secondHandArr =$secondHandDAO->getActiveSecondHand();
 foreach ($secondHandArr as $secondHand){
-	
+	echo $secondHand->id;
 }
 ?>
 <html>
@@ -26,12 +26,20 @@ foreach ($secondHandArr as $secondHand){
          	<?php include "_/components/php/header.php"; ?>
         	<h1 class="page-header">2dehands</h1>
         	<div class="row news">
-				  <div class="col-md-4"> 
-				  	<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws"  title="2dehands - Klik op de foto voor details">
-				  		<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" class="myImage img-responsive img-center">
-				  		<h2 style="text-align:center;"><a href="2dehandsDetail.php?id=<?php echo $secondHand->id; ?>"><?php echo $secondHand->title; if($secondHand->sold){echo "<br/>VERKOCHT";} ?></a></h2>
-				  	</a> 
-				  </div>
+        			<?php
+        				echo '<div class="col-md-4">';
+        				echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image1.'"data-lightbox="Nieuws"  title="2dehands - Klik op de foto voor details">';
+        				echo '<img src="images/secondHand/'.$secondHand->id.'/'.$secondHand->image1.'" class="myImage img-responsive img-center">';
+        				echo '<h2 style="text-align:center;"><a href="2dehandsDetail.php?id='.$secondHand->id.'">';
+        				echo $secondHand->title; 
+        				if($secondHand->sold)
+							{echo "<br/>VERKOCHT";}
+						echo '</a></h2>';
+        				echo '</a>'; 
+        				echo '</div>';
+        			?>
+        	
+				  
 				<div class="col-md-4"> 
 					<a href="images/nieuws/blog-item2.jpg" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
 						<img src="images/nieuws/blog-item2.jpg" class="myImage img-responsive img-center	">

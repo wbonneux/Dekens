@@ -2,12 +2,19 @@
 //check if editSecondHand has a request parameter id
 //if no -> back the fuck up!
 //if so -> granted access mtf
-if (empty( $_REQUEST['id'])) {
+
+if (!isset( $_REQUEST['id']) && !isset($_POST['save'])) {
 	header("location:2deHands.php");
 }else{
-	$_SESSION['sh_id'] = $_REQUEST['id'];
+	include "../_/components/administration/php-version/header.php";
+	if(!isset($_POST['save'])){
+		$_SESSION['sh_id'] = $_REQUEST['id'];
+	}else{
+		
+	}
+	//echo $_SESSION['sh_id'];
 }
-include "../_/components/administration/php-version/header.php";
+
 $required = null;
 $errors = null;
 include_once '../_/components/lang/lang.nl.php';
@@ -38,6 +45,8 @@ require_once '../_/components/classes/FormValidator.class.php';
 
 if(isset($_POST['save']))
 {
+	
+	
 	include "../_/components/administration/php-version/actions/editSecondHand.action.php";
 }else{
 	if(isset($_POST['cancel'])){
@@ -64,16 +73,26 @@ function getSecondHandItem($id){
 		$_SESSION['sh_hourswork']			= $secondHand->hoursWork;
 		$_SESSION['sh_buildyear']			= $secondHand->buildYear;
 		$_SESSION['sh_description']			= $secondHand->description;
-		$_SESSION['sh_image_1']				= $secondHand->image1;
-		$_SESSION['sh_image_1_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image1;
-		$_SESSION['sh_image_2']				= $secondHand->image2;
-		$_SESSION['sh_image_2_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image2;
-		$_SESSION['sh_image_3']				= $secondHand->image3;
-		$_SESSION['sh_image_3_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image3;
-		$_SESSION['sh_image_4']				= $secondHand->image4;
-		$_SESSION['sh_image_4_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image4;
-		$_SESSION['sh_image_5']				= $secondHand->image5;
-		$_SESSION['sh_image_5_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image5;
+		if($secondHand->image1 != ''){
+			$_SESSION['sh_image_1']				= $secondHand->image1;
+			$_SESSION['sh_image_1_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image1;
+		}
+		if($secondHand->image2 != ''){
+			$_SESSION['sh_image_2']				= $secondHand->image2;
+			$_SESSION['sh_image_2_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image2;
+		}
+		if($secondHand->image3 != ''){
+			$_SESSION['sh_image_3']				= $secondHand->image3;
+			$_SESSION['sh_image_3_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image3;
+		}
+		if($secondHand->image4 != ''){
+			$_SESSION['sh_image_4']				= $secondHand->image4;
+			$_SESSION['sh_image_4_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image4;
+		}
+		if($secondHand->image5 != ''){
+			$_SESSION['sh_image_5']				= $secondHand->image5;
+			$_SESSION['sh_image_5_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image5;
+		}
 	}
 }
 ?>

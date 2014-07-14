@@ -12,7 +12,8 @@ $errors = array();
 $required = array();
 
 //setting the input vars in session
-if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
+// echo 'post-id: '.$_POST['sh_id'];
+//if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
 if(isset($_POST['sh_title'])){ $_SESSION['sh_title'] = $_POST["sh_title"];}
 if(isset($_POST['sh_description'])){ $_SESSION['sh_description'] = $_POST["sh_description"];}
 if(isset($_POST['sh_price_day'])){ $_SESSION['sh_price_day'] = $_POST["sh_price_day"];}
@@ -42,7 +43,7 @@ if ($validator->validate ( $_POST )) {
 	$rental = new Rental();
 	$rentalDAO = DAOFactory::getRentalDAO();
 	
-	$rental->id					= $_POST['sh_id'];
+	$rental->id					= $_SESSION['sh_id'];
 	$rental->title 				= $_POST['sh_title'];
 	$rental->description 		= $_POST['sh_description'];
 	$rental->priceDay			= $_POST['sh_price_day'];

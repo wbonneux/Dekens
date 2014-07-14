@@ -28,6 +28,21 @@ if(isset($_POST['save']))
 	if(isset($_POST['cancel'])){
 		include "../_/components/administration/php-version/secondHand_grid.php";
 	}else{
+		$_SESSION['sh_active'] 				= null;
+		$_SESSION['sh_sold'] 				= null;
+		$_SESSION['sh_title'] 				= null;
+		$_SESSION['sh_price']				= null;
+		$_SESSION['sh_sizetirefront']		= null;
+		$_SESSION['sh_sizetireback']		= null;
+		$_SESSION['sh_hourswork']			= null;
+		$_SESSION['sh_buildyear']			= null;
+		$_SESSION['sh_description']			= null;
+		$_SESSION['sh_image_1']				= null;
+		$_SESSION['sh_image_1_location']	= null;
+		$_SESSION['sh_image_2']				= null;
+		$_SESSION['sh_image_3']				= null;
+		$_SESSION['sh_image_4']				= null;
+		$_SESSION['sh_image_5']				= null;
 		include "../_/components/administration/php-version/forms/secondHand.form.php";
 	}
 }

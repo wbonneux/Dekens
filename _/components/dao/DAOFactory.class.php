@@ -11,8 +11,15 @@ class DAOFactory{
 	/*
 	 * @return RentalDAO
 	*/
+	public static function getContentFrontPageDAO(){
+		return new ContentFrontPageMySqlExtDAO();
+	}
+	
+	/*
+	 * @return RentalDAO
+	*/
 	public static function getRentalDAO(){
-		return new RentalMySqlDAO();
+		return new RentalMySqlExtDAO();
 	}
 	
 	/*
@@ -105,13 +112,6 @@ class DAOFactory{
 	 */
 	public static function getContentDAO(){
 		return new ContentMySqlExtDAO();
-	}
-
-	/*
-	 * @return ContentFrontpageDAO
-	 */
-	public static function getContentFrontpageDAO(){
-		return new ContentFrontpageMySqlExtDAO();
 	}
 
 	/*

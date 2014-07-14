@@ -83,7 +83,9 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
  	 * @param ContentMySql content
  	 */
 	public function update(Rental $Rental){
-		
+// 		echo 'update<br>';
+// 		echo 'id:'.$Rental->id.'<br>';
+// 		echo 'id:'.$_SESSION['sh_id'].'<br>';
 		$sql = 'UPDATE PROD_RENTAL SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, C_I_PRICE_DAY = ?,  C_I_PRICE_WEEKEND = ?,  C_I_PRICE_WEEK = ?,  L_I_ACTIVE = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		

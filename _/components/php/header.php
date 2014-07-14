@@ -6,8 +6,12 @@ include_once '_/components/php/include_dao.php';
 	<section id="branding">
 		<a href="index.php">
       <img class="none-bg img-responsive" src="images/misc/Logo_Trans_Header_V2.png" alt="Logo for Roux Conference">
+      <a href="http://www.mypartspartner.be/mpp-be/nl" target="_blank">
+      <img class="none-bg img-responsive" style="height:40px" src="images/MyPartsPartner/MyPartsPartner.jpg" alt="My Parts Partner - klik om in te loggen">
+      </a>
     </a>
 	</section><!-- branding -->
+	
 	<nav class="navbar" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
