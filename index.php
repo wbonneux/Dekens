@@ -1,4 +1,4 @@
-<?php   require_once('_/components/php/include_dao.php'); ?>
+<?php   //require_once('_/components/php/include_dao.php'); ?>
 <!DOCTYPE>
 <html>  
 	<head>
@@ -13,7 +13,7 @@
 	</head>
 
 	<body id="home">
-
+		<?php include_once("_/components/google/analyticstracking.php") ?>
     	<section class="container">
             <div class="content row container">
              	<?php include "_/components/php/header.php"; ?>
@@ -47,11 +47,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6 hidden-sm hidden-xs visible-lg visible-md">
                     <div class="cycle-slideshow">
-                        <img class="img-responsive" src="images/slides_index/IMG_3073.jpg"/>
-                        <img class="img-responsive" src="images/slides_index/IMG_3081.jpg"/>
-                        <img class="img-responsive" src="images/slides_index/IMG_3084.jpg"/>
-                        <img class="img-responsive" src="images/slides_index/IMG_3085.jpg"/>
-                        <img class="img-responsive" src="images/slides_index/IMG_3086.jpg"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3073.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3081.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3084.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3085.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3086.JPG"/>
                     </div>
                	</div>
             </div><!-- content -->

@@ -14,8 +14,8 @@
 				class="table table-striped table-bordered bootstrap-datatable datatable">
 				<thead>
 					<tr style="text-align: center">
-						<th style="width: 30%">Titel</th>
-						<th style="width: 40%">Tekst</th>
+						<th style="width: 70%">Titel</th>
+						<!--<th style="width: 40%">Tekst</th>-->
 						<!-- <th>Image</th> -->
 						<th style="width: 15%">Actief</th>
 						
@@ -35,7 +35,7 @@
 					echo "<tr>";
 					$row = $rentalArray [$i];
 					echo "<td class='center'>$row->title</td>";
-					echo "<td class='center'>$row->description</td>";
+// 					echo "<td class='center'>$row->description</td>";
 					echo "<td class='center'>";
 					if ($row->active == 1) {
 						echo "<span class='label label-success'>Ja</span>";

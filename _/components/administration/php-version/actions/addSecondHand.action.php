@@ -1,5 +1,7 @@
 
 <?php
+require '../_/components/php/upload.class.php';
+require '../_/components/php/SimpleImage.php';
 // configuration for the validation of the form
 $validation = array ();
 $mandatory = array (
@@ -164,7 +166,7 @@ if ($validator->validate ( $_POST )) {
 	$output = $validator->getJSON ();
 	$errors = $output ['errors'];
 	$required = $output ['required'];
-	echo '<div class="alert alert-warning">';
+	echo '<div class="alert alert-error">';
 	foreach ( $required as $key => $val ) {
 		// echo $val;
 		echo 'Verplicht veld: ' . $lang [$key] . '<br/>';
@@ -186,6 +188,12 @@ function setImage($imageId) {
 function saveUploadPhoto($uploadId, $ses_id, $id) {
 	copy ( "../images/tempory/" . $ses_id . "/" . $_SESSION [$uploadId], "../images/secondHand/" . $id . "/" . $_SESSION [$uploadId] );
 	unlink ( "../images/tempory/" . $ses_id . "/" . $_SESSION [$uploadId] );
+	//add a directory 'sm', resize the image and save in this folder
+	if (! file_exists ( "../images/secondHand/" . $id . "/sm/" )) {
+		mkdir ( "../images/secondHand/" . $id . "/sm/" );
+	}
+	$img = new SimpleImage();
+	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(300, 300)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 function checkUploadPhoto($uploadId, $ses_id) {
 	if (isset ( $_FILES [$uploadId] )) {
@@ -196,6 +204,26 @@ function checkUploadPhoto($uploadId, $ses_id) {
 			mkdir ( "../images/tempory/" . $ses_id );
 		}
 		if (! file_exists ( "../images/tempory/" . $ses_id . "/" . $_FILES [$uploadId] ["name"] )) {
+			//testing upload class
+// 			$uploaded = new Upload($_FILES[$uploadId]);
+			
+// 			$types  = array('image/png');
+// 			$ext    = array('png');
+// 			$size   = 1;
+			
+// 			$uploaded->validate($size, $ext, $types);
+// 			$estado = $uploaded->save( "../images/tempory/" . $ses_id. "/");
+			
+// 			if($estado){
+// 				echo "Imagen Guardada correctamente.";
+// 				$uploaded->rename('imagen1.png');
+			
+// 			} else {
+// 				echo "Imagen no valida.";
+// 			}
+						
+			
+			
 			$tempFile = $_FILES [$uploadId] ['tmp_name'];
 			move_uploaded_file ( $_FILES [$uploadId] ["tmp_name"], "../images/tempory/" . $ses_id . "/" . $_FILES [$uploadId] ["name"] );
 			$_SESSION [$uploadId . '_location'] = "../images/tempory/" . $ses_id . "/" . $_FILES [$uploadId] ["name"];

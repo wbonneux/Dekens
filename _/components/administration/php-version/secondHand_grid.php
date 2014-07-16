@@ -14,8 +14,8 @@
 				class="table table-striped table-bordered bootstrap-datatable datatable">
 				<thead>
 					<tr style="text-align: center">
-						<th style="width: 100px">Titel</th>
-						<th>Tekst</th>
+						<th style="width: 70%">Titel</th>
+						 <!--<th>Tekst</th> -->
 						<!-- <th>Image</th> -->
 						<th style="width: 10px">Actief</th>
 						<th style="width: 10px">Verkocht</th>
@@ -34,8 +34,8 @@
 				for($i = 0; $i < count ( $secondHandArray ); $i ++) {
 					echo "<tr>";
 					$row = $secondHandArray [$i];
-					echo "<td class='center' style='width:25%'>$row->title</td>";
-					echo "<td class='center' style='width:25%'>$row->description</td>";
+					echo "<td class='center' style='width:70%'>$row->title</td>";
+// 					echo "<td class='center' style='width:25%'>$row->description</td>";
 					echo "<td class='center'>";
 					if ($row->active == 1) {
 						echo "<span class='label label-success'>Ja</span>";

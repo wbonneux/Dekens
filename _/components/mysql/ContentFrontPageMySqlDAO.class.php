@@ -64,7 +64,7 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
 		$sqlQuery->setString($frontPage->image);
 		$sqlQuery->setString($frontPage->imagePos);
 		$sqlQuery->set($frontPage->active);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		$sqlQuery->set((new DateTime())->format('Y-m-d H:i:s'));
 		
 		$id = $this->executeInsert($sqlQuery);	
 		$frontPage->id = $id;

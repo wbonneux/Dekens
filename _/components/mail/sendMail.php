@@ -20,19 +20,21 @@ $mail->SMTPDebug = 0;
 //Ask for HTML-friendly debug output 
 $mail->Debugoutput = 'html'; 
 //Set the hostname of the mail server 
-$mail->Host = "uit.telenet.be"; 
+$mail->Host = "mail.dekens-agritechnics.be"; 
 //Set the SMTP port number - likely to be 25, 465 or 587 
-$mail->Port = 25; 
+$mail->Port = 587; 
 //Whether to use SMTP authentication 
-$mail->SMTPAuth = false; 
+$mail->SMTPAuth = true;
+$mail->Username = 'info@dekens-agritechnics.be';
+$mail->Password = 'dekens'; 
 //Set who the message is to be sent from 
 //$mail->setFrom($_SESSION['contact_email'], $_SESSION['contact_name']); 
-$mail->setFrom('info@dekens-agritechnics.be', 'Dekens Agri Technics');
+$mail->addAddress('info@dekens-agritechnics.be', 'Dekens Agri Technics');
 //Set an alternative reply-to address 
 //$mail->addReplyTo('NoReply@dekens-agritechnics.be', 'Dekens Agri Technics'); 
 //Set who the message is to be sent to 
 //$mail->addAddress('info@dekens-agritechnics.be', 'Dekens Agri Technics');
-$mail->addAddress($_SESSION['contact_email'], $_SESSION['contact_name']);
+$mail->setFrom($_SESSION['contact_email'], $_SESSION['contact_name']);
 //$mail->addAddress('wbonneux@gmail.com', 'Webbo WebDesign'); 
 //Set the subject line 
 $mail->Subject = 'Inlichting/Vraag via contactformulier website'; 

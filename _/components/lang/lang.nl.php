@@ -7,6 +7,9 @@ $lang['contact_email'] = 'Email ';
 $lang['contact_phone'] = 'Telefoon/GSM(vb: 0496753678) ';
 $lang['contact_message'] = 'Bericht ';
 $lang['MENU_SEARCHREQUEST'] = 'Zoekopdracht ';
+$lang['POS_LEFT'] = 'Links ';
+$lang['POS_RIGHT'] = 'Rechts ';
+$lang['SELECT_POS'] = 'Selecteer een positie ';
 
 $lang['sh_title']  				= 'Titel';
 $lang['sh_description']  		= 'Omschrijving';

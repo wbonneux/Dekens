@@ -129,7 +129,7 @@ if ($validator->validate ( $_POST )) {
 	$output = $validator->getJSON ();
 	$errors = $output ['errors'];
 	$required = $output ['required'];
-	echo '<div class="alert alert-warning">';
+	echo '<div class="alert alert-error">';
 	foreach ( $required as $key => $val ) {
 		// echo $val;
 		echo 'Verplicht veld: ' . $lang[$key] . '<br/>';

@@ -1,13 +1,13 @@
 <?php 
 set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
-include_once '_/components/php/include_dao.php';
+//include_once '_/components/php/include_dao.php';
 ?>
 <header class="clearfix">
 	<section id="branding">
 		<a href="index.php">
       <img class="none-bg img-responsive" src="images/misc/Logo_Trans_Header_V2.png" alt="Logo for Roux Conference">
       <a href="http://www.mypartspartner.be/mpp-be/nl" target="_blank">
-      <img class="none-bg img-responsive" style="height:40px" src="images/MyPartsPartner/MyPartsPartner.jpg" alt="My Parts Partner - klik om in te loggen">
+      <!--<img class="none-bg img-responsive" style="height:40px" src="images/MyPartsPartner/MyPartsPartner.jpg" alt="My Parts Partner - klik om in te loggen">-->
       </a>
     </a>
 	</section><!-- branding -->
@@ -31,9 +31,9 @@ include_once '_/components/php/include_dao.php';
     <ul class="nav navbar-nav navbar">
       <li><a href="index.php">Home</a></li>
       <!--<li><a href="overons.php">Over ons</a></li>-->
-        <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>
-        <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>
-      <li><a href="2dehands.php">2dehands</a></li>
+      <!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
+      <!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
+      <!--<li><a href="2dehands.php">2dehands</a></li>-->
       <li><a href="contact.php">Contacteer ons</a></li>
     </ul>
     <!--

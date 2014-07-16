@@ -13,10 +13,10 @@ $message = $_POST['contact_message'];
 	
 // check that a name was entered
 if (empty($name))
-    $error = 'U moet een naam opgeven.';
+    $error = 'You must enter your name.';
 // check that an email address was entered
 elseif (empty($email_address)) 
-    $error = 'U moet een email adres opgeven.';
+    $error = 'You must enter your email address.';
 // check for a valid email address
 elseif (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email_address))
     $error = 'U moet een geldig email adres opgeven.';
@@ -43,7 +43,7 @@ $email_content .= "Bericht:\n\n$message";
 	
 // send the email
 //ENTER YOUR INFORMATION BELOW FOR THE FORM TO WORK!
-mail ('info@dekens-agritechnis.be.be', 'Agri Technics Dekens - Contact formulier', $email_content, $headers);
+mail ('wbonneux@gmail.be', 'Agri Technics Dekens - Contact formulier', $email_content, $headers);
 	
 // send the user back to the form
 header('Location: contact.php?s='.urlencode('Hartelijk bedankt voor uw bericht!.')); exit;
@@ -51,7 +51,7 @@ header('Location: contact.php?s='.urlencode('Hartelijk bedankt voor uw bericht!.
 //testing
 
 //define the receiver of the email
-$to = 'info@dekens-agritechnics.be';
+$to = 'wbonneux@gmail.com';
 //define the subject of the email
 $subject = 'Test email'; 
 //define the message to be sent. Each line should be separated with \n
@@ -61,7 +61,7 @@ $headers = "From: wbonneux@gmail.com\r\nReply-To: wbonneux@gmail.com";
 //send the email
 $mail_sent = @mail( $to, $subject, $message, $headers );
 //if the message is sent successfully print "Mail sent". Otherwise print "Mail failed" 
-// echo $mail_sent ? "Mail sent" : "Mail failed";
+echo $mail_sent ? "Mail sent" : "Mail failed";
 
 
 ?>

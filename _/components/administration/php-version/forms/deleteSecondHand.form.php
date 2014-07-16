@@ -12,7 +12,10 @@
 				Bent u zeker om volgend item te verwijderen?<br/>
 				<?php
 					echo $secondHand->title.'<br/>';
-					echo "<img src='../images/secondHand/".$secondHand->id."/".$secondHand->image1."'>"
+					if(isset($secondHand->image1) && $secondHand->image1 != ''){
+						echo "<img src='../images/secondHand/".$secondHand->id."/".$secondHand->image1."'>";
+					}
+
 					
 				?>
 			</h3>
