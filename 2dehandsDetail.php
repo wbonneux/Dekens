@@ -26,52 +26,77 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 	<section class="container">
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
-        	<h1 class="page-header"><?php echo $secondHand->title; if($secondHand->sold){echo "- VERKOCHT";} ?></h1>
+         	<div class="row">
+         		<div class="col-lg-12">
+         			<h1 class="page-header"><a href="2dehands.php">Tweedehands</a> / <?php echo $secondHand->title; if($secondHand->sold){echo " - VERKOCHT";} ?></h1>
+        		</div>
+        	</div>
 		    <div class="row news">
-				  <div class="col-md-6"> 
+		    	<div class="col-lg-12">
+				  <div class="col-md-5"> 
 				    <h3>
-				  	<?php echo $secondHand->description; ?><br/>
-				  	</h3>
-				  	<h4>
-				  		Bouwjaar: <?php echo $secondHand->buildYear; ?><br/>
-				  		Bandenmaat(voor): <?php echo $secondHand->sizeTireFront; ?><br/>
-				  		Bandenmaat(achter): <?php echo $secondHand->sizeTireBack; ?><br/>
+				    	<div class="description">
+				  			<?php echo $secondHand->description; ?>
+				  		</div>
+			  		</h3>
+			  		<h4>
 				  		<?php
-				  		if(isset($secondHand->hoursWork)){
-				  			echo 'Aantal uren: '.$secondHand->hoursWork.'<br/>';
-				  		}
+					  		if(isset($secondHand->buildYear)){
+					  			echo '<div class="alert alert-success">Bouwjaar: '.$secondHand->buildYear.'</div>';
+					  		}
+					  		if(isset($secondHand->sizeTireFront) && $secondHand->sizeTireFront != ""){
+					  			echo '<div class="alert alert-success">Bandenmaat(voor): '.$secondHand->sizeTireFront.'</div>';
+					  		}
+					  		if(isset($secondHand->sizeTireBack) && $secondHand->sizeTireBack != ""){
+					  			echo '<div class="alert alert-success">Bandenmaat(achter): '.$secondHand->sizeTireBack.'</div>';
+					  		}
+					  		if(isset($secondHand->hoursWork)){
+					  			echo '<div class="alert alert-success">Aantal uren: '.$secondHand->hoursWork.'</div>';
+					  		}
 				  		?>
-				  		
 				  	</h4>
 				  </div>
-				  <div class="col-md-5"> 
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
-						<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" class="myImage img-responsive img-center	">
+				  <div class="col-md-7"> 
+					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws" title="<?php echo $secondHand->title; ?>"> 	
+						<img src="images/secondHand/<?php echo $secondHand->id.'/sm/'.$secondHand->image1; ?>" class="img-responsive img-center	">
 					</a> 
+				  </div>
 				</div>
 			</div>
 			<br>
 			<div class="row news">
-				<div class="col-md-3">
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image2; ?>" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
-						<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image2; ?>" class="myImage img-responsive img-center	">
-					</a> 
+				<div class="col-lg-12">
+					<?php 
+					if(isset($secondHand->image2) && $secondHand->image2 != ''){ 
+						echo '<div class="col-md-3">';
+							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image2.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image2.'" class="myImage img-responsive img-center	">';
+							echo '</a>'; 
+						echo '</div>';
+					}
+					if(isset($secondHand->image3) && $secondHand->image3 != ''){
+						echo '<div class="col-md-3">';
+							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image3.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image3.'" class="myImage img-responsive img-center	">';
+							echo '</a>';
+						echo '</div>';
+					}
+					if(isset($secondHand->image4) && $secondHand->image4 != ''){
+						echo '<div class="col-md-3">';
+							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image4.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image4.'" class="myImage img-responsive img-center	">';
+							echo '</a>';
+						echo '</div>';
+					}
+					if(isset($secondHand->image5) && $secondHand->image5 != ''){
+						echo '<div class="col-md-3">';
+							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image5.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image5.'" class="myImage img-responsive img-center	">';
+							echo '</a>';
+						echo '</div>';
+					}
+					?>
 				</div>
-				<div class="col-md-3">
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image3; ?>" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
-						<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image3; ?>" class="myImage img-responsive img-center	">
-					</a> 
-				</div>
-				<div class="col-md-3">
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image4; ?>" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
-						<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image4; ?>" class="myImage img-responsive img-center	">
-					</a> 
-				</div>
-				<div class="col-md-3">
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image5; ?>" data-lightbox="Nieuws" title="2dehands - Klik op de foto voor details">
-						<img src="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image5; ?>" class="myImage img-responsive img-center	">
-					</a> 
-				</div>	
 			</div>
 		
         </div><!-- content -->
@@ -81,6 +106,6 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 	<script type="text/javascript" src="_/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="_/js/myscript.js"></script>
     <script type="text/javascript" src="_/js/lightbox.js"></script>
-	</script>
+	
 </body>
 </html>

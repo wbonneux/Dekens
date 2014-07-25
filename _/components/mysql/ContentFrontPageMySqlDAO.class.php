@@ -16,14 +16,14 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
 	 * @return ContentMySql 
 	 */
 	public function load($id){
-		return parent::loadBase($id,'CONT_FRONTPAGE');
+		return parent::loadBase($id,'cont_frontpage');
 	}
 
 	/**
 	 * Get all records from table
 	 */
 	public function queryAll(){
-		return parent::queryAllBase('CONT_FRONTPAGE');
+		return parent::queryAllBase('cont_frontpage');
 	}
 	
 	/**
@@ -32,7 +32,7 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
 	 * @param $orderColumn column name
 	 */
 	public function queryAllOrderBy($orderColumn){
-		return parent::queryAllOrderByBase($orderColumn,'CONT_FRONTPAGE');
+		return parent::queryAllOrderByBase($orderColumn,'cont_frontpage');
 	}
 	
 	/**
@@ -40,14 +40,14 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
  	 * @param content primary key
  	 */
 	public function delete($id){
-		return parent::deleteBase($id,'CONT_FRONTPAGE');
+		return parent::deleteBase($id,'cont_frontpage');
 	}
 
 	/**
  	 * Delete all rows
  	 */
 	public function clean(){
-		return parent::cleanBase('CONT_FRONTPAGE');
+		return parent::cleanBase('cont_frontpage');
 	}
 	
 	/**
@@ -56,7 +56,7 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
  	 * @param ContentMySql content
  	 */
 	public function insert(ContentFrontPage $frontPage){
-		$sql = 'INSERT INTO CONT_FRONTPAGE (T_I_TITLE, T_I_DESCRIPTION, T_I_IMAGE, T_I_IMAGE_POS, L_I_ACTIVE, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO cont_frontpage (T_I_TITLE, T_I_DESCRIPTION, T_I_IMAGE, T_I_IMAGE_POS, L_I_ACTIVE, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($frontPage->title);
@@ -64,7 +64,9 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
 		$sqlQuery->setString($frontPage->image);
 		$sqlQuery->setString($frontPage->imagePos);
 		$sqlQuery->set($frontPage->active);
-		$sqlQuery->set((new DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set(new \DateTime( 'now' ));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 		
 		$id = $this->executeInsert($sqlQuery);	
 		$frontPage->id = $id;
@@ -77,7 +79,7 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
  	 * @param ContentMySql content
  	 */
 	public function update(ContentFrontPage $frontPage){
-		$sql = 'UPDATE CONT_FRONTPAGE SET T_I_TITLE = ?, T_I_DESCRIPTION = ?, T_I_IMAGE = ?, T_I_IMAGE_POS = ?, L_I_ACTIVE = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
+		$sql = 'UPDATE cont_frontpage SET T_I_TITLE = ?, T_I_DESCRIPTION = ?, T_I_IMAGE = ?, T_I_IMAGE_POS = ?, L_I_ACTIVE = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($frontPage->title);
@@ -85,12 +87,13 @@ class ContentFrontPageMySqlDAO extends BaseCommonMySqlDAO implements ContentFron
 		$sqlQuery->setString($frontPage->image);
 		$sqlQuery->setString($frontPage->imagePos);
 		$sqlQuery->set($frontPage->active);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 
 		$sqlQuery->setNumber($frontPage->id);
 		
 // 		echo 'update<br/>';
-// 		echo $sqlQuery->getQuery();
+ 		//echo $sqlQuery->getQuery();
 		return $this->executeUpdate($sqlQuery);
 	}
 

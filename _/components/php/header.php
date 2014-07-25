@@ -1,42 +1,55 @@
-<?php 
-set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
-//include_once '_/components/php/include_dao.php';
+<?php
+set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
+// include_once '_/components/php/include_dao.php';
 ?>
 <header class="clearfix">
 	<section id="branding">
-		<a href="index.php">
-      <img class="none-bg img-responsive" src="images/misc/Logo_Trans_Header_V2.png" alt="Logo for Roux Conference">
-      <a href="http://www.mypartspartner.be/mpp-be/nl" target="_blank">
-      <!--<img class="none-bg img-responsive" style="height:40px" src="images/MyPartsPartner/MyPartsPartner.jpg" alt="My Parts Partner - klik om in te loggen">-->
-      </a>
-    </a>
-	</section><!-- branding -->
-	
+		<div class="row">
+			<div class="col-lg-10 col-md-6 hidden-xs">
+				<a href="index.php"> <img class="none-bg img-responsive"
+					style="height: 100px" src="images/misc/Logo_Trans_Header_V4.png"
+					alt="Dekens Agri Technics">
+				</a>
+			</div>
+			<div class="col-lg-2 col-md-6 hidden-sm hidden-xs" style="text-align: right">
+				<br/><br/><br/>
+				<a href="http://www.mypartspartner.be/mpp-be/nl" target="_blank"> <img
+					class="none-bg img-responsive" style="height: 40px;text-align:right;vertical-align:bottom"
+					src="images/MyPartsPartner/MyPartsPartner.JPG"
+					alt="My Parts Partner - klik om in te loggen">
+				</a>
+			</div>
+		</div>
+	</section>
+	<!-- branding -->
+
 	<nav class="navbar" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!--
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<!--
       <a class="navbar-brand" href="#">Brand</a>
     -->
-  </div>
+		</div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar">
-      <li><a href="index.php">Home</a></li>
-      <!--<li><a href="overons.php">Over ons</a></li>-->
-      <!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
-      <!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
-      <!--<li><a href="2dehands.php">2dehands</a></li>-->
-      <li><a href="contact.php">Contacteer ons</a></li>
-    </ul>
-    <!--
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar">
+				<li><a href="index.php">Home</a></li>
+				<!--<li><a href="overons.php">Over ons</a></li>-->
+				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
+				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
+				<li><a href="2dehands.php">Tweedehands</a></li>
+				<li><a href="Verhuur.php">Verhuur</a></li>
+				<li><a href="contact.php">Contacteer ons</a></li>
+			</ul>
+			<!--
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
@@ -57,12 +70,16 @@ set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
       </li>
     </ul>
   -->
-  </div><!-- /.navbar-collapse -->
-</nav>
+		</div>
+		<!-- /.navbar-collapse -->
+	</nav>
 	<!-- Modal -->
 	<section id="modal" class="modal fade">
 		<div class="modal-body">
 			<img id="modalimage" src="" alt="Modal Photo">
-		</div><!-- modal-body -->
-	</section><!-- modal -->
-</header><!-- header -->
+		</div>
+		<!-- modal-body -->
+	</section>
+	<!-- modal -->
+</header>
+<!-- header -->

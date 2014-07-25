@@ -12,7 +12,7 @@
 	</ul>
 </div>
 
-<?php include "../_/components/administration/php-version/frontpage_grid.php"; ?>
+<?php include "../_/components/administration/php-version/frontPage_grid.php"; ?>
 
 <!-- end content -->
 <?php include "../_/components/administration/php-version/footer.php"; ?>

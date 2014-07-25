@@ -7,7 +7,7 @@
  */
 class UserMySqlExtDAO extends UserMySqlDAO{
 	function getUserByUsernamePassword($username, $userpassword){
-		$sql = 'SELECT * FROM USR_USER WHERE T_I_USERNAME = ? AND T_I_PASSWORD = ?';
+		$sql = 'SELECT * FROM usr_user WHERE T_I_USERNAME = ? AND T_I_PASSWORD = ?';
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setString($username);
 		$sqlQuery->setString($userpassword);
@@ -16,7 +16,7 @@ class UserMySqlExtDAO extends UserMySqlDAO{
 
 
 	function getUserByUsername($username){
-		$sql = 'SELECT * FROM USR_USER WHERE T_I_USERNAME = ?';
+		$sql = 'SELECT * FROM usr_user WHERE T_I_USERNAME = ?';
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setString($username);
 		return $this->getRow($sqlQuery);

@@ -75,23 +75,23 @@ function getSecondHandItem($id){
 		$_SESSION['sh_description']			= $secondHand->description;
 		if($secondHand->image1 != ''){
 			$_SESSION['sh_image_1']				= $secondHand->image1;
-			$_SESSION['sh_image_1_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image1;
+			$_SESSION['sh_image_1_location']	= '../images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1;
 		}
 		if($secondHand->image2 != ''){
 			$_SESSION['sh_image_2']				= $secondHand->image2;
-			$_SESSION['sh_image_2_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image2;
+			$_SESSION['sh_image_2_location']	= '../images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image2;
 		}
 		if($secondHand->image3 != ''){
 			$_SESSION['sh_image_3']				= $secondHand->image3;
-			$_SESSION['sh_image_3_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image3;
+			$_SESSION['sh_image_3_location']	= '../images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image3;
 		}
 		if($secondHand->image4 != ''){
 			$_SESSION['sh_image_4']				= $secondHand->image4;
-			$_SESSION['sh_image_4_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image4;
+			$_SESSION['sh_image_4_location']	= '../images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image4;
 		}
 		if($secondHand->image5 != ''){
 			$_SESSION['sh_image_5']				= $secondHand->image5;
-			$_SESSION['sh_image_5_location']	= '../images/secondHand/'.$secondHand->id.'/'.$secondHand->image5;
+			$_SESSION['sh_image_5_location']	= '../images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image5;
 		}
 	}
 }

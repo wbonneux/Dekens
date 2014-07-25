@@ -6,7 +6,7 @@
 				<i class="icon-align-justify"></i> Verhuur
 			</h2>
 			<div>
-			<a href="AddRental.php">Toevoegen</a>
+			<a href="addRental.php">Toevoegen</a>
 			</div>
 		</div>
 		<div class="box-content">
@@ -46,9 +46,9 @@
 // 					echo "<td class='center'>$row->sold</td>";
 					
 					echo '<td class="center">';
-					echo '<a class="btn btn-info" href="EditRental.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
+					echo '<a class="btn btn-info" href="editRental.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="DeleteRental.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" href="deleteRental.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

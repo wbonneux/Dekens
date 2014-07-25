@@ -1,5 +1,7 @@
 
 <?php
+require '../_/components/php/upload.class.php';
+require '../_/components/php/SimpleImage.php';
 //configuration for the validation of the form
 $validation = array ();
 $mandatory = array (
@@ -13,7 +15,7 @@ $required = array();
 
 //setting the input vars in session
 // echo 'post-id: '.$_POST['sh_id'];
-//if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
+if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
 if(isset($_POST['sh_title'])){ $_SESSION['sh_title'] = $_POST["sh_title"];}
 if(isset($_POST['sh_description'])){ $_SESSION['sh_description'] = $_POST["sh_description"];}
 if(isset($_POST['sh_price_day'])){ $_SESSION['sh_price_day'] = $_POST["sh_price_day"];}
@@ -147,6 +149,13 @@ function setImage($imageId){
 function saveUploadPhoto($uploadId, $ses_id, $id){
 	copy("../images/tempory/".$ses_id."/".$_SESSION[$uploadId],"../images/rental/".$id."/".$_SESSION[$uploadId]);
 	unlink("../images/tempory/".$ses_id."/".$_SESSION[$uploadId]);
+	
+	if (! file_exists ( "../images/rental/" . $id . "/sm/" )) {
+		mkdir ( "../images/rental/" . $id . "/sm/" );
+	}
+	$img = new SimpleImage();
+	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
+	
 }
 
 function checkUploadPhoto($uploadId,$id){
@@ -161,6 +170,12 @@ function checkUploadPhoto($uploadId,$id){
 		if(!file_exists("../images/rental/".$id."/".$_FILES[$uploadId]["name"])){
 			$tempFile = $_FILES[$uploadId]['tmp_name'];
 			move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/rental/".$id."/".$_FILES[$uploadId]["name"]);
+			if (! file_exists ( "../images/rental/" . $id . "/sm/" )) {
+				mkdir ( "../images/rental/" . $id . "/sm/" );
+			}
+			$img = new SimpleImage();
+			$img->load("../images/rental/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
+			
 			$_SESSION[$uploadId.'_location'] = "../images/rental/".$id."/".$_FILES[$uploadId]["name"];
 			// 			echo "uploaded";
 			// 			echo "Stored in: " . $_FILES["uploadPhoto"]["tmp_name"];

@@ -12,7 +12,6 @@ if (!isset( $_REQUEST['id']) && !isset($_POST['save'])) {
 	}else{
 		
 	}
-	//echo $_SESSION['sh_id'];
 }
 
 $required = null;

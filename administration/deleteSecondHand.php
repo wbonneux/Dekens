@@ -3,8 +3,8 @@
 //check if deleteSecondHand has a request parameter id
 //if no -> back the fuck up!
 //if so -> granted access mtf
-if (empty( $_REQUEST['id'])) {
-	header("location:2deHands.php");
+if (empty( $_REQUEST['id']) && empty($_POST)) {
+	header("location:2dehands.php");
 }
 include "../_/components/administration/php-version/header.php";
 $required = null;
@@ -43,7 +43,7 @@ if(isset($_POST['yes']))
 		include "../_/components/administration/php-version/secondHand_grid.php";
 	}else{
 		getSecondHandItem($_REQUEST['id']);
-		include "../_/components/administration/php-version/forms/deletesecondHand.form.php";
+		include "../_/components/administration/php-version/forms/deleteSecondHand.form.php";
 	}
 	
 }

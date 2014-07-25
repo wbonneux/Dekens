@@ -163,7 +163,7 @@
 	<div class="row">
 		<div class="clearfix"></div>
 		<div class="form-group col-lg-12">
-			<input type="hidden" value="<?php if(isset($_REQUEST['id'])){$_REQUEST['id'];}?>" id="sh_id" name="sh_id">
+			<input type="hidden" value="<?php if(isset($_REQUEST['id'])){echo $_REQUEST['id'];}?>" id="sh_id" name="sh_id">
 			<button type="submit" name="save" class="btn btn-primary">Verzenden</button>
 			<button type="submit" name="cancel" class="btn btn-primary">Annuleren</button>
 		</div>

@@ -3,7 +3,7 @@
 //check if deleteRental has a request parameter id
 //if no -> back the fuck up!
 //if so -> granted access mtf
-if (empty( $_REQUEST['id'])) {
+if (empty( $_REQUEST['id']) && empty($_POST)) {
 	header("location:verhuur.php");
 }
 include "../_/components/administration/php-version/header.php";

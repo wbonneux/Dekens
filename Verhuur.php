@@ -1,14 +1,15 @@
 <?php
 set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 include_once '_/components/php/include_dao.php';
-$secondHandDAO = DAOFactory::getSecondHandDAO();
-$secondHandArr = null;
-$secondHandArr =$secondHandDAO->getActiveSecondHand();
+$rentalDAO = DAOFactory::getRentalDAO();
+$rentalArr = null;
+$rentalArr =$rentalDAO->getActiveRental();
 ?>
 <html>
-	<head>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - 2dehands</title>
+		<title>Dekens Agri Technics - Verhuur</title>
 		<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -22,49 +23,31 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 	<section class="container">
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
-        	<h1 class="page-header">Tweedehands</h1>
+        	<h1 class="page-header">Verhuur</h1>
         	<div class="row news">
         			<?php
         			$items = 0;
-        			if(sizeof($secondHandArr) == 0)
+        			if(sizeof($rentalArr) == 0)
         			{
-        				
+        			
         				echo '<div class="col-md-12">';
-        				echo '<h2>Momenteel geen items te koop</h2>';
+        				echo '<h2>Momenteel geen items te huur</h2>';
         				echo '</div>';
         			}
-        			foreach ($secondHandArr as $secondHand ){
+        			foreach ($rentalArr as $rental ){
 					//todo mod function 
 						if($items == 3 || $items == 6 || $items == 9){
 							echo '</div>';
 							echo '<div class="row news">';
 						}
 						echo '<div class="col-md-4">';
-						if($secondHand->sold){
-								
-									echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="mythumbnail myImage img-responsive img-center"></a>';
-									echo '<div class="mywrapper">';
-									echo '<div class="caption mypost-content">';
-									
-									echo '<h1 style="font-size:50px;font-style:bold;color:red">Verkocht!</h1>';
-									//echo '<p>Lorem ipsum dolor sit amet</p>';
-									
-									echo '</div></div>';
-									echo '<h2 style="text-align:center;">';
-								echo $secondHand->title;
-								echo "<br/>VERKOCHT";
-							echo '</h2>';
-						}
-						else
-						{
-							echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'" title="'.$secondHand->title.'">';
-							echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="myImage img-responsive img-center"></a>';
-							echo '<h2 style="text-align:center;">';
-							echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'">';
-							echo $secondHand->title;
-							echo '</a></h2>';
-							echo '</a>';
-						}
+							echo '<a href="VerhuurDetail.php?id='.$rental->id.'" title="'.$rental->title.'">';
+								echo '<img src="images/rental/'.$rental->id.'/sm/'.$rental->image1.'" class="myImage img-responsive img-center"></a>';
+								echo '<h2 style="text-align:center;">';
+						echo '<a href="VerhuurDetail.php?id='.$rental->id.'">';
+							echo $rental->title;
+						echo '</a></h2>';
+						echo '</a>';
 						echo '</div>';
 						$items++;
 					}

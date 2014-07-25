@@ -1,7 +1,15 @@
 <?php
-set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
-include_once '_/components/php/include_dao.php'; 
-?>
+//set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '../_/components/php/include_dao.php'; 
+
+	//echo 'session';
+	//session_start();
+	//echo $_SESSION['myusername'];
+	if (!isset($_SESSION['myusername'])) {
+		//header("location:login.php");
+	}
+		
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,15 +70,7 @@ include_once '_/components/php/include_dao.php';
 </head>
 
 <body>
-	<?php 
-	//echo 'session';
-	session_start();
-	//echo $_SESSION['myusername'];
-	if (empty($_SESSION['myusername'])) {
-		header("location:login.php");
-	}
-		
-	?>
+	
 	
 	<?php if(!isset($no_visible_elements) || !$no_visible_elements)	{ ?>
 	<!-- topbar starts -->

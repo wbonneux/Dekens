@@ -1,6 +1,7 @@
 <?php
 	//include all DAO files
 	set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+	//set_include_path('.;/home/wimbogp45/domains/dekens-agritechnics.be/public_html');
 	require_once('_/components/sql/Connection.class.php');
 	require_once('_/components/sql/ConnectionFactory.class.php');
 	require_once('_/components/sql/ConnectionProperty.class.php');
@@ -10,6 +11,7 @@
 	require_once('_/components/core/ArrayList.class.php');
 	require_once('_/components/dao/DAOFactory.class.php');
  	
+	require_once('_/components/dto/ContentFrontPage.class.php');
 	require_once('_/components/dao/ContentFrontPageDAO.class.php');
 	require_once('_/components/mysql/ContentFrontPageMySqlDAO.class.php');
 	require_once('_/components/mysql/ext/ContentFrontPageMySqlExtDAO.class.php');
@@ -55,12 +57,12 @@
 	require_once('_/components/mysql/ext/ContainersMySqlExtDAO.class.php');
 	require_once('_/components/dao/ContentDAO.class.php');
 	require_once('_/components/dto/Content.class.php');
-	require_once('_/components/mysql/ContentMySqlDAO.class.php');
-	require_once('_/components/mysql/ext/ContentMySqlExtDAO.class.php');
-	require_once('_/components/dao/ContentFrontpageDAO.class.php');
-	require_once('_/components/dto/ContentFrontpage.class.php');
-	require_once('_/components/mysql/ContentFrontpageMySqlDAO.class.php');
-	require_once('_/components/mysql/ext/ContentFrontpageMySqlExtDAO.class.php');
+	//require_once('_/components/mysql/ContentMySqlDAO.class.php');
+	//require_once('_/components/mysql/ext/ContentMySqlExtDAO.class.php');
+	//require_once('_/components/dao/ContentFrontpageDAO.class.php');
+	//require_once('_/components/dto/ContentFrontpage.class.php');
+	//require_once('_/components/mysql/ContentFrontpageMySqlDAO.class.php');
+	//require_once('_/components/mysql/ext/ContentFrontpageMySqlExtDAO.class.php');
 	require_once('_/components/dao/ContentRatingDAO.class.php');
 	require_once('_/components/dto/ContentRating.class.php');
 	require_once('_/components/mysql/ContentRatingMySqlDAO.class.php');
@@ -163,10 +165,10 @@
 	require_once('_/components/mysql/UserMySqlDAO.class.php');
 	require_once('_/components/mysql/ext/UserMySqlExtDAO.class.php');
 
-	require_once('_/components/dao/UsertypeDAO.class.php');
-	require_once('_/components/dto/Usertype.class.php');
-	require_once('_/components/mysql/UsertypeMySqlDAO.class.php');
-	require_once('_/components/mysql/ext/UsertypeMySqlExtDAO.class.php');
+	//require_once('_/components/dao/UsertypeDAO.class.php');
+// 	require_once('_/components/dto/Usertype.class.php');
+// 	require_once('_/components/mysql/UsertypeMySqlDAO.class.php');
+// 	require_once('_/components/mysql/ext/UsertypeMySqlExtDAO.class.php');
 	
 	require_once('_/components/dao/WeblinksDAO.class.php');
 	require_once('_/components/dto/Weblink.class.php');

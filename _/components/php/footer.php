@@ -16,7 +16,7 @@
 <!-- 		<br /> -->
 		<div class="container">
 			<p style="color:azure">
-				© 2013 <a style="color:white;font-weight:bold;" href="http://webbositedesign.be" target="_blank">WebBo Site Design.</a> All Rights Reserved.
+				© 2014 <a style="color:white;font-weight:bold;" href="http://webbositedesign.be" target="_blank">WebBo Site Design.</a> All Rights Reserved.
 			</p>
 		</div>
 		

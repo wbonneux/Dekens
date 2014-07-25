@@ -3,7 +3,7 @@
 //check if deleteFrontPage has a request parameter id
 //if no -> back the fuck up!
 //if so -> granted access mtf
-if (empty( $_REQUEST['id'])) {
+if (empty( $_REQUEST['id']) && empty($_POST)) {
 	header("location:voorpagina.php");
 }
 include "../_/components/administration/php-version/header.php";
@@ -33,7 +33,6 @@ require_once '../_/components/classes/FormValidator.class.php';
  * 2. if button yes is pressed -> delete the record & return to grid
  * 3. if button no is pressed  -> return to grid
  */
-
 if(isset($_POST['yes']))
 {
 	include "../_/components/administration/php-version/actions/deleteFrontPage.action.php";
@@ -43,7 +42,7 @@ if(isset($_POST['yes']))
 		include "../_/components/administration/php-version/frontPage_grid.php";
 	}else{
 		getFrontPageItem($_REQUEST['id']);
-		include "../_/components/administration/php-version/forms/deletefrontPage.form.php";
+		include "../_/components/administration/php-version/forms/deleteFrontPage.form.php";
 	}
 	
 }

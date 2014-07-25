@@ -1,6 +1,6 @@
 <?php
 /*
- * Class that operate on table 'PROD_RENTAL'. Database Mysql.
+ * Class that operate on table 'prod_rental'. Database Mysql.
  *
  * @author: Bonneux Wim
  * @date: 2014/07/09
@@ -16,14 +16,14 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
 	 * @return ContentMySql 
 	 */
 	public function load($id){
-		return parent::loadBase($id,'PROD_RENTAL');
+		return parent::loadBase($id,'prod_rental');
 	}
 
 	/**
 	 * Get all records from table
 	 */
 	public function queryAll(){
-		return parent::queryAllBase('PROD_RENTAL');
+		return parent::queryAllBase('prod_rental');
 	}
 	
 	/**
@@ -32,7 +32,7 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
 	 * @param $orderColumn column name
 	 */
 	public function queryAllOrderBy($orderColumn){
-		return parent::queryAllOrderByBase($orderColumn,'PROD_RENTAL');
+		return parent::queryAllOrderByBase($orderColumn,'prod_rental');
 	}
 	
 	/**
@@ -40,14 +40,14 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
  	 * @param content primary key
  	 */
 	public function delete($id){
-		return parent::deleteBase($id,'PROD_RENTAL');
+		return parent::deleteBase($id,'prod_rental');
 	}
 
 	/**
  	 * Delete all rows
  	 */
 	public function clean(){
-		return parent::cleanBase('PROD_RENTAL');
+		return parent::cleanBase('prod_rental');
 	}
 	
 	/**
@@ -56,7 +56,7 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
  	 * @param ContentMySql content
  	 */
 	public function insert(Rental $Rental){
-		$sql = 'INSERT INTO PROD_RENTAL (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, C_I_PRICE_DAY, C_I_PRICE_WEEKEND, C_I_PRICE_WEEK, L_I_ACTIVE, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO prod_rental (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, C_I_PRICE_DAY, C_I_PRICE_WEEKEND, C_I_PRICE_WEEK, L_I_ACTIVE, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($Rental->title);
@@ -70,7 +70,8 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
 		$sqlQuery->set($Rental->priceWeek);
 		$sqlQuery->set($Rental->active);
 		$sqlQuery->set($Rental->description);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 		
 		$id = $this->executeInsert($sqlQuery);	
 		$Rental->id = $id;
@@ -86,7 +87,7 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
 // 		echo 'update<br>';
 // 		echo 'id:'.$Rental->id.'<br>';
 // 		echo 'id:'.$_SESSION['sh_id'].'<br>';
-		$sql = 'UPDATE PROD_RENTAL SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, C_I_PRICE_DAY = ?,  C_I_PRICE_WEEKEND = ?,  C_I_PRICE_WEEK = ?,  L_I_ACTIVE = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
+		$sql = 'UPDATE prod_rental SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, C_I_PRICE_DAY = ?,  C_I_PRICE_WEEKEND = ?,  C_I_PRICE_WEEK = ?,  L_I_ACTIVE = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($Rental->title);
@@ -100,7 +101,8 @@ class RentalMySqlDAO extends BaseCommonMySqlDAO implements RentalDAO{
 		$sqlQuery->set($Rental->priceWeek);
 		$sqlQuery->set($Rental->active);
 		$sqlQuery->set($Rental->description);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 
 		$sqlQuery->setNumber($Rental->id);
 		

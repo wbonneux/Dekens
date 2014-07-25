@@ -25,7 +25,7 @@ $mail->Host = "mail.dekens-agritechnics.be";
 $mail->Port = 587; 
 //Whether to use SMTP authentication 
 $mail->SMTPAuth = true;
-$mail->Username = 'info@dekens-agritechnics.be';
+$mail->Username = 'gert@dekens-agritechnics.be';
 $mail->Password = 'dekens'; 
 //Set who the message is to be sent from 
 //$mail->setFrom($_SESSION['contact_email'], $_SESSION['contact_name']); 

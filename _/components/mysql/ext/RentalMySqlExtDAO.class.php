@@ -7,7 +7,7 @@
  * @date: 2013/11/29
  */
 
-require_once('_/components/php/include_dao.php');
+//require_once('_/components/php/include_dao.php');
 
 class RentalMySqlExtDAO extends RentalMySqlDAO{
 	
@@ -19,7 +19,7 @@ class RentalMySqlExtDAO extends RentalMySqlDAO{
 		}else{
 			$active = 1;
 		}
-		$sql = "UPDATE  PROD_RENTAL SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
+		$sql = "UPDATE  prod_rental SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber($active);
 		$sqlQuery->setNumber($id);
@@ -28,9 +28,8 @@ class RentalMySqlExtDAO extends RentalMySqlDAO{
 
 	
 	public function getActiveRental(){
-		$sql = "SELECT * FROM PROD_RENTAL WHERE L_I_ACTIVE = ? ORDER BY S_I_CREATE_TECH DESC";
+		$sql = "SELECT * FROM prod_rental WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->setNumber(1);
 		return $this->getList($sqlQuery);
 	}
 

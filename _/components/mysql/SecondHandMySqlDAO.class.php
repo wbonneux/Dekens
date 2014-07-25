@@ -16,14 +16,14 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
 	 * @return ContentMySql 
 	 */
 	public function load($id){
-		return parent::loadBase($id,'PROD_SECONDHAND');
+		return parent::loadBase($id,'prod_secondhand');
 	}
 
 	/**
 	 * Get all records from table
 	 */
 	public function queryAll(){
-		return parent::queryAllBase('PROD_SECONDHAND');
+		return parent::queryAllBase('prod_secondhand');
 	}
 	
 	/**
@@ -32,7 +32,7 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
 	 * @param $orderColumn column name
 	 */
 	public function queryAllOrderBy($orderColumn){
-		return parent::queryAllOrderByBase($orderColumn,'PROD_SECONDHAND');
+		return parent::queryAllOrderByBase($orderColumn,'prod_secondhand');
 	}
 	
 	/**
@@ -40,14 +40,14 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
  	 * @param content primary key
  	 */
 	public function delete($id){
-		return parent::deleteBase($id,'PROD_SECONDHAND');
+		return parent::deleteBase($id,'prod_secondhand');
 	}
 
 	/**
  	 * Delete all rows
  	 */
 	public function clean(){
-		return parent::cleanBase('PROD_SECONDHAND');
+		return parent::cleanBase('prod_secondhand');
 	}
 	
 	/**
@@ -56,7 +56,7 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
  	 * @param ContentMySql content
  	 */
 	public function insert(SecondHand $secondHand){
-		$sql = 'INSERT INTO PROD_SECONDHAND (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, N_I_BUILD_YEAR, T_I_SIZE_TIRE_FRONT, T_I_SIZE_TIRE_BACK, N_I_HOURS_WORK, C_I_PRICE, L_I_ACTIVE, L_I_SOLD, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO prod_secondhand (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, N_I_BUILD_YEAR, T_I_SIZE_TIRE_FRONT, T_I_SIZE_TIRE_BACK, N_I_HOURS_WORK, C_I_PRICE, L_I_ACTIVE, L_I_SOLD, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($secondHand->title);
@@ -73,7 +73,8 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
 		$sqlQuery->set($secondHand->active);
 		$sqlQuery->set($secondHand->sold);
 		$sqlQuery->set($secondHand->description);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 		
 		$id = $this->executeInsert($sqlQuery);	
 		$secondHand->id = $id;
@@ -103,7 +104,9 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
 		$sqlQuery->set($secondHand->active);
 		$sqlQuery->set($secondHand->sold);
 		$sqlQuery->set($secondHand->description);
-		$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
+		//$sqlQuery->set(new \DateTime( 'now' ));
+		$sqlQuery->set(date('Y-m-d H:i:s'));
 
 		$sqlQuery->setNumber($secondHand->id);
 		

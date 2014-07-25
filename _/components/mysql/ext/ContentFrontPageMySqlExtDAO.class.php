@@ -7,7 +7,7 @@
  * @date: 2014/07/14
  */
 
-require_once('_/components/php/include_dao.php');
+//require_once('_/components/php/include_dao.php');
 
 class ContentFrontPageMySqlExtDAO extends ContentFrontPageMySqlDAO{
 	
@@ -19,7 +19,7 @@ class ContentFrontPageMySqlExtDAO extends ContentFrontPageMySqlDAO{
 		}else{
 			$active = 1;
 		}
-		$sql = "UPDATE CONT_FRONTPAGE SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
+		$sql = "UPDATE cont_frontpage SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber($active);
 		$sqlQuery->setNumber($id);
@@ -28,7 +28,7 @@ class ContentFrontPageMySqlExtDAO extends ContentFrontPageMySqlDAO{
 
 	
 	public function getActiveFrontPage(){
-		$sql = "SELECT * FROM CONT_FRONTPAGE WHERE L_I_ACTIVE = ? ORDER BY S_I_CREATE_TECH DESC";
+		$sql = "SELECT * FROM cont_frontpage WHERE L_I_ACTIVE = ? ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber(1);
 		return $this->getList($sqlQuery);

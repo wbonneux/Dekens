@@ -6,7 +6,7 @@
 				<i class="icon-align-justify"></i> Voorpagina
 			</h2>
 			<div>
-			<a href="AddFrontPage.php">Toevoegen</a>
+			<a href="addFrontPage.php">Toevoegen</a>
 			</div>
 		</div>
 		<div class="box-content">
@@ -17,6 +17,7 @@
 						<th style="width: 70%">Titel</th>
 						<!--<th>Tekst</th>-->
 						<!-- <th>Image</th> -->
+						<th style="width: 10px">Positie Afb.</th>
 						<th style="width: 10px">Actief</th>
 						<th style="width: 40px">Actions</th>
 					</tr>
@@ -34,8 +35,16 @@
 					echo "<tr>";
 					$row = $frontPageArray [$i];
 					echo "<td class='center' style='width:70%'>$row->title</td>";
-// 					echo "<td class='center' style='width:25%'>$row->description</td>";
-					echo "<td class='center'>";
+ 					//echo "<td class='center' style='width:10%'>$row->imagePos</td>";
+ 					echo "<td class='center' style='width:10px'>";
+ 					if ($row->imagePos == 'left') {
+ 						echo "Links";
+ 					} else {
+						echo "Rechts";
+ 						
+ 					}
+ 					echo "</td>";
+ 					echo "<td class='center'>";
 					if ($row->active == 1) {
 						echo "<span class='label label-success'>Ja</span>";
 					} else {
@@ -43,9 +52,9 @@
 					}
 					echo "</td>";
 					echo '<td class="center">';
-					echo '<a class="btn btn-info" href="EditFrontPage.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
+					echo '<a class="btn btn-info" href="editFrontPage.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="DeleteFrontPage.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" href="deleteFrontPage.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

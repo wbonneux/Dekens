@@ -1,5 +1,7 @@
 
 <?php
+require '../_/components/php/upload.class.php';
+require '../_/components/php/SimpleImage.php';
 // configuration for the validation of the form
 $validation = array ();
 $mandatory = array (
@@ -170,6 +172,12 @@ function setImage($imageId) {
 function saveUploadPhoto($uploadId, $ses_id, $id) {
 	copy ( "../images/tempory/" . $ses_id . "/" . $_SESSION [$uploadId], "../images/rental/" . $id . "/" . $_SESSION [$uploadId] );
 	unlink ( "../images/tempory/" . $ses_id . "/" . $_SESSION [$uploadId] );
+	
+	if (! file_exists ( "../images/rental/" . $id . "/sm/" )) {
+		mkdir ( "../images/rental/" . $id . "/sm/" );
+	}
+	$img = new SimpleImage();
+	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 function checkUploadPhoto($uploadId, $ses_id) {
 	if (isset ( $_FILES [$uploadId] )) {

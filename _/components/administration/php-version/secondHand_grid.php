@@ -6,7 +6,7 @@
 				<i class="icon-align-justify"></i> 2deHands
 			</h2>
 			<div>
-			<a href="AddSecondHand.php">Toevoegen</a>
+			<a href="addSecondHand.php">Toevoegen</a>
 			</div>
 		</div>
 		<div class="box-content">
@@ -14,12 +14,12 @@
 				class="table table-striped table-bordered bootstrap-datatable datatable">
 				<thead>
 					<tr style="text-align: center">
-						<th style="width: 70%">Titel</th>
+						<th style="width: 40%">Titel</th>
 						 <!--<th>Tekst</th> -->
 						<!-- <th>Image</th> -->
 						<th style="width: 10px">Actief</th>
 						<th style="width: 10px">Verkocht</th>
-						<th style="width: 40px">Actions</th>
+						<th style="width: 70px">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -53,9 +53,11 @@
 // 					echo "<td class='center'>$row->sold</td>";
 					
 					echo '<td class="center">';
-					echo '<a class="btn btn-info" href="EditSecondHand.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
+					echo '<a class="btn btn-info" href="editSecondHand.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="DeleteSecondHand.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" href="deleteSecondHand.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '&nbsp&nbsp';
+					echo '<a class="btn btn-danger" href="printSecondHand.php?id='.$row->id.'"><i class="icon-print icon-white" data-rel="tooltip" title="Print"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

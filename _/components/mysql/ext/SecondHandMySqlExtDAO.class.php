@@ -7,7 +7,7 @@
  * @date: 2013/11/29
  */
 
-require_once('_/components/php/include_dao.php');
+// require_once('_/components/php/include_dao.php');
 
 class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 	
@@ -19,7 +19,7 @@ class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 		}else{
 			$active = 1;
 		}
-		$sql = "UPDATE  PROD_SECONDHAND SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
+		$sql = "UPDATE  prod_secondhand SET  L_I_ACTIVE =  ? WHERE  O_I_IDF_TECH = ?";
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber($active);
 		$sqlQuery->setNumber($id);
@@ -28,9 +28,8 @@ class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 
 	
 	public function getActiveSecondHand(){
-		$sql = "SELECT * FROM PROD_SECONDHAND WHERE L_I_ACTIVE = ? ORDER BY S_I_CREATE_TECH DESC";
+		$sql = "SELECT * FROM prod_secondhand WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->setNumber(1);
 		return $this->getList($sqlQuery);
 	}
 

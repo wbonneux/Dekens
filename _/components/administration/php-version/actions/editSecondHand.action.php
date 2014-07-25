@@ -1,5 +1,7 @@
 
 <?php
+require '../_/components/php/upload.class.php';
+require '../_/components/php/SimpleImage.php';
 //configuration for the validation of the form
 $validation = array ();
 $mandatory = array (
@@ -11,7 +13,7 @@ $validator = new FormValidator ( $validation, $mandatory, $sanitize );
 $errors = array();
 $required = array();
 //setting the input vars in session
-//if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
+if(isset($_POST['sh_id'])){ $_SESSION['sh_id'] = $_POST["sh_id"];}
 if(isset($_POST['sh_title'])){ $_SESSION['sh_title'] = $_POST["sh_title"];}
 if(isset($_POST['sh_description'])){ $_SESSION['sh_description'] = $_POST["sh_description"];}
 if(isset($_POST['sh_price'])){ $_SESSION['sh_price'] = $_POST["sh_price"];}
@@ -154,35 +156,52 @@ function setImage($imageId){
 function saveUploadPhoto($uploadId, $ses_id, $id){
 	copy("../images/tempory/".$ses_id."/".$_SESSION[$uploadId],"../images/secondHand/".$id."/".$_SESSION[$uploadId]);
 	unlink("../images/tempory/".$ses_id."/".$_SESSION[$uploadId]);
+	//add a directory 'sm', resize the image and save in this folder
+	if (! file_exists ( "../images/secondHand/" . $id . "/sm/" )) {
+		mkdir ( "../images/secondHand/" . $id . "/sm/" );
+	}
+	$img = new SimpleImage();
+	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 
 function checkUploadPhoto($uploadId,$id){
+	//echo 'name: '.$uploadId.'<br>';
+	//echo 'file: '.$_FILES[$uploadId]['name'].'<br>';
+	
 	if(isset($_FILES[$uploadId])){
 		if($_FILES[$uploadId]['name'] != '')
 		{
 			$_SESSION[$uploadId] = $_FILES[$uploadId]["name"];
-		}
-		if(!file_exists("../images/secondHand/".$id)){
-			mkdir("../images/secondHand/".$id);
-		}
-		if(!file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
-			$tempFile = $_FILES[$uploadId]['tmp_name'];
-			move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"]);
-			$_SESSION[$uploadId.'_location'] = "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"];
-			// 			echo "uploaded";
-			// 			echo "Stored in: " . $_FILES["uploadPhoto"]["tmp_name"];
-			// 			echo "Stored in: " . $_FILES["uploadPhoto"]["name"];
-			// Check $_FILES['upfile']['error'] value.
-			switch ($_FILES[$uploadId]['error']) {
-				case UPLOAD_ERR_OK:
-					break;
-				case UPLOAD_ERR_NO_FILE:
-					throw new RuntimeException('No file sent.');
-				case UPLOAD_ERR_INI_SIZE:
-				case UPLOAD_ERR_FORM_SIZE:
-					throw new RuntimeException('Exceeded filesize limit.');
-				default:
-					throw new RuntimeException('Unknown errors.');
+		
+			if(!file_exists("../images/secondHand/".$id)){
+				mkdir("../images/secondHand/".$id);
+			}
+			if(!file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
+				$tempFile = $_FILES[$uploadId]['tmp_name'];
+				move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"]);
+				//add a directory 'sm', resize the image and save in this folder
+				if (! file_exists ( "../images/secondHand/" . $id . "/sm/" )) {
+					mkdir ( "../images/secondHand/" . $id . "/sm/" );
+				}
+				$img = new SimpleImage();
+				$img->load("../images/secondHand/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(400, 400)->save("../images/secondHand/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
+					
+				$_SESSION[$uploadId.'_location'] = "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"];
+				// 			echo "uploaded";
+				// 			echo "Stored in: " . $_FILES["uploadPhoto"]["tmp_name"];
+				// 			echo "Stored in: " . $_FILES["uploadPhoto"]["name"];
+				// Check $_FILES['upfile']['error'] value.
+				switch ($_FILES[$uploadId]['error']) {
+					case UPLOAD_ERR_OK:
+						break;
+					case UPLOAD_ERR_NO_FILE:
+						throw new RuntimeException('No file sent.');
+					case UPLOAD_ERR_INI_SIZE:
+					case UPLOAD_ERR_FORM_SIZE:
+						throw new RuntimeException('Exceeded filesize limit.');
+					default:
+						throw new RuntimeException('Unknown errors.');
+				}
 			}
 		}
 	}	

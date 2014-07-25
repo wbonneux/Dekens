@@ -265,3 +265,38 @@ merk-index {
 .img-responsive.img-center {
   margin: 0 auto;
 }
+
+h3 p{
+	font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+	font-size:17px;
+	line-height: 1.4em;
+	color: #586e75;
+	padding: 0 2%;
+	margin: 0px;
+}
+
+h3 .description{
+	font-size:17px;
+}
+
+.mypost-content {
+    background: none repeat scroll 0 0 #FFffff;
+    opacity: 0.5;
+    margin: 0 auto;
+    margin-top: -100px;
+    margin-bottom:52px;
+    text-align:center
+    position: relative;
+    width:60%;
+
+    
+}
+
+.mythumbnail {
+    margin:0 auto;
+    text-align:center;
+}
+
+.mywrapper {
+    text-align:center;
+}

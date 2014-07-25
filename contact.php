@@ -20,6 +20,7 @@ require_once '_/components/classes/FormValidator.class.php';
 	</head>
 
 	<body id="home">
+	<?php include_once("_/components/google/analyticstracking.php") ?>
     	<section class="container">
             <div class="content row container">
              	<?php include "_/components/php/header.php"; ?>

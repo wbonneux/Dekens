@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('../../../../_/components/php/include_dao.php');
@@ -13,8 +12,8 @@ $mypassword=$_POST['password'];
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
-$myusername = mysql_real_escape_string($myusername);
-$mypassword = mysql_real_escape_string($mypassword);
+// $myusername = mysqli_real_escape_string($myusername);
+// $mypassword = mysqli_real_escape_string($mypassword);
 
 $result = DAOFactory::getUserDAO()->getUserByUsernamePassword($myusername, $mypassword);
 

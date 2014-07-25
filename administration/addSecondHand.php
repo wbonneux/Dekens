@@ -43,6 +43,8 @@ if(isset($_POST['save']))
 		$_SESSION['sh_image_3']				= null;
 		$_SESSION['sh_image_4']				= null;
 		$_SESSION['sh_image_5']				= null;
+// 		echo ini_get('max_file_uploads').'<br>';
+// 		echo ini_get('upload_max_filesize').'<br>';
 		include "../_/components/administration/php-version/forms/secondHand.form.php";
 	}
 }

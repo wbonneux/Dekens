@@ -55,6 +55,7 @@ class BaseCommonMySqlDAO extends BaseMySqlDAO implements BaseCommonDAO{
 		$sql = 'DELETE FROM '.$table.' WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber($id);
+		//echo $sqlQuery->getQuery();
 		return $this->executeUpdate($sqlQuery);
 	}
 

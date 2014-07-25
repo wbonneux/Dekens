@@ -11,7 +11,7 @@ $validator = new FormValidator ( $validation, $mandatory, $sanitize );
 $errors = array();
 $required = array();
 //setting the input vars in session
-//if(isset($_POST['fp_id'])){ $_SESSION['fp_id'] = $_POST["fp_id"];}
+if(isset($_POST['fp_id'])){ $_SESSION['fp_id'] = $_POST["fp_id"];}
 if(isset($_POST['fp_title'])){ $_SESSION['fp_title'] = $_POST["fp_title"];}
 if(isset($_POST['fp_description'])){ $_SESSION['fp_description'] = $_POST["fp_description"];}
 if(isset($_POST['fp_image'])){ $_SESSION['fp_image'] = $_POST["fp_image"];}
@@ -50,7 +50,7 @@ if ($validator->validate ( $_POST )) {
 	
 	
 	
-// 	echo 'ses-id: '.$_SESSION['fp_id'].'<br>';
+//  	echo 'ses-id: '.$_SESSION['fp_id'].'<br>';
 	$frontPageDAO->update($frontPage);
 	//save the images in the folder images/frontPage/[$id]/[imageName]
 	//remove the session folder

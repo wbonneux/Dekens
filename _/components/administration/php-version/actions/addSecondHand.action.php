@@ -193,9 +193,10 @@ function saveUploadPhoto($uploadId, $ses_id, $id) {
 		mkdir ( "../images/secondHand/" . $id . "/sm/" );
 	}
 	$img = new SimpleImage();
-	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(300, 300)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
+	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 function checkUploadPhoto($uploadId, $ses_id) {
+// 	echo '$uploadId(begin): '.$uploadId.'<br>';
 	if (isset ( $_FILES [$uploadId] )) {
 		if ($_FILES [$uploadId] ['name'] != '') {
 			$_SESSION [$uploadId] = $_FILES [$uploadId] ["name"];
@@ -243,6 +244,7 @@ function checkUploadPhoto($uploadId, $ses_id) {
 					throw new RuntimeException ( 'Unknown errors.' );
 			}
 		}
+// 		echo '$uploadId(end): '.$uploadId.'<br>';
 	}
 }
 ?>
