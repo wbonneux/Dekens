@@ -19,6 +19,7 @@ if(isset($_POST['sh_description'])){ $_SESSION['sh_description'] = $_POST["sh_de
 if(isset($_POST['sh_price'])){ $_SESSION['sh_price'] = $_POST["sh_price"];}
 if(isset($_POST['sh_hourswork'])){ $_SESSION['sh_hourswork'] = $_POST["sh_hourswork"];}
 if(isset($_POST['sh_buildyear'])){ $_SESSION['sh_buildyear'] = $_POST["sh_buildyear"];}
+
 if(isset($_POST['sh_image_1'])){ $_SESSION['sh_image_1'] = $_POST["sh_image_1"];}
 if(isset($_POST['sh_image_2'])){ $_SESSION['sh_image_2'] = $_POST["sh_image_2"];}
 if(isset($_POST['sh_image_3'])){ $_SESSION['sh_image_3'] = $_POST["sh_image_3"];}
@@ -161,7 +162,7 @@ function saveUploadPhoto($uploadId, $ses_id, $id){
 		mkdir ( "../images/secondHand/" . $id . "/sm/" );
 	}
 	$img = new SimpleImage();
-	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
+	$img->load("../images/secondHand/" . $id . "/" . $_SESSION [$uploadId])->best_fit(600, 600)->save("../images/secondHand/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 
 function checkUploadPhoto($uploadId,$id){
@@ -184,7 +185,7 @@ function checkUploadPhoto($uploadId,$id){
 					mkdir ( "../images/secondHand/" . $id . "/sm/" );
 				}
 				$img = new SimpleImage();
-				$img->load("../images/secondHand/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(400, 400)->save("../images/secondHand/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
+				$img->load("../images/secondHand/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(600, 600)->save("../images/secondHand/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
 					
 				$_SESSION[$uploadId.'_location'] = "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"];
 				// 			echo "uploaded";

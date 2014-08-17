@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group col-lg-12">
                   <input type="hidden" name="save" value="contact">
-                  <button type="submit" name="send" class="btn btn-primary">Verzenden</button>
+                  <button type="submit" name="send" class="btn btn-primary"><?php echo $lang['lbl_send'];?></button>
                 </div>
               </form>
               <?php

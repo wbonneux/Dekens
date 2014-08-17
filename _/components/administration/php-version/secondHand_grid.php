@@ -14,12 +14,12 @@
 				class="table table-striped table-bordered bootstrap-datatable datatable">
 				<thead>
 					<tr style="text-align: center">
-						<th style="width: 40%">Titel</th>
+						<th style="width: 60%">Titel</th>
 						 <!--<th>Tekst</th> -->
 						<!-- <th>Image</th> -->
-						<th style="width: 10px">Actief</th>
-						<th style="width: 10px">Verkocht</th>
-						<th style="width: 70px">Actions</th>
+						<th style="width: 10px;text-align:center;">Actief</th>
+						<th style="width: 10px;text-align:center;">Verkocht</th>
+						<th style="width: 30px;text-align:center;">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,15 +34,15 @@
 				for($i = 0; $i < count ( $secondHandArray ); $i ++) {
 					echo "<tr>";
 					$row = $secondHandArray [$i];
-					echo "<td class='center' style='width:70%'>$row->title</td>";
+					echo "<td class='center' style='width:100px'>$row->title</td>";
 // 					echo "<td class='center' style='width:25%'>$row->description</td>";
-					echo "<td class='center'>";
+					echo '<td class="center" style="text-align:center;">';
 					if ($row->active == 1) {
 						echo "<span class='label label-success'>Ja</span>";
 					} else {
 						echo "<span class='label label-error'>Nee</span>";
 					}
-					echo "</td><td class='center'>";
+					echo '</td><td class="center" style="text-align:center;">';
 // 					echo "<td class='center'>$row->active</td>";
 					if ($row->sold == 1) {
 						echo "<span class='label label-success'>Ja</span>";
@@ -52,7 +52,7 @@
 					echo "</td>";
 // 					echo "<td class='center'>$row->sold</td>";
 					
-					echo '<td class="center">';
+					echo '<td class="center" style="text-align:center">';
 					echo '<a class="btn btn-info" href="editSecondHand.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
 					echo '<a class="btn btn-danger" href="deleteSecondHand.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';

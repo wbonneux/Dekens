@@ -3,10 +3,10 @@
 include_once '../_/components/php/include_dao.php'; 
 
 	//echo 'session';
-	//session_start();
+	session_start();
 	//echo $_SESSION['myusername'];
 	if (!isset($_SESSION['myusername'])) {
-		//header("location:login.php");
+		header("location:login.php");
 	}
 		
 	?>
@@ -157,6 +157,12 @@ include_once '../_/components/php/include_dao.php';
 						<li><a class="ajax-link" href="voorpagina.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Voorpagina</span></a></li>
 						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> 2deHands</span></a></li>
 						<li><a class="ajax-link" href="verhuur.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Verhuur</span></a></li>
+						
+						<li class="nav-header hidden-tablet">Beschikbaarheden</li>
+						<li><a class="ajax-link" href="daysHours.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Openingsuren</span></a></li>
+						<li><a class="ajax-link" href="daysClosed.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Uitzonderlijk gesloten</span></a></li>
+						<li><a class="ajax-link" href="daysOpen.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Uitzonderlijk open</span></a></li>
+						<li><a class="ajax-link" href="infoAvailability.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Extra informatie</span></a></li>
 						<!--
 						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
 						<li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>

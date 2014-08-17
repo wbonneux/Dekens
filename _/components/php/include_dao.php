@@ -11,6 +11,25 @@
 	require_once('_/components/core/ArrayList.class.php');
 	require_once('_/components/dao/DAOFactory.class.php');
  	
+	//av
+	require_once('_/components/dto/AvDaysOpen.class.php');
+	require_once('_/components/dao/AvDaysOpenDAO.class.php');
+	require_once('_/components/mysql/AvDaysOpenMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/AvDaysOpenMySqlExtDAO.class.php');
+	require_once('_/components/dto/AvDaysClosed.class.php');
+	require_once('_/components/dao/AvDaysClosedDAO.class.php');
+	require_once('_/components/mysql/AvDaysClosedMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/AvDaysClosedMySqlExtDAO.class.php');
+	require_once('_/components/dto/AvDaysHours.class.php');
+	require_once('_/components/dao/AvDaysHoursDAO.class.php');
+	require_once('_/components/mysql/AvDaysHoursMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/AvDaysHoursMySqlExtDAO.class.php');
+	require_once('_/components/dto/AvInformation.class.php');
+	require_once('_/components/dao/AvInformationDAO.class.php');
+	require_once('_/components/mysql/AvInformationMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/AvInformationMySqlExtDAO.class.php');
+	
+	//content
 	require_once('_/components/dto/ContentFrontPage.class.php');
 	require_once('_/components/dao/ContentFrontPageDAO.class.php');
 	require_once('_/components/mysql/ContentFrontPageMySqlDAO.class.php');

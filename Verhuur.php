@@ -1,5 +1,6 @@
 <?php
-set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+// set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '_/components/lang/lang.nl.php';
 include_once '_/components/php/include_dao.php';
 $rentalDAO = DAOFactory::getRentalDAO();
 $rentalArr = null;
@@ -7,9 +8,10 @@ $rentalArr =$rentalDAO->getActiveRental();
 ?>
 <html>
 	<head>
+		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - Verhuur</title>
+		<title><?php echo  $lang ['rental_pagetitle'];?></title>
 		<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -23,7 +25,7 @@ $rentalArr =$rentalDAO->getActiveRental();
 	<section class="container">
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
-        	<h1 class="page-header">Verhuur</h1>
+        	<h1 class="page-header"><?php echo  $lang ['rental_title'];?></h1>
         	<div class="row news">
         			<?php
         			$items = 0;
@@ -31,7 +33,7 @@ $rentalArr =$rentalDAO->getActiveRental();
         			{
         			
         				echo '<div class="col-md-12">';
-        				echo '<h2>Momenteel geen items te huur</h2>';
+						echo '<h2>$lang ["rental_no_items"]</h2>';
         				echo '</div>';
         			}
         			foreach ($rentalArr as $rental ){

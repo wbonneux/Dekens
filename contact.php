@@ -8,9 +8,10 @@ require_once '_/components/classes/FormValidator.class.php';
 <!DOCTYPE>
 <html>  
 	<head>
+		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - Contacteer ons</title>
-    <link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
+		<title><?php echo  $lang ['secondhand_pagetitle']?></title>
+	    <link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
@@ -24,13 +25,13 @@ require_once '_/components/classes/FormValidator.class.php';
     	<section class="container">
             <div class="content row container">
              	<?php include "_/components/php/header.php"; ?>
-              <h1 class="page-header">Contacteer ons</h1>
-                <div class="col-lg-12"> 
+        	<h1 class="page-header"><?php echo  $lang ['contact_title'];?></h1>
+            <div class="col-lg-12"> 
       <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iùframe src. If you want to use the Google Maps API instead then have at it! -->
       <div class="row">
             <div class="col-sm-8">
               
-              <p>Als u enige vragen hebt of een inlichting nodig hebt kan u ons altijd tijdens de kantooruren bereiken via telefoon/fax/email. U kan ook vrijblijvend het contactformulier invullen. Onze medewerkers zullen u dan zo snel mogelijk een antwoord bieden.</p>
+              <p><?php echo $lang['contact_introduction'];?></p>
               <?php 
               if(isset($_POST['send']))
               {

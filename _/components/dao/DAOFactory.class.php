@@ -9,7 +9,36 @@ class DAOFactory{
 	
 	
 	/*
-	 * @return RentalDAO
+	 * @return AvInformationDAO
+	*/
+	public static function getAvInformationDAO(){
+		return new AvInformationMySqlExtDAO();
+	}
+	
+	
+	/*
+	 * @return DaysHoursDAO
+	*/
+	public static function getDaysHoursDAO(){
+		return new AvDaysHoursMySqlExtDAO();
+	}
+	
+	/*
+	 * @return DaysOpenDAO
+	*/
+	public static function getDaysOpenedDAO(){
+		return new AvDaysOpenMySqlExtDAO();
+	}
+	
+	/*
+	 * @return DaysClosedDAO
+	*/
+	public static function getDaysClosedDAO(){
+		return new AvDaysClosedMySqlExtDAO();
+	}
+	
+	/*
+	 * @return FrontPageDAO
 	*/
 	public static function getContentFrontPageDAO(){
 		return new ContentFrontPageMySqlExtDAO();

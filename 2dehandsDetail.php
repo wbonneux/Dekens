@@ -1,4 +1,5 @@
 <?php
+include_once '_/components/lang/lang.nl.php';
 if(!isset($_REQUEST['id'])){
 	header("location:index.php");
 } 
@@ -11,8 +12,9 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 ?>
 <html>
 	<head>	
+		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - 2dehands</title>
+		<title><?php echo  $lang ['secondhanddetail_pagetitle'];?></title>
 		<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -28,8 +30,17 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
          	<?php include "_/components/php/header.php"; ?>
          	<div class="row">
          		<div class="col-lg-12">
-         			<h1 class="page-header"><a href="2dehands.php">Tweedehands</a> / <?php echo $secondHand->title; if($secondHand->sold){echo " - VERKOCHT";} ?></h1>
-        		</div>
+         			<h6 style="margin-bottom:0px">
+         				<button class="btn btn-success btn-sm" type="button">
+						    <a style="color:white" href="2dehands.php"><?php echo $lang['back_to_list'];?></a>
+						  </button>
+         			</h6>
+         		</div>
+        	</div>
+         	<div class="row">
+         		<div class="col-lg-12">
+         			<h1 class="page-header"><a href="2dehands.php"><?php echo $lang['secondhand_title'];?></a> / <?php echo $secondHand->title; if($secondHand->sold){echo " - VERKOCHT";} ?></h1>
+         		</div>
         	</div>
 		    <div class="row news">
 		    	<div class="col-lg-12">
@@ -39,20 +50,21 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 				  			<?php echo $secondHand->description; ?>
 				  		</div>
 			  		</h3>
-			  		<h4>
+			  		<h4 style="font-weight:bold">
 				  		<?php
-					  		if(isset($secondHand->buildYear)){
-					  			echo '<div class="alert alert-success">Bouwjaar: '.$secondHand->buildYear.'</div>';
+					  		if(isset($secondHand->buildYear) && $secondHand->buildYear != 0){
+					  			echo '<div style="padding:5px;margin-bottom:8px" class="alert alert-success">'.$lang['secondhanddetail_buildyear'].': '.$secondHand->buildYear.'</div>';
+					  		}
+					  		if(isset($secondHand->hoursWork) && $secondHand->hoursWork != 0){
+					  			echo '<div style="padding:5px;margin-bottom:8px" class="alert alert-success">'.$lang['secondhanddetail_workhours'].': '.$secondHand->hoursWork.'</div>';
 					  		}
 					  		if(isset($secondHand->sizeTireFront) && $secondHand->sizeTireFront != ""){
-					  			echo '<div class="alert alert-success">Bandenmaat(voor): '.$secondHand->sizeTireFront.'</div>';
+					  			echo '<div style="padding:5px;margin-bottom:8px" class="alert alert-success">'.$lang['secondhanddetail_sizetirefront'].': '.$secondHand->sizeTireFront.'</div>';
 					  		}
 					  		if(isset($secondHand->sizeTireBack) && $secondHand->sizeTireBack != ""){
-					  			echo '<div class="alert alert-success">Bandenmaat(achter): '.$secondHand->sizeTireBack.'</div>';
+					  			echo '<div style="padding:5px;margin-bottom:8px" class="alert alert-success">'.$lang['secondhanddetail_sizetireback'].': '.$secondHand->sizeTireBack.'</div>';
 					  		}
-					  		if(isset($secondHand->hoursWork)){
-					  			echo '<div class="alert alert-success">Aantal uren: '.$secondHand->hoursWork.'</div>';
-					  		}
+					  		
 				  		?>
 				  	</h4>
 				  </div>

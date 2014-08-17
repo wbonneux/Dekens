@@ -116,8 +116,8 @@ if ($validator->validate ( $_POST )) {
 		if (isset ( $_SESSION ['sh_image_5'] )) {
 			saveUploadPhoto ( 'sh_image_5', $ses_id, $rental->id );
 		}
-		// remove session folder
-		if (file_exists ( "../images/tempory/" . $ses_id )) {
+		// remove session folder(test if exist and if $ses_id != ""
+		if ($ses_id != "" && file_exists ( "../images/tempory/" . $ses_id )) {
 			rmdir ( "../images/tempory/" . $ses_id );
 		}
 	}
@@ -177,7 +177,7 @@ function saveUploadPhoto($uploadId, $ses_id, $id) {
 		mkdir ( "../images/rental/" . $id . "/sm/" );
 	}
 	$img = new SimpleImage();
-	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
+	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(600, 600)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
 }
 function checkUploadPhoto($uploadId, $ses_id) {
 	if (isset ( $_FILES [$uploadId] )) {

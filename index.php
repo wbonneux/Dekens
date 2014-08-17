@@ -1,9 +1,14 @@
-<?php   //require_once('_/components/php/include_dao.php'); ?>
+<?php   
+//require_once('_/components/php/include_dao.php');
+include_once '_/components/lang/select.lang.php';
+?>
 <!DOCTYPE>
 <html>  
 	<head>
+		<meta name="keyword" content="Agri Technics, Fendt, tractor">
+		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - Home</title>
+		<title><?php echo  $lang ['index_pagetitle'];?></title>
         <link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -17,7 +22,7 @@
     	<section class="container">
             <div class="content row container">
              	<?php include "_/components/php/header.php"; ?>
-                <h1 class="page-header">Welkom</h1>
+                <h1 class="page-header"><?php  echo $lang['index_title'];?></h1>
                <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <img class="img-responsive merk-index" src="images/merken_index/MasseyLogo.gif"/>
                     <img class="img-responsive merk-index" src="images/merken_index/FendtLogo.jpg"/>
@@ -88,7 +93,17 @@
                 </div>
             </div>
 		</section>        
-        <?php include "_/components/php/footer.php"; ?> 
+        <?php
+        // set BarcodeQR object
+        
+        $qr = new BarcodeQR();
+        
+        // create URL QR code
+        $qr->url("www.shayanderson.com");
+        
+        // display new QR code image
+        $qr->draw();
+        include "_/components/php/footer.php"; ?> 
 		<script type="text/javascript" src="_/js/bootstrap.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript" src="_/components/newsTicker/jquery.easy-ticker.js"></script>

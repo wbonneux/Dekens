@@ -1,5 +1,6 @@
 <?php
-set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+//set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+include_once '_/components/lang/lang.nl.php';
 include_once '_/components/php/include_dao.php';
 $secondHandDAO = DAOFactory::getSecondHandDAO();
 $secondHandArr = null;
@@ -7,8 +8,9 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 ?>
 <html>
 	<head>	
+		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - 2dehands</title>
+		<title><?php echo  $lang ['secondhand_pagetitle'];?></title>
 		<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -22,7 +24,7 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 	<section class="container">
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
-        	<h1 class="page-header">Tweedehands</h1>
+        	<h1 class="page-header"><?php echo  $lang ['secondhand_title'];?></h1>
         	<div class="row news">
         			<?php
         			$items = 0;
@@ -30,7 +32,7 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
         			{
         				
         				echo '<div class="col-md-12">';
-        				echo '<h2>Momenteel geen items te koop</h2>';
+        				echo '<h2>$lang ["secondhand_no_items"]</h2>';
         				echo '</div>';
         			}
         			foreach ($secondHandArr as $secondHand ){
@@ -46,13 +48,13 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 									echo '<div class="mywrapper">';
 									echo '<div class="caption mypost-content">';
 									
-									echo '<h1 style="font-size:50px;font-style:bold;color:red">Verkocht!</h1>';
+									echo '<h1 style="font-size:50px;font-style:bold;color:red">'.$lang["secondhand_sold"].'</h1>';
 									//echo '<p>Lorem ipsum dolor sit amet</p>';
 									
 									echo '</div></div>';
 									echo '<h2 style="text-align:center;">';
 								echo $secondHand->title;
-								echo "<br/>VERKOCHT";
+								//echo "<br/>VERKOCHT";
 							echo '</h2>';
 						}
 						else

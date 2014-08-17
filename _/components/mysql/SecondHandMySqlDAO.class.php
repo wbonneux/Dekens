@@ -56,7 +56,7 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
  	 * @param ContentMySql content
  	 */
 	public function insert(SecondHand $secondHand){
-		$sql = 'INSERT INTO prod_secondhand (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, N_I_BUILD_YEAR, T_I_SIZE_TIRE_FRONT, T_I_SIZE_TIRE_BACK, N_I_HOURS_WORK, C_I_PRICE, L_I_ACTIVE, L_I_SOLD, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO prod_secondhand (T_I_TITLE, T_I_IMAGE_1, T_I_IMAGE_2, T_I_IMAGE_3, T_I_IMAGE_4, T_I_IMAGE_5, T_I_BUILD_YEAR, T_I_SIZE_TIRE_FRONT, T_I_SIZE_TIRE_BACK, N_I_HOURS_WORK, C_I_PRICE, L_I_ACTIVE, L_I_SOLD, T_I_DESCRIPTION, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($secondHand->title);
@@ -87,7 +87,7 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
  	 * @param ContentMySql content
  	 */
 	public function update(SecondHand $secondHand){
-		$sql = 'UPDATE prod_secondhand SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, N_I_BUILD_YEAR = ?, T_I_SIZE_TIRE_FRONT = ?, T_I_SIZE_TIRE_BACK = ?, N_I_HOURS_WORK = ?, C_I_PRICE = ?,  L_I_ACTIVE = ?, L_I_SOLD = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
+		$sql = 'UPDATE prod_secondhand SET T_I_TITLE = ?, T_I_IMAGE_1 = ?, T_I_IMAGE_2 = ?, T_I_IMAGE_3 = ?, T_I_IMAGE_4 = ?, T_I_IMAGE_5 = ?, T_I_BUILD_YEAR = ?, T_I_SIZE_TIRE_FRONT = ?, T_I_SIZE_TIRE_BACK = ?, N_I_HOURS_WORK = ?, C_I_PRICE = ?,  L_I_ACTIVE = ?, L_I_SOLD = ?, T_I_DESCRIPTION = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($secondHand->title);
@@ -132,7 +132,7 @@ class SecondHandMySqlDAO extends BaseCommonMySqlDAO implements SecondHandDAO{
 		$secondHand->image3 			= $row['T_I_IMAGE_3'];
 		$secondHand->image4 			= $row['T_I_IMAGE_4'];
 		$secondHand->image5 			= $row['T_I_IMAGE_5'];
-		$secondHand->buildYear 			= $row['N_I_BUILD_YEAR'];
+		$secondHand->buildYear 			= $row['T_I_BUILD_YEAR'];
 		$secondHand->sizeTireFront 		= $row['T_I_SIZE_TIRE_FRONT'];
 		$secondHand->sizeTireBack 		= $row['T_I_SIZE_TIRE_BACK'];
 		$secondHand->hoursWork 			= $row['N_I_HOURS_WORK'];

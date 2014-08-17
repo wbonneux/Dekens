@@ -154,7 +154,7 @@ function saveUploadPhoto($uploadId, $ses_id, $id){
 		mkdir ( "../images/rental/" . $id . "/sm/" );
 	}
 	$img = new SimpleImage();
-	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
+	$img->load("../images/rental/" . $id . "/" . $_SESSION [$uploadId])->best_fit(600, 600)->save("../images/rental/" . $id . "/sm/" . $_SESSION [$uploadId]);
 	
 }
 
@@ -174,7 +174,7 @@ function checkUploadPhoto($uploadId,$id){
 				mkdir ( "../images/rental/" . $id . "/sm/" );
 			}
 			$img = new SimpleImage();
-			$img->load("../images/rental/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(400, 400)->save("../images/rental/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
+			$img->load("../images/rental/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(600, 600)->save("../images/rental/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
 			
 			$_SESSION[$uploadId.'_location'] = "../images/rental/".$id."/".$_FILES[$uploadId]["name"];
 			// 			echo "uploaded";

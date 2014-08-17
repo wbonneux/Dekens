@@ -4,6 +4,7 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 ?>
 <header class="clearfix">
 	<section id="branding">
+		
 		<div class="row">
 			<div class="col-lg-10 col-md-6 hidden-xs">
 				<a href="index.php"> <img class="none-bg img-responsive"
@@ -11,10 +12,16 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 					alt="Dekens Agri Technics">
 				</a>
 			</div>
-			<div class="col-lg-2 col-md-6 hidden-sm hidden-xs" style="text-align: right">
-				<br/><br/><br/>
-				<a href="http://www.mypartspartner.be/mpp-be/nl" target="_blank"> <img
-					class="none-bg img-responsive" style="height: 40px;text-align:right;vertical-align:bottom"
+			<div class="col-lg-2 col-md-6 hidden-sm hidden-xs"
+				style="text-align: right">
+				<div id="languages">
+					<a href="index.php?lang=nl"><img src="images/flags/en.png" /></a> <a
+						href="index.php?lang=fr"><img src="images/flags/es.png" /></a>
+				</div>
+				<br />
+				<br /> <a href="http://www.mypartspartner.be/mpp-be/nl"
+					target="_blank"> <img class="none-bg img-responsive"
+					style="height: 40px; text-align: right; vertical-align: bottom"
 					src="images/MyPartsPartner/MyPartsPartner.JPG"
 					alt="My Parts Partner - klik om in te loggen">
 				</a>

@@ -1,4 +1,5 @@
 <?php
+include_once '_/components/lang/lang.nl.php';
 if(!isset($_REQUEST['id'])){
 	header("location:index.php");
 } 
@@ -12,7 +13,7 @@ $rental =$rentalDAO->load($_REQUEST['id']);
 <html>
 	<head>	
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Dekens Agri Technics - 2dehands</title>
+		<title><?php echo  $lang ['rentaldetail_pagetitle'];?></title>
 		<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
@@ -28,7 +29,16 @@ $rental =$rentalDAO->load($_REQUEST['id']);
          	<?php include "_/components/php/header.php"; ?>
          	<div class="row">
          		<div class="col-lg-12">
-         			<h1 class="page-header"><a href="Verhuur.php">Verhuur</a> / <?php echo $rental->title; ?></h1>
+         			<h6 style="margin-bottom:0px">
+         				<button class="btn btn-success btn-sm" type="button">
+						    <a style="color:white" href="Verhuur.php"><?php echo $lang['back_to_list'];?></a>
+						  </button>
+         			</h6>
+         		</div>
+        	</div>
+         	<div class="row">
+         		<div class="col-lg-12">
+         			<h1 class="page-header"><a href="Verhuur.php"><?php echo $lang['rental_title'];?></a> / <?php echo $rental->title; ?></h1>
         		</div>
         	</div>
         	
@@ -36,15 +46,15 @@ $rental =$rentalDAO->load($_REQUEST['id']);
 		    	<div class="col-lg-12">
 		    	
 				  <div class="col-md-6">
-				  	<div class="row">
+				  	<div class="row" style="font-weight:bold">
 				  		<div class="col-lg-4" style="text-align:center">
-        			<?php echo '<div class="alert alert-success">Prijs/dag<br>&#8364; '.$rental->priceDay.'</div>'; ?>
+        			<?php echo '<div class="alert alert-success">'.$lang['rentaldetail_price_day'].'<br>&#8364; '.$rental->priceDay.'</div>'; ?>
         		</div>
         		<div class="col-lg-4" style="text-align:center">
-        			<?php echo '<div class="alert alert-success">Prijs/weekend<br>&#8364; '.$rental->priceWeekend.'</div>'; ?>
+        			<?php echo '<div class="alert alert-success">'.$lang['rentaldetail_price_weekend'].'<br>&#8364; '.$rental->priceWeekend.'</div>'; ?>
         		</div>
         		<div class="col-lg-4" style="text-align:center">
-        			<?php echo '<div class="alert alert-success">Prijs/week<br>&#8364; '.$rental->priceWeek.'</div>'; ?>
+        			<?php echo '<div class="alert alert-success">'.$lang['rentaldetail_price_week'].'<br>&#8364; '.$rental->priceWeek.'</div>'; ?>
         		</div>
 				  	</div> 
 				    <h3>

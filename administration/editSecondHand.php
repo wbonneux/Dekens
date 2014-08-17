@@ -4,7 +4,7 @@
 //if so -> granted access mtf
 
 if (!isset( $_REQUEST['id']) && !isset($_POST['save'])) {
-	header("location:2deHands.php");
+	header("location:2dehands.php");
 }else{
 	include "../_/components/administration/php-version/header.php";
 	if(!isset($_POST['save'])){

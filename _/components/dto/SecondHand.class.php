@@ -44,7 +44,7 @@
 
 		var $image5;
 
-		//N_I_BUILD_YEAR
+		//T_I_BUILD_YEAR
 
 		var $buildYear;
 

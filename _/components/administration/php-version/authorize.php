@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('../../../../_/components/php/include_dao.php');
 
 // Connect to server and select databse.
@@ -22,10 +22,10 @@ $result = DAOFactory::getUserDAO()->getUserByUsernamePassword($myusername, $mypa
 
 // If result matched $myusername and $mypassword, table row must be 1 row
 if($result){
-session_start();
+
 // Register $myusername, $mypassword and redirect to file "login_success.php"
 $_SESSION['myusername']=$myusername;
-//$_SESSION['mypassword']=$mypassword;
+$_SESSION['mypassword']=$mypassword;
 
 header("location:../../../../administration/index.php");
 }
