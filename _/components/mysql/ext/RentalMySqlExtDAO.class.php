@@ -12,6 +12,21 @@
 class RentalMySqlExtDAO extends RentalMySqlDAO{
 	
 	
+	public function setActive($id){
+		$sql = "UPDATE  prod_rental SET  L_I_ACTIVE = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setInactive($id){
+		$sql = "UPDATE  prod_rental SET  L_I_ACTIVE = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	
 	public function setSwitchActive($id,$active){
 		if($active == 1)
 		{
@@ -31,6 +46,12 @@ class RentalMySqlExtDAO extends RentalMySqlDAO{
 		$sql = "SELECT * FROM prod_rental WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
 		return $this->getList($sqlQuery);
+	}
+	
+	public function countActiveRental(){
+		$sql = "SELECT count(O_I_IDF_TECH) FROM prod_rental WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
+		$sqlQuery = new SqlQuery($sql);
+		return $this->querySingleResult($sqlQuery);
 	}
 
 	

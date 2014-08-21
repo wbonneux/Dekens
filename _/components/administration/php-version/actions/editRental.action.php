@@ -167,6 +167,9 @@ function checkUploadPhoto($uploadId,$id){
 		if(!file_exists("../images/rental/".$id)){
 			mkdir("../images/rental/".$id);
 		}
+		if(file_exists("../images/rental/".$id."/".$_FILES[$uploadId]["name"])){
+			unlink("../images/rental/".$id."/".$_FILES[$uploadId]["name"]);
+		}
 		if(!file_exists("../images/rental/".$id."/".$_FILES[$uploadId]["name"])){
 			$tempFile = $_FILES[$uploadId]['tmp_name'];
 			move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/rental/".$id."/".$_FILES[$uploadId]["name"]);

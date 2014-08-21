@@ -12,6 +12,36 @@
 class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 	
 	
+	public function setSold($id){
+		$sql = "UPDATE  prod_secondhand SET  L_I_SOLD = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setUnsold($id){
+		$sql = "UPDATE  prod_secondhand SET  L_I_SOLD = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	
+	public function setActive($id){
+		$sql = "UPDATE  prod_secondhand SET  L_I_ACTIVE = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setInactive($id){
+		$sql = "UPDATE  prod_secondhand SET  L_I_ACTIVE = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	
 	public function setSwitchActive($id,$active){
 		if($active == 1)
 		{
@@ -31,6 +61,12 @@ class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 		$sql = "SELECT * FROM prod_secondhand WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
 		$sqlQuery = new SqlQuery($sql);
 		return $this->getList($sqlQuery);
+	}
+	
+	public function countActiveSecondHand(){
+		$sql = "SELECT count(O_I_IDF_TECH) FROM prod_secondhand WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
+		$sqlQuery = new SqlQuery($sql);
+		return $this->querySingleResult($sqlQuery);
 	}
 
 	

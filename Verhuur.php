@@ -33,7 +33,7 @@ $rentalArr =$rentalDAO->getActiveRental();
         			{
         			
         				echo '<div class="col-md-12">';
-						echo '<h2>$lang ["rental_no_items"]</h2>';
+						echo '<h2>'.$lang["rental_no_items"].'</h2>';
         				echo '</div>';
         			}
         			foreach ($rentalArr as $rental ){

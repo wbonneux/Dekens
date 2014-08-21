@@ -32,15 +32,17 @@
 				
 				$rentalArray = DAOFactory::getRentalDAO()->queryAll ();
 				for($i = 0; $i < count ( $rentalArray ); $i ++) {
-					echo "<tr>";
 					$row = $rentalArray [$i];
+					echo "<tr id=rowid-".$row->id.">";
 					echo "<td class='center'>$row->title</td>";
 // 					echo "<td class='center'>$row->description</td>";
 					echo "<td class='center'>";
 					if ($row->active == 1) {
-						echo "<span class='label label-success'>Ja</span>";
+						//echo "<span class='label label-success'>Ja</span>";
+						echo "<span style='cursor: pointer;' id=active-".$row->id." onclick=setRtInactive(".$row->id.") class='label label-success'>Ja</span>";
 					} else {
-						echo "<span class='label label-error'>Nee</span>";
+// 						echo "<span class='label label-error'>Nee</span>";
+						echo "<span style='cursor: pointer;' id=inactive-".$row->id." onclick=setRtActive(".$row->id.") class='label label-error'>Nee</span>";
 					}
 					echo "</td>";
 // 					echo "<td class='center'>$row->sold</td>";
@@ -48,7 +50,8 @@
 					echo '<td class="center">';
 					echo '<a class="btn btn-info" href="editRental.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="deleteRental.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					//echo '<a class="btn btn-danger" href="deleteRental.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" id="'.$row->id.'"><i onclick="deleteRt('.$row->id.')" class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

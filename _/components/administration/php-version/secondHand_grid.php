@@ -27,27 +27,28 @@
 			  		nieuws items ophalen (all)
 			  		in een array plaatsen en per gevonden record een rij laten tonen met de gegevens
 				-->
-
 				<?php
 				
 				$secondHandArray = DAOFactory::getSecondHandDAO ()->queryAll ();
 				for($i = 0; $i < count ( $secondHandArray ); $i ++) {
-					echo "<tr>";
 					$row = $secondHandArray [$i];
+					echo "<tr id=rowid-".$row->id.">";
 					echo "<td class='center' style='width:100px'>$row->title</td>";
 // 					echo "<td class='center' style='width:25%'>$row->description</td>";
 					echo '<td class="center" style="text-align:center;">';
 					if ($row->active == 1) {
-						echo "<span class='label label-success'>Ja</span>";
+						//echo "<a id='active' href='javascript:return(0);' id='".$row->id."><span class='label label-success'>Ja</span></a>";
+						echo "<span style='cursor: pointer;' id=active-".$row->id." onclick=setInactive(".$row->id.") class='label label-success'>Ja</span>";
 					} else {
-						echo "<span class='label label-error'>Nee</span>";
+						echo "<span style='cursor: pointer;' id=inactive-".$row->id." onclick=setActive(".$row->id.") class='label label-error'>Nee</span>";
+						
 					}
 					echo '</td><td class="center" style="text-align:center;">';
 // 					echo "<td class='center'>$row->active</td>";
 					if ($row->sold == 1) {
-						echo "<span class='label label-success'>Ja</span>";
+						echo "<span style='cursor: pointer;' id=sold-".$row->id." onclick=setUnsold(".$row->id.") class='label label-success'>Ja</span>";
 					} else {
-						echo "<span class='label label-error'>Nee</span>";
+						echo "<span style='cursor: pointer;' id=unsold-".$row->id." onclick=setSold(".$row->id.")  class='label label-error'>Nee</span>";
 					}
 					echo "</td>";
 // 					echo "<td class='center'>$row->sold</td>";
@@ -55,7 +56,8 @@
 					echo '<td class="center" style="text-align:center">';
 					echo '<a class="btn btn-info" href="editSecondHand.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="deleteSecondHand.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					//echo '<a class="btn btn-danger" href="deleteSecondHand.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" id="'.$row->id.'"><i onclick="deleteSh('.$row->id.')" class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '&nbsp&nbsp';
 					echo '<a class="btn btn-danger" href="printSecondHand.php?id='.$row->id.'"><i class="icon-print icon-white" data-rel="tooltip" title="Print"></i></a>';
 					echo '</td>';

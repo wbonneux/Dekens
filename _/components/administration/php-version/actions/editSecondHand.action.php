@@ -177,6 +177,9 @@ function checkUploadPhoto($uploadId,$id){
 			if(!file_exists("../images/secondHand/".$id)){
 				mkdir("../images/secondHand/".$id);
 			}
+			if(file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
+				unlink("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"]);
+			}
 			if(!file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
 				$tempFile = $_FILES[$uploadId]['tmp_name'];
 				move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"]);

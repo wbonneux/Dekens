@@ -7,7 +7,8 @@ $secondHandArr = null;
 $secondHandArr =$secondHandDAO->getActiveSecondHand();
 ?>
 <html>
-	<head>	
+	<head>
+		<meta name="keyword" content="Agri Technics, Fendt, tractor">	
 		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title><?php echo  $lang ['secondhand_pagetitle'];?></title>
@@ -16,10 +17,8 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 		<link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
 		<link rel="stylesheet" href="_/css/lightbox.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+		<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	</head>
-
-	<title></title>
-</head>
 <body id="home">
 	<section class="container">
         <div class="content row container">
@@ -32,7 +31,7 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
         			{
         				
         				echo '<div class="col-md-12">';
-        				echo '<h2>$lang ["secondhand_no_items"]</h2>';
+        				echo '<h2>'.$lang["secondhand_no_items"].'</h2>';
         				echo '</div>';
         			}
         			foreach ($secondHandArr as $secondHand ){
@@ -89,6 +88,5 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
 	<script type="text/javascript" src="_/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="_/js/myscript.js"></script>
     <script type="text/javascript" src="_/js/lightbox.js"></script>
-	</script>
 </body>
 </html>

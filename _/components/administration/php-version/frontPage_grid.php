@@ -32,29 +32,34 @@
 				
 				$frontPageArray = DAOFactory::getContentFrontPageDAO ()->queryAll ();
 				for($i = 0; $i < count ( $frontPageArray ); $i ++) {
-					echo "<tr>";
 					$row = $frontPageArray [$i];
+					echo "<tr id=rowid-".$row->id.">";
 					echo "<td class='center' style='width:70%'>$row->title</td>";
  					//echo "<td class='center' style='width:10%'>$row->imagePos</td>";
  					echo "<td class='center' style='width:10px'>";
  					if ($row->imagePos == 'left') {
- 						echo "Links";
+//  						echo "Links";
+ 						echo "<span style='cursor: pointer;' id=left-".$row->id." onclick=setPosRight(".$row->id.") class='label label-warning'>Links</span>";
  					} else {
-						echo "Rechts";
+// 						echo "Rechts";
+						echo "<span style='cursor: pointer;' id=right-".$row->id." onclick=setPosLeft(".$row->id.") class='label label-warning'>Rechts</span>";
  						
  					}
  					echo "</td>";
  					echo "<td class='center'>";
 					if ($row->active == 1) {
-						echo "<span class='label label-success'>Ja</span>";
+// 						echo "<span class='label label-success'>Ja</span>";
+						echo "<span style='cursor: pointer;' id=active-".$row->id." onclick=setFpInactive(".$row->id.") class='label label-success'>Ja</span>";
 					} else {
-						echo "<span class='label label-error'>Nee</span>";
+// 						echo "<span class='label label-error'>Nee</span>";
+						echo "<span style='cursor: pointer;' id=inactive-".$row->id." onclick=setFpActive(".$row->id.")  class='label label-error'>Nee</span>";
 					}
 					echo "</td>";
 					echo '<td class="center">';
 					echo '<a class="btn btn-info" href="editFrontPage.php?id='.$row->id.'"><i class="icon-edit icon-white" data-rel="tooltip" title="Bewerken"></i></a>';
 					echo '&nbsp&nbsp';
-					echo '<a class="btn btn-danger" href="deleteFrontPage.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+// 					echo '<a class="btn btn-danger" href="deleteFrontPage.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" id="'.$row->id.'"><i onclick="deleteFp('.$row->id.')" class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

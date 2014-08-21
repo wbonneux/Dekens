@@ -126,6 +126,9 @@ function checkUploadPhoto($uploadId,$id){
 		if(!file_exists("../images/frontPage/".$id)){
 			mkdir("../images/frontPage/".$id);
 		}
+		if(file_exists("../images/frontPage/".$id."/".$_FILES[$uploadId]["name"])){
+			unlink("../images/frontPage/".$id."/".$_FILES[$uploadId]["name"]);
+		}
 		if(!file_exists("../images/frontPage/".$id."/".$_FILES[$uploadId]["name"])){
 			$tempFile = $_FILES[$uploadId]['tmp_name'];
 			move_uploaded_file($_FILES[$uploadId]["tmp_name"], "../images/frontPage/".$id."/".$_FILES[$uploadId]["name"]);

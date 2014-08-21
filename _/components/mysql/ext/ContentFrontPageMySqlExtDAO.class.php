@@ -12,6 +12,34 @@
 class ContentFrontPageMySqlExtDAO extends ContentFrontPageMySqlDAO{
 	
 	
+	public function setPosLeft($id){
+		$sql = "UPDATE  cont_frontpage SET  T_I_IMAGE_POS = 'left' WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setPosRight($id){
+		$sql = "UPDATE  cont_frontpage SET  T_I_IMAGE_POS = 'right' WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setInactive($id){
+		$sql = "UPDATE  cont_frontpage SET  L_I_ACTIVE = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setActive($id){
+		$sql = "UPDATE  cont_frontpage SET  L_I_ACTIVE = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
 	public function setSwitchActive($id,$active){
 		if($active == 1)
 		{
