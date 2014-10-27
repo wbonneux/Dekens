@@ -91,7 +91,9 @@ p a:active {
 }
 /* line 89, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 body {
-  background: #475c98 url(../../images/misc/BackGround.jpg);
+  /*  background: #475c98 url(../../images/misc/BackGround.jpg);*/
+  background: #475c98 url(../../images/background.jpg);
+  /*  background-size: 100%;*/
   margin-top: 30px;
   font-family: 'Advent Pro', sans-serif;
   font-size: 14px;

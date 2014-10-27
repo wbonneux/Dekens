@@ -52,6 +52,7 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 				<!--<li><a href="overons.php">Over ons</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
+				<li><a href="accugereedschap.php"><?php echo  $lang ['accu_title'];?></a></li>
 				<li><a href="2dehands.php">Tweedehands</a></li>
 				<li><a href="Verhuur.php">Verhuur</a></li>
 				<li><a href="contact.php">Contacteer ons</a></li>

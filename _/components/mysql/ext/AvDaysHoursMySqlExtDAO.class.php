@@ -9,8 +9,37 @@
 
 // require_once('_/components/php/include_dao.php');
 
-class AvDaysHoursMySqlExtDAO extends AvDaysClosedMySqlDAO{
+class AvDaysHoursMySqlExtDAO extends AvDaysHoursMySqlDAO{
 	
+	
+	public function setClosed($id){
+		$sql = "UPDATE  av_days_hours SET  L_I_CLOSED = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		echo $sqlQuery->getQuery();
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setOpen($id){
+		$sql = "UPDATE  av_days_hours SET  L_I_CLOSED = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setActive($id){
+		$sql = "UPDATE  av_days_hours SET  L_I_ACTIVE = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setInactive($id){
+		$sql = "UPDATE  av_days_hours SET  L_I_ACTIVE = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
 	
 	public function setSwitchActive($id,$active){
 		if($active == 1)
@@ -28,10 +57,11 @@ class AvDaysHoursMySqlExtDAO extends AvDaysClosedMySqlDAO{
 
 	
 	public function getActiveAvDaysHours(){
-		$sql = "SELECT * FROM av_days_hours WHERE L_I_ACTIVE = true ORDER BY S_I_CREATE_TECH DESC";
+		$sql = "SELECT * FROM av_days_hours WHERE L_I_ACTIVE = true ORDER BY N_I_ORDER";
 		$sqlQuery = new SqlQuery($sql);
 		return $this->getList($sqlQuery);
 	}
+	
 
 	
 

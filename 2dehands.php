@@ -19,6 +19,8 @@ $secondHandArr =$secondHandDAO->getActiveSecondHand();
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	</head>
+
+</head>
 <body id="home">
 	<section class="container">
         <div class="content row container">

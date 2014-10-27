@@ -12,6 +12,20 @@
 class AvDaysOpenMySqlExtDAO extends AvDaysOpenMySqlDAO{
 	
 	
+	public function setActive($id){
+		$sql = "UPDATE  av_days_open SET  L_I_ACTIVE = true WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
+	public function setInactive($id){
+		$sql = "UPDATE  av_days_open SET  L_I_ACTIVE = false WHERE  O_I_IDF_TECH = ?";
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->executeUpdate($sqlQuery);
+	}
+	
 	public function setSwitchActive($id,$active){
 		if($active == 1)
 		{

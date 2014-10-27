@@ -67,6 +67,9 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 					  		
 				  		?>
 				  	</h4>
+				  	<button class="btn btn-success btn-sm" type="button">
+						    <?php echo '<a style="color:white" href="contact.php?2dehands='.$secondHand->id.'">'.$lang['more_info'].'</a>';?>
+						  </button>
 				  </div>
 				  <div class="col-md-7"> 
 					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws" title="<?php echo $secondHand->title; ?>"> 	

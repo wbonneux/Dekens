@@ -32,6 +32,7 @@ interface BaseCommonDAO extends BaseDAO{
 	 */
 	public function queryAllOrderByBase($orderColumn,$table);
 	
+	
 	/**
  	 * Delete record from table
  	 * @param object primary key

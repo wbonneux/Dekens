@@ -121,5 +121,6 @@ $pdf->Image($PNG_WEB_DIR.basename($filename));
 $pdf->Output('secondHand/VerkoopFiche.pdf', 'F'); //->DEV
 //email the pdf(for prod)
 include '../_/components/mail/sendVerkoopFiche.php';
-//$attachment = $pdf->Output('Verkoopsfiche: '.$secondHand->title,'E'); //->Attachment 
+//$attachment = $pdf->Output('Verkoopsfiche: '.$secondHand->title,'E'); //->Attachment
+ 
 ?>	

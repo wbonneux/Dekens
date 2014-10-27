@@ -3,11 +3,36 @@ $lang = array();
 
 //common
 $lang['back_to_list']			= 'Terug naar lijst';
+$lang['more_info']				= 'Meer informatie';
 
 
 //index page
 $lang['index_pagetitle'] 		= 'Dekens Agri Technics - Home';
 $lang['index_title'] 			= 'Welkom';
+
+//Accugereedschap page
+$lang['accu_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap';
+$lang['accu_title'] 		= 'Accugereedschap';
+
+//Kettingzaag page
+$lang['ketting_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Kettingzaag';
+$lang['ketting_title'] 		= 'Kettingzaag';
+
+//Heggenschaar page
+$lang['heggenschaar_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Heggenschaar';
+$lang['heggenschaar_title'] 		= 'Heggenschaar';
+
+//Zitmaaier page
+$lang['zitmaaier_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Zitmaaier';
+$lang['zitmaaier_title'] 		= 'Zitmaaier';
+
+//Bosmaaier page
+$lang['bosmaaier_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Bosmaaier';
+$lang['bosmaaier_title'] 		= 'Bosmaaier';
+
+//accessoires page
+$lang['accessoires_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Accessoires';
+$lang['accessoires_title'] 		= 'Accessoires';
 
 //secondHand page
 $lang['secondhand_pagetitle'] 	= 'Dekens Agri Technics - Tweedehands';

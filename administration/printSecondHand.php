@@ -32,7 +32,7 @@ include "../_/components/administration/php-version/header.php";
 $secondHandDAO = DAOFactory::getSecondHandDAO();
 $secondHand = $secondHandDAO->load($_REQUEST['id']);
 include "../_/components/administration/php-version/actions/printSecondHand.action.php";
-//include "../_/components/administration/php-version/secondHand_grid.php";
+include "../_/components/administration/php-version/secondHand_grid.php";
 ?>
 
 

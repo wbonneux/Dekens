@@ -14,12 +14,12 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-2">
 			<div class="form-group">
 		                <?php
 							check_label ( 'obj_day', $required, $errors, $lang );
 							?>
-		                  <input type="text" name="obj_day"
+		                  <input type="date" name="obj_day"
 					class="form-control" id="obj_day"
 					value="<?php if(isset($_SESSION['obj_day'])){echo $_SESSION['obj_day'];}?>">
 			</div>

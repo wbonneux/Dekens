@@ -5,9 +5,9 @@
 			<h2>
 				<i class="icon-align-justify"></i> Voorpagina
 			</h2>
-			<div>
-			<a href="addFrontPage.php">Toevoegen</a>
-			</div>
+			<h2>
+			&nbsp;-&nbsp;<a style="color: purple;"href="addFrontPage.php">Toevoegen</a>
+			</h2>
 		</div>
 		<div class="box-content">
 			<table
