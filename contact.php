@@ -1,6 +1,5 @@
 <?php 
-include_once '_/components/lang/lang.nl.php';
-session_start();
+include_once '_/components/lang/select.lang.php';
 $required = null;
 $errors = null;
 require_once '_/components/classes/FormValidator.class.php';
@@ -16,6 +15,7 @@ include_once '_/components/php/include_dao.php';
 		<link rel="stylesheet" href="_/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link rel="stylesheet" href="_/css/mystyles.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+  		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY-BmvO5ZBSs1KTEutG9rKqFqFxLeUXhg&sensor=false"></script>
 <script type="text/javascript" src="http://www.map-generator.org/map/iframejs/3103987c-f992-4698-a25b-460b3eaf3e49?key=AIzaSyBY-BmvO5ZBSs1KTEutG9rKqFqFxLeUXhg&width=950px&height=400px"></script>

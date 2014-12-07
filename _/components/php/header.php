@@ -48,14 +48,14 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar">
-				<li><a href="index.php">Home</a></li>
+				<li><a href="index.php"><?php echo  $lang ['index_menutitle'];?></a></li>
 				<!--<li><a href="overons.php">Over ons</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
 				<li><a href="accugereedschap.php"><?php echo  $lang ['accu_title'];?></a></li>
-				<li><a href="2dehands.php">Tweedehands</a></li>
-				<li><a href="Verhuur.php">Verhuur</a></li>
-				<li><a href="contact.php">Contacteer ons</a></li>
+				<li><a href="2dehands.php"><?php echo  $lang ['secondhand_title'];?></a></li>
+				<li><a href="Verhuur.php"><?php echo  $lang ['rental_title'];?></a></li>
+				<li><a href="contact.php"><?php echo  $lang ['contact_title'];?></a></li>
 			</ul>
 			<!--
     <form class="navbar-form navbar-left" role="search">

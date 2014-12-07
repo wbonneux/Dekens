@@ -68,6 +68,12 @@ class SecondHandMySqlExtDAO extends SecondHandMySqlDAO{
 		$sqlQuery = new SqlQuery($sql);
 		return $this->querySingleResult($sqlQuery);
 	}
+	
+	public function getFrontPageItems(){
+		$sql = "SELECT * FROM PROD_SECONDHAND WHERE L_I_ACTIVE = TRUE AND L_I_SOLD = FALSE ORDER BY PROD_SECONDHAND.S_I_CREATE_TECH DESC LIMIT 5";
+		$sqlQuery = new SqlQuery($sql);
+		return $this->getList($sqlQuery);
+	}
 
 	
 

@@ -34,7 +34,14 @@
 				for($i = 0; $i < count ( $frontPageArray ); $i ++) {
 					$row = $frontPageArray [$i];
 					echo "<tr id=rowid-".$row->id.">";
-					echo "<td class='center' style='width:70%'>$row->title</td>";
+					if($row->title == '')
+					{
+						
+						echo "<td class='center' style='width:70%'>".substr($row->description,0,100)."...</td>";
+					}else{
+						echo "<td class='center' style='width:70%'>$row->title</td>";
+					}
+					
  					//echo "<td class='center' style='width:10%'>$row->imagePos</td>";
  					echo "<td class='center' style='width:10px'>";
  					if ($row->imagePos == 'left') {

@@ -314,7 +314,8 @@ html {
 }
 /* line 22, D:\xampp\htdocs\WebSites\Dekens\_\components\less\scaffolding.less */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans Bold'; */
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -4456,7 +4457,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   /* line 20, D:\xampp\htdocs\WebSites\Dekens\_\components\less\navbar.less */
   .navbar {
-    border-radius: 4px;
+    border-radius: 15px;
   }
 }
 /* line 20, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mixins.less */

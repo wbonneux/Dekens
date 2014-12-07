@@ -31,8 +31,9 @@ include_once '_/components/lang/select.lang.php';
                     <img class="img-responsive merk-index" src="images/merken_index/FELLA.jpg"/>
                     <img class="img-responsive merk-index" src="images/merken_index/HusqvarnaLogo.gif"/>
                 </div> -->
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <?php
+                
 	                	$frontPageDAO = DAOFactory::getContentFrontPageDAO();
 	                	$frontPageArray = $frontPageDAO->getActiveFrontPage();
 	                	if(count ( $frontPageArray ) != 0)
@@ -43,17 +44,19 @@ include_once '_/components/lang/select.lang.php';
 	                			echo '<div class="media">';
 	                			if($row->imagePos != "" && $row->imagePos == 'right')
 	                			{
-	                				echo '<a class="pull-right" href="detail.php?id='.$row->id.'">';
+	                				//echo '<a class="pull-right" href="detail.php?id='.$row->id.'">';
+	                				echo '<a class="pull-right" href="#">';
 	                			}
 	                			else
 	                			{
-	                				echo '<a class="pull-left" href="detail.php?id='.$row->id.'">';
+	                				//echo '<a class="pull-left" href="detail.php?id='.$row->id.'">';
+	                				echo '<a class="pull-left" href="#">';
 	                			}
 	                		
-	                			echo '<img class="media-object" width="100px" src="images/frontPage/'.$row->id.'/'.$row->image.'" alt="...">';
+	                			echo '<img class="media-object" width="200px" src="images/frontPage/'.$row->id.'/'.$row->image.'" alt="...">';
 	                			echo '</a>';
 	                			echo '<div class="media-body">';
-	                			echo '<h4 class="media-heading">'.$row->title.'</h4>';
+	                			echo '<h4 class="fp-title media-heading">'.$row->title.'</h4>';
 	                			echo $row->description;
 	                			echo '</div>';
 	                			echo '</div>';
@@ -75,7 +78,7 @@ include_once '_/components/lang/select.lang.php';
                         We hopen u vlug te mogen verwelkomen als klant. Maar ook indien u meer informatie wenst over onze diensten of graag een offerte had gekregen, twijfel dan niet en contacteer ons.
                     </p>
 				</div>
-                <div class="col-lg-6 col-md-6 hidden-sm hidden-xs visible-lg visible-md">
+                <div class="col-lg-5 col-md-5 hidden-sm hidden-xs visible-lg visible-md">
                     <div class="cycle-slideshow">
                         <img class="img-responsive" src="images/slides_index/IMG_3073.JPG"/>
                         <img class="img-responsive" src="images/slides_index/IMG_3081.JPG"/>
@@ -83,6 +86,18 @@ include_once '_/components/lang/select.lang.php';
                         <img class="img-responsive" src="images/slides_index/IMG_3085.JPG"/>
                         <img class="img-responsive" src="images/slides_index/IMG_3086.JPG"/>
                     </div>
+                    <?php 
+                    $secondHandDAO = DAOFactory::getSecondHandDAO();
+                    $secondHandArray = $secondHandDAO->getFrontPageItems();
+                    if(count ( $secondHandArray ) != 0)
+                    {
+                    	echo '<div class="cycle-slideshow">';
+                    	foreach ($secondHandArray as $secondHand ){
+                    		echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'"><img class="img-responsive" src="images/secondhand/'.$secondHand->id.'/sm/'.$secondHand->image1.'"/></a>';
+                    	}
+                    	echo '</div>';
+                    }
+                    ?>
                	</div>
             </div><!-- content -->
             <div class="row hidden-md hidden-sm hidden-xs ">

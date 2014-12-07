@@ -9,6 +9,7 @@ $lang['more_info']				= 'Meer informatie';
 //index page
 $lang['index_pagetitle'] 		= 'Dekens Agri Technics - Home';
 $lang['index_title'] 			= 'Welkom';
+$lang['index_menutitle'] 		= 'Home';
 
 //Accugereedschap page
 $lang['accu_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap';
@@ -101,6 +102,8 @@ $lang['fp_description']  		= 'Omschrijving';
 $lang['fp_active']				= 'Actief';
 $lang['fp_image']				= 'Afbeelding';
 $lang['fp_image_pos']			= 'Position';
+$lang['SELECT_POS']				= 'Selecteer een positie';
+
 
 
 //common formFields
