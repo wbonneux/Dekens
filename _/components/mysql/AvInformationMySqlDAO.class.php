@@ -18,6 +18,10 @@ class AvInformationMySqlDAO extends BaseCommonMySqlDAO implements AvInformationD
 	public function load($id){
 		return parent::loadBase($id,'av_information');
 	}
+	
+	public function loadActive($id){
+		return parent::loadBaseActive($id,'av_information');
+	}
 
 	/**
 	 * Get all records from table
@@ -82,8 +86,8 @@ class AvInformationMySqlDAO extends BaseCommonMySqlDAO implements AvInformationD
 		$sqlQuery->set(date('Y-m-d H:i:s'));
 		$sqlQuery->setNumber($avInformation->id);
 		
- 		echo 'update<br/>';
-		echo $sqlQuery->getQuery();
+ 		//echo 'update<br/>';
+		//echo $sqlQuery->getQuery();
 		return $this->executeUpdate($sqlQuery);
 	}
 

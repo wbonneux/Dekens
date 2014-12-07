@@ -28,9 +28,13 @@ $mail->SMTPAuth = true;
 $mail->Username = 'gert@dekens-agritechnics.be';
 $mail->Password = 'dekens'; 
 //Set who the message is to be sent from 
-//$mail->setFrom($_SESSION['contact_email'], $_SESSION['contact_name']); 
-// $mail->addAddress('gert@dekens-agritechnics.be', 'Dekens Agri Technics');
+//$mail->setFrom($_SESSION['contact_email'], $_SESSION['contact_name']);
+
+
+ $mail->addAddress('gert@dekens-agritechnics.be', 'Dekens Agri Technics');
 $mail->addAddress('wbonneux@gmail.com', 'Dekens Agri Technics');
+
+
 //Set an alternative reply-to address 
 //$mail->addReplyTo('NoReply@dekens-agritechnics.be', 'Dekens Agri Technics'); 
 //Set who the message is to be sent to 
@@ -52,7 +56,6 @@ $body = 'Verkoopfiche in bijlage';
 $mail->msgHTML($body); 
 //Attach an image file 
 $mail->addAttachment('secondHand/VerkoopFiche.pdf'); 
-
 //send the message, check for errors 
-
+$mail->send();
 ?> 

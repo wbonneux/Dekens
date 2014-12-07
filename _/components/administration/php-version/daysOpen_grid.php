@@ -31,20 +31,23 @@
 				
 				$daysOpenArray = DAOFactory::getDaysOpenedDAO()->queryAll ();
 				for($i = 0; $i < count ( $daysOpenArray ); $i ++) {
-					echo "<tr>";
 					$row = $daysOpenArray [$i];
+					echo "<tr id=rowid-".$row->id.">";
 					echo "<td class='center' style='width:70%'>$row->day</td>";
  					//echo "<td class='center' style='width:10%'>$row->imagePos</td>";
  					echo "</td>";
  					echo "<td class='center'>";
 					if ($row->active == 1) {
-						echo "<span class='label label-success'>Ja</span>";
+// 						echo "<span class='label label-success'>Ja</span>";
+						echo "<span style='cursor: pointer;' id=active-".$row->id." onclick=setDoInactive(".$row->id.") class='label label-success'>Ja</span>";
 					} else {
-						echo "<span class='label label-error'>Nee</span>";
+// 						echo "<span class='label label-error'>Nee</span>";
+						echo "<span style='cursor: pointer;' id=inactive-".$row->id." onclick=setDoActive(".$row->id.") class='label label-error'>Nee</span>";
 					}
 					echo "</td>";
 					echo '<td class="center">';
-					echo '<a class="btn btn-danger" href="deleteDaysOpen.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+// 					echo '<a class="btn btn-danger" href="deleteDaysOpen.php?id='.$row->id.'"><i class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
+					echo '<a class="btn btn-danger" id="'.$row->id.'"><i onclick="deleteDo('.$row->id.')" class="icon-trash icon-white" data-rel="tooltip" title="Verwijderen"></i></a>';
 					echo '</td>';
 					echo "</tr>";
 				}

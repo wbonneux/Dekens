@@ -8,12 +8,18 @@ $lang['back_to_list']			= 'Terug naar lijst';
 //index page
 $lang['index_pagetitle'] 		= 'Dekens Agri Technics - Home';
 $lang['index_title'] 			= 'Welkom - fr';
+$lang['index_menutitle'] 		= 'Home-fr';
+
+//Accugereedschap page
+$lang['accu_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap-fr';
+$lang['accu_title'] 		= 'Accugereedschap-fr';
+
 
 //secondHand page
-$lang['secondhand_pagetitle'] 	= 'Dekens Agri Technics - Tweedehands';
-$lang['secondhand_title'] 		= 'Tweedehands';
-$lang['secondhand_no_items']	= 'Momenteel geen items te koop';
-$lang['secondhand_sold']		= 'Verkocht!';
+$lang['secondhand_pagetitle'] 	= 'Dekens Agri Technics - Tweedehands-fr';
+$lang['secondhand_title'] 		= 'Tweedehands-fr';
+$lang['secondhand_no_items']	= 'Momenteel geen items te koop-fr';
+$lang['secondhand_sold']		= 'Verkocht!-fr';
 
 //secondHand detail
 $lang['secondhanddetail_pagetitle'] 	= 'Dekens Agri Technics - Tweedehands detail';
@@ -25,18 +31,18 @@ $lang['secondhanddetail_workhours']   	= 'Werkuren';
 
 //rental page
 $lang['rental_pagetitle'] 		= 'Dekens Agri Technics - Verhuur';
-$lang['rental_title'] 			= 'Verhuur';
-$lang['rental_no_items']		= 'Momenteel geen items te huur';
+$lang['rental_title'] 			= 'Verhuur-fr';
+$lang['rental_no_items']		= 'Momenteel geen items te huur-fr';
 
 //rental detail
-$lang['rentaldetail_pagetitle'] 	= 'Dekens Agri Technics - Verhuur';
+$lang['rentaldetail_pagetitle'] 	= 'Dekens Agri Technics - Verhuur-fr';
 $lang['rentaldetail_price_day']		= 'Prijs/dag';
 $lang['rentaldetail_price_weekend']	= 'Prijs/weekend';
 $lang['rentaldetail_price_week']	= 'Prijs/week';
 
 //contact page
 $lang['contact_pagetitle'] 		= 'Dekens Agri Technics - Contacteer ons';
-$lang['contact_title'] 			= 'Contacteer ons ';
+$lang['contact_title'] 			= 'Contacteer ons-fr ';
 $lang['contact_introduction']	= 'Als u enige vragen hebt of een inlichting nodig hebt kan u ons altijd tijdens de kantooruren bereiken via telefoon/fax/email. U kan ook vrijblijvend het contactformulier invullen. Onze medewerkers zullen u dan zo snel mogelijk een antwoord bieden.';
 $lang['contact_name'] 			= 'Naam ';
 $lang['contact_email'] 			= 'Email ';

@@ -5,7 +5,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Advent Pro', sans-serif;
+  /* font-family: 'Advent Pro', sans-serif; */
   color: #2c6700;
 }
 /* line 24, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
@@ -69,7 +69,8 @@ h3 {
 }
 /* line 70, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 p {
-  font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+  /*font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+  */
   font-size: 14px;
   line-height: 1.4em;
   color: #586e75;
@@ -91,16 +92,19 @@ p a:active {
 }
 /* line 89, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 body {
-  background: #475c98 url(../../images/misc/BackGround.jpg);
+  /*  background: #475c98 url(../../images/misc/BackGround.jpg);*/
+  background: #475c98 url(../../images/background.jpg);
+  /*  background-size: 100%;*/
   margin-top: 30px;
-  font-family: 'Advent Pro', sans-serif;
+/*   font-family: 'Advent Pro', sans-serif; */
   font-size: 14px;
 }
 /* line 96, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 .navbar {
   background-color: #6e9a00;
   margin-bottom: 0px;
-  font-size: 16px;
+  font-size: 18px;
+  /*  font-weight: bold;*/
 }
 /* line 103, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 .page-header {
@@ -113,6 +117,10 @@ body {
 /* line 111, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 .container {
   background: #f1ffcd;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius:15px;
 }
 /* line 115, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 footer {
@@ -120,7 +128,7 @@ footer {
   padding-top: 20px;
   color: white;
   background: #214e00;
-  font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+  /* font-family: Merriweather, Georgia, "Times New Roman", Times, serif;*/
 }
 /* line 120, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 footer .container {
@@ -172,7 +180,7 @@ footer .container {
   color: white;
   background: #6e9a00;
   font-size: 16px;
-  font-family: 'Advent Pro', sans-serif;
+  /* font-family: 'Advent Pro', sans-serif; */
 }
 /* line 189, D:\xampp\htdocs\WebSites\Dekens\_\components\less\mystyles.less */
 .dropdown-menu {
@@ -267,7 +275,7 @@ merk-index {
 }
 
 h3 p{
-	font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+	/* font-family: Merriweather, Georgia, "Times New Roman", Times, serif;*/
 	font-size:17px;
 	line-height: 1.4em;
 	color: #586e75;
@@ -299,4 +307,9 @@ h3 .description{
 
 .mywrapper {
     text-align:center;
+}
+
+.fp-title
+{
+	font-size: 22px;	
 }

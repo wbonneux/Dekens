@@ -24,6 +24,21 @@ class BaseCommonMySqlDAO extends BaseMySqlDAO implements BaseCommonDAO{
 		$sqlQuery->setNumber($id);
 		return $this->getRow($sqlQuery);
 	}
+	
+	/**
+	 * Get Domain  by primry key and active
+	 *
+	 * @param String $id primary key
+	 * @param String $table table for the query
+	 * @Return object
+	 */
+	public function loadBaseActive($id,$table){
+		$sql = 'SELECT * FROM '.$table.' WHERE L_I_ACTIVE = TRUE AND O_I_IDF_TECH = ?';
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($id);
+		return $this->getRow($sqlQuery);
+	}
+	
 
 	/**
 	 * Get all records from table

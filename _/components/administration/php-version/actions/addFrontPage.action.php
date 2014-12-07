@@ -3,7 +3,7 @@
 // configuration for the validation of the form
 $validation = array ();
 $mandatory = array (
-		'fp_title' => 'fp_title',
+// 		'fp_title' => 'fp_title',
 		'fp_description' => 'fp_description' 
 );
 $sanitize = array ();

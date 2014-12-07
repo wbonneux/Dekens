@@ -1,7 +1,7 @@
 <?php
 	//include all DAO files
-	set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
-	//set_include_path('.;/home/wimbogp45/domains/dekens-agritechnics.be/public_html');
+set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
+//	set_include_path('/home/wimbogp45/domains/dekens-agritechnics.be/public_html/');
 	require_once('_/components/sql/Connection.class.php');
 	require_once('_/components/sql/ConnectionFactory.class.php');
 	require_once('_/components/sql/ConnectionProperty.class.php');

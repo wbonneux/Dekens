@@ -9,7 +9,9 @@ $avInformationDAO = DAOFactory::getAvInformationDAO();
 if(isset($_POST['save'])){
 	//get the vars from the form & update
 	//go to index
-	$avInformationobj = $avInformationDAO->load(1);
+	$avInformationobj = new AvInformation();
+	//$obj = $avInformationDAO->load(1);
+
 	$avInformationobj->id = 1;
 	if (isset ( $_POST ['obj_active'] )) {
 		$_SESSION ['obj_active'] = '1';
@@ -18,7 +20,7 @@ if(isset($_POST['save'])){
 	}
 	$avInformationobj->active = $_SESSION['obj_active'];
 	$avInformationobj->information = $_POST['obj_information'];
-	echo $_POST['obj_information'];
+	//echo $_POST['obj_information'];
 	$_SESSION['obj_active'] = null;
 	$_SESSION['obj_information'] = null;
 	$avInformationDAO->update($avInformationobj);

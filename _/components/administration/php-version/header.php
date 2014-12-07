@@ -13,6 +13,7 @@ include_once '../_/components/php/include_dao.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<!--
 		Charisma v1.0.0
 
@@ -55,6 +56,8 @@ include_once '../_/components/php/include_dao.php';
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="../_/components/administration/img/favicon.ico">
 	<script type="text/javascript" src="../_/js/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript" src="../_/components/js/jquery.js"></script>
+	<script type="text/javascript" src="../_/js/adminActions.js"></script>
 	<script type="text/javascript">
 	tinymce.init({
 	    selector: "textarea",

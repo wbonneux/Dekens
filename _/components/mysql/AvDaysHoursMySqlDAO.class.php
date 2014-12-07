@@ -56,15 +56,19 @@ class AvDaysHoursMySqlDAO extends BaseCommonMySqlDAO implements AvDaysHoursDAO{
  	 * @param ContentMySql content
  	 */
 	public function insert(AvDaysHours $avDaysHours){
-		$sql = 'INSERT INTO av_days_hours (T_I_DAY, T_I_HRS_DAY, T_I_HRS_AM, T_I_HRS_PM, L_I_CLOSED, L_I_ACTIVE, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO av_days_hours (T_I_DAY, T_I_HRS_DAY_BEGIN, T_I_HRS_DAY_END, T_I_HRS_AM_BEGIN, T_I_HRS_AM_END, T_I_HRS_PM_BEGIN, T_I_HRS_PM_END, L_I_CLOSED, L_I_ACTIVE, N_I_ORDER, S_I_CREATE_TECH) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($avDaysHours->day);
-		$sqlQuery->setString($avDaysHours->hoursDay);
-		$sqlQuery->setString($avDaysHours->hoursAm);
-		$sqlQuery->setString($avDaysHours->hoursPm);
+		$sqlQuery->setString($avDaysHours->hoursDayBegin);
+		$sqlQuery->setString($avDaysHours->hoursDayEnd);
+		$sqlQuery->setString($avDaysHours->hoursAmBegin);
+		$sqlQuery->setString($avDaysHours->hoursAmEnd);
+		$sqlQuery->setString($avDaysHours->hoursPmBegin);
+		$sqlQuery->setString($avDaysHours->hoursPmEnd);
 		$sqlQuery->set($avDaysHours->closed);
 		$sqlQuery->set($avDaysHours->active);
+		$sqlQuery->set($avDaysHours->order);
 		//$sqlQuery->set((new \DateTime())->format('Y-m-d H:i:s'));
 		$sqlQuery->set(date('Y-m-d H:i:s'));
 		$id = $this->executeInsert($sqlQuery);	
@@ -78,20 +82,24 @@ class AvDaysHoursMySqlDAO extends BaseCommonMySqlDAO implements AvDaysHoursDAO{
  	 * @param ContentMySql content
  	 */
 	public function update(AvDaysHours $avDaysHours){
-		$sql = 'UPDATE av_days_hours SET T_I_DAY = ?, T_I_HRS_DAY = ?, T_I_HRS_AM = ?, T_I_HRS_PM,  L_I_SOLD= ?,  L_I_ACTIVE = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
+		$sql = 'UPDATE av_days_hours SET T_I_DAY = ?, T_I_HRS_DAY_BEGIN = ?, T_I_HRS_DAY_END = ?, T_I_HRS_AM_BEGIN = ?, T_I_HRS_AM_END = ?, T_I_HRS_PM_BEGIN = ?, T_I_HRS_PM_END = ?,  L_I_CLOSED= ?,  L_I_ACTIVE = ?, N_I_ORDER = ?, S_I_MOD_TECH = ? WHERE O_I_IDF_TECH = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setString($avDaysHours->day);
-		$sqlQuery->setString($avDaysHours->hoursDay);
-		$sqlQuery->setString($avDaysHours->hoursAm);
-		$sqlQuery->setString($avDaysHours->hoursPm);
+		$sqlQuery->setString($avDaysHours->hoursDayBegin);
+		$sqlQuery->setString($avDaysHours->hoursDayEnd);
+		$sqlQuery->setString($avDaysHours->hoursAmBegin);
+		$sqlQuery->setString($avDaysHours->hoursAmEnd);
+		$sqlQuery->setString($avDaysHours->hoursPmBegin);
+		$sqlQuery->setString($avDaysHours->hoursPmEnd);
 		$sqlQuery->set($avDaysHours->closed);
 		$sqlQuery->set($avDaysHours->active);
+		$sqlQuery->setNumber($avDaysHours->order);
 		$sqlQuery->set(date('Y-m-d H:i:s'));
 		$sqlQuery->setNumber($avDaysHours->id);
 		
-// 		echo 'update<br/>';
-// 		echo $sqlQuery->getQuery();
+//   		echo 'update<br/>';
+//   		echo $sqlQuery->getQuery().'<br>';
 		return $this->executeUpdate($sqlQuery);
 	}
 
@@ -107,7 +115,15 @@ class AvDaysHoursMySqlDAO extends BaseCommonMySqlDAO implements AvDaysHoursDAO{
 		
 		$avDaysHours->id 				= $row['O_I_IDF_TECH'];
 		$avDaysHours->day				= $row['T_I_DAY'];
+		$avDaysHours->hoursDayBegin		= $row['T_I_HRS_DAY_BEGIN'];
+		$avDaysHours->hoursDayEnd		= $row['T_I_HRS_DAY_END'];
+		$avDaysHours->hoursAmBegin		= $row['T_I_HRS_AM_BEGIN'];
+		$avDaysHours->hoursAmEnd		= $row['T_I_HRS_AM_END'];
+		$avDaysHours->hoursPmBegin		= $row['T_I_HRS_PM_BEGIN'];
+		$avDaysHours->hoursPmEnd		= $row['T_I_HRS_PM_END'];
+		$avDaysHours->closed 			= $row['L_I_CLOSED'];
 		$avDaysHours->active 			= $row['L_I_ACTIVE'];
+		$avDaysHours->order				= $row['N_I_ORDER'];
 		$avDaysHours->created 			= $row['S_I_CREATE_TECH'];
 		$avDaysHours->modified			= $row['S_I_MOD_TECH'];
 		

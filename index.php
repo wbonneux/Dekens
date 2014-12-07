@@ -1,13 +1,10 @@
 <?php   
-//require_once('_/components/php/include_dao.php');
+require_once('_/components/php/include_dao.php'); 
 include_once '_/components/lang/select.lang.php';
-include_once '_/components/php/include_dao.php';
 ?>
 <!DOCTYPE>
 <html>  
 	<head>
-		<meta name="keyword" content="Agri Technics, Fendt, tractor">
-		<meta name="description" content="Dekens Agri Technics - Specialist in tuinmachines en parkmachines met een uitstekende service">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title><?php echo  $lang ['index_pagetitle'];?></title>
         <link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon" />
@@ -17,67 +14,91 @@ include_once '_/components/php/include_dao.php';
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
         <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	</head>
+
 	<body id="home">
 		<?php include_once("_/components/google/analyticstracking.php") ?>
     	<section class="container">
             <div class="content row container">
              	<?php include "_/components/php/header.php"; ?>
-                <h1 class="page-header"><?php  echo $lang['index_title'];?></h1>
+                <h1 class="page-header">Welkom</h1>
+               <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img class="img-responsive merk-index" src="images/merken_index/MasseyLogo.gif"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/FendtLogo.jpg"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/kubota01.gif"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/record.jpg"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/thaler.gif"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/pageLogoKuhn.gif"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/FELLA.jpg"/>
+                    <img class="img-responsive merk-index" src="images/merken_index/HusqvarnaLogo.gif"/>
+                </div> -->
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <?php
-                $countSh = 0;
-                $countRt = 0;
-                $countSh = DAOFactory::getSecondHandDAO()->countActiveSecondHand();
-                $countRt = DAOFactory::getRentalDAO()->countActiveRental();
-                if($countSh == 0 && $countRt == 0)
-				{
-					echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
-				}
-				else
-				{
-					echo '<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">';
-				}
-                ?>
                 
-	                <?php
 	                	$frontPageDAO = DAOFactory::getContentFrontPageDAO();
 	                	$frontPageArray = $frontPageDAO->getActiveFrontPage();
-	                	for($i = 0; $i < count ( $frontPageArray ); $i ++) {
-							$row = $frontPageArray [$i];
-							echo '<div class="media">';
-								if($row->imagePos != "" && $row->imagePos == 'right')
-								{
-									echo '<a class="pull-right" href="detail.php?id='.$row->id.'">';
-								}
-								else
-								{
-									echo '<a class="pull-left" href="detail.php?id='.$row->id.'">';
-								} 
-								
-									echo '<img class="media-object" width="300px" src="images/frontPage/'.$row->id.'/'.$row->image.'" alt="...">';
-								echo '</a>';
-								echo '<div class="media-body">';
-									echo '<h4 class="media-heading">'.$row->title.' '.$row->imagePos.'</h4>';
-										echo $row->description;
-								echo '</div>';
-							echo '</div>';
-							echo '<hr/>';
+	                	if(count ( $frontPageArray ) != 0)
+	                	{
+	                		//echo '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
+	                		for($i = 0; $i < count ( $frontPageArray ); $i ++) {
+	                			$row = $frontPageArray [$i];
+	                			echo '<div class="media">';
+	                			if($row->imagePos != "" && $row->imagePos == 'right')
+	                			{
+	                				//echo '<a class="pull-right" href="detail.php?id='.$row->id.'">';
+	                				echo '<a class="pull-right" href="#">';
+	                			}
+	                			else
+	                			{
+	                				//echo '<a class="pull-left" href="detail.php?id='.$row->id.'">';
+	                				echo '<a class="pull-left" href="#">';
+	                			}
+	                		
+	                			echo '<img class="media-object" width="200px" src="images/frontPage/'.$row->id.'/'.$row->image.'" alt="...">';
+	                			echo '</a>';
+	                			echo '<div class="media-body">';
+	                			echo '<h4 class="fp-title media-heading">'.$row->title.'</h4>';
+	                			echo $row->description;
+	                			echo '</div>';
+	                			echo '</div>';
+	                			echo '<hr/>';
+	                		}
 						}
 	                ?>
-                </div>
-                <?php
-                	if($countSh != 0 || $countRt != 0)
-                	{
-                		echo '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">';
-                		if($countSh != 0){
-                			include '_/components/secondHandTicker/index_module.php';
-                		}
-                		echo '<br/>';
-                		if($countRt != 0){
-                			include '_/components/rentalTicker/index_module.php';
-                		}
-                		echo '</div>';
-                	}	
-                ?>
+<!--                 
+                    <p>
+                        Wilt u graag een nieuwe tractor aankopen of is uw huidige tractor gewoon toe aan een groot onderhoud ? Is uw plukwagen of spuitmachine defect of aan vervanging toe ? Wilt u de nieuwste trends in de land- & tuinbouwmachines van dichtbij opvolgen ? Steekt u liever zelf de handen uit de mouwen maar ontbreken u nog enkele wisselstukken ?
+                    </p>
+                    <!-- <p>
+                        Bent u op zoek naar een kettingzaag of een haagschaar ? Overweegt u de aankoop van een grasmachine of een zitmaaier ? Wilt u uw kind verrassen met een kanjer van een speelgoed tractor ?
+                    </p> -->
+                    <p>
+                        Op deze website vindt u ons aanbod aan machines en tractoren voor land- & tuinbouw en voor fruitteelt. Naast professionelen kunnen ook particulieren bij ons terecht voor de courante park- en tuingereedschappen. Bij ons kan je terecht voor verkoop (nieuw en tweedehands) als ook voor herstellingen.
+                    </p>
+                    <p>
+                        We hopen u vlug te mogen verwelkomen als klant. Maar ook indien u meer informatie wenst over onze diensten of graag een offerte had gekregen, twijfel dan niet en contacteer ons.
+                    </p>
+				</div>
+                <div class="col-lg-5 col-md-5 hidden-sm hidden-xs visible-lg visible-md">
+                    <div class="cycle-slideshow">
+                        <img class="img-responsive" src="images/slides_index/IMG_3073.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3081.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3084.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3085.JPG"/>
+                        <img class="img-responsive" src="images/slides_index/IMG_3086.JPG"/>
+                    </div>
+                    <?php 
+                    $secondHandDAO = DAOFactory::getSecondHandDAO();
+                    $secondHandArray = $secondHandDAO->getFrontPageItems();
+                    if(count ( $secondHandArray ) != 0)
+                    {
+                    	echo '<div class="cycle-slideshow">';
+                    	foreach ($secondHandArray as $secondHand ){
+                    		echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'"><img class="img-responsive" src="images/secondhand/'.$secondHand->id.'/sm/'.$secondHand->image1.'"/></a>';
+                    	}
+                    	echo '</div>';
+                    }
+                    ?>
+               	</div>
             </div><!-- content -->
             <div class="row hidden-md hidden-sm hidden-xs ">
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -112,12 +133,10 @@ include_once '_/components/php/include_dao.php';
                 </div>
             </div>
 		</section>        
-        <?php
-        include "_/components/php/footer.php"; ?> 
+        <?php include "_/components/php/footer.php"; ?> 
 		<script type="text/javascript" src="_/js/bootstrap.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<!--         <script type="text/javascript" src="_/components/newsTicker/jquery.easy-ticker.js"></script> -->
-        <script type="text/javascript" src="_/components/secondHandTicker/jquery.easy-ticker.js"></script>
+        <script type="text/javascript" src="_/components/newsTicker/jquery.easy-ticker.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){
             $('#demo').hide();
