@@ -177,8 +177,20 @@ function checkUploadPhoto($uploadId,$id){
 			if(!file_exists("../images/secondHand/".$id)){
 				mkdir("../images/secondHand/".$id);
 			}
+			if(!file_exists("../images/secondHand/".$id."/sm/")){
+				mkdir("../images/secondHand/".$id."/sm/");
+			}
+			if(!file_exists("../images/secondHand/".$id."/xs/")){
+				mkdir("../images/secondHand/".$id."/xs/");
+			}
 			if(file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
 				unlink("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"]);
+			}
+			if(file_exists("../images/secondHand/".$id."/sm/".$_FILES[$uploadId]["name"])){
+				unlink("../images/secondHand/".$id."/sm/".$_FILES[$uploadId]["name"]);
+			}
+			if(file_exists("../images/secondHand/".$id."/xs/".$_FILES[$uploadId]["name"])){
+				unlink("../images/secondHand/".$id."/xs/".$_FILES[$uploadId]["name"]);
 			}
 			if(!file_exists("../images/secondHand/".$id."/".$_FILES[$uploadId]["name"])){
 				$tempFile = $_FILES[$uploadId]['tmp_name'];
@@ -189,6 +201,7 @@ function checkUploadPhoto($uploadId,$id){
 				}
 				$img = new SimpleImage();
 				$img->load("../images/secondHand/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(600, 600)->save("../images/secondHand/" . $id . "/sm/" . $_FILES[$uploadId]["name"]);
+				$img->load("../images/secondHand/" . $id . "/" . $_FILES[$uploadId]["name"])->best_fit(200, 200)->save("../images/secondHand/" . $id . "/xs/" . $_FILES[$uploadId]["name"]);
 					
 				$_SESSION[$uploadId.'_location'] = "../images/secondHand/".$id."/".$_FILES[$uploadId]["name"];
 				// 			echo "uploaded";

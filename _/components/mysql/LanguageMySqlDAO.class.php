@@ -17,14 +17,14 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
 	 * @return LanguageMySql 
 	 */
 	public function load($id){
-		return parent::loadBase($id,'CODE_LANGUAGE');
+		return parent::loadBase($id,'code_language');
 	}
 
 	/**
 	 * Get all records from table
 	 */
 	public function queryAll(){
-		return parent::queryAllBase('CODE_LANGUAGE');
+		return parent::queryAllBase('code_language');
 	}
 	
 	/**
@@ -33,7 +33,7 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
 	 * @param $orderColumn column name
 	 */
 	public function queryAllOrderBy($orderColumn){
-		return parent::queryAllOrderByBase($orderColumn,'CODE_LANGUAGE');
+		return parent::queryAllOrderByBase($orderColumn,'code_language');
 	}
 	
 	/**
@@ -41,7 +41,7 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
  	 * @param language primary key
  	 */
 	public function delete($id){
-		return parent::deleteBase($id,'CODE_LANGUAGE');
+		return parent::deleteBase($id,'code_language');
 	}
 	
 	/**
@@ -50,7 +50,7 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
  	 * @param LanguageMySql language
  	 */
 	public function insert($language){
-		$sql = 'INSERT INTO CODE_LANGUAGE (T_I_CODE, T_I_DESCR_NED, T_I_DESCR_FR, T_I_DESCR_EN) VALUES (?, ?, ?, ?)';
+		$sql = 'INSERT INTO code_language (T_I_CODE, T_I_DESCR_NED, T_I_DESCR_FR, T_I_DESCR_EN) VALUES (?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		//$sqlQuery->setNumber($language->id);
@@ -70,7 +70,7 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
  	 * @param LanguageMySql language
  	 */
 	public function update($language){
-		$sql = 'UPDATE CODE_LANGUAGE SET T_I_CODE = ?, T_I_DESCR_NED = ?, T_I_DESCR_FR = ?, T_I_DESCR_EN = ?, ';
+		$sql = 'UPDATE code_language SET T_I_CODE = ?, T_I_DESCR_NED = ?, T_I_DESCR_FR = ?, T_I_DESCR_EN = ?, ';
 		$sql = $sql.'S_I_MOD_TECH = now() WHERE C_I_IDF_TECH = ?';
 		echo $sql;
 
@@ -89,7 +89,7 @@ class LanguageMySqlDAO extends BaseCodeMySqlDAO implements languageDAO {
  	 * Delete all rows
  	 */
 	public function clean(){
-		return parent::cleanBase('CODE_LANGUAGE');
+		return parent::cleanBase('code_language');
 	}
 
 	/**

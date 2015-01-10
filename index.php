@@ -13,6 +13,8 @@ include_once '_/components/lang/select.lang.php';
         <link rel="stylesheet" href="_/css/prettyPhoto.css" type="text/css" media="screen" title="master" charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
         <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<!--         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+        
 	</head>
 
 	<body id="home">
@@ -60,7 +62,7 @@ include_once '_/components/lang/select.lang.php';
 	                			echo $row->description;
 	                			echo '</div>';
 	                			echo '</div>';
-	                			echo '<hr/>';
+	                			echo '<hr style="border-bottom: 4px solid #e5e4d7;"/>';
 	                		}
 						}
 	                ?>
@@ -78,7 +80,7 @@ include_once '_/components/lang/select.lang.php';
                         We hopen u vlug te mogen verwelkomen als klant. Maar ook indien u meer informatie wenst over onze diensten of graag een offerte had gekregen, twijfel dan niet en contacteer ons.
                     </p>
 				</div>
-                <div class="col-lg-5 col-md-5 hidden-sm hidden-xs visible-lg visible-md">
+                <div class="col-lg-5 col-md-5 hidden-sm hidden-xs visible-lg visible-md">>
                     <div class="cycle-slideshow">
                         <img class="img-responsive" src="images/slides_index/IMG_3073.JPG"/>
                         <img class="img-responsive" src="images/slides_index/IMG_3081.JPG"/>
@@ -87,16 +89,16 @@ include_once '_/components/lang/select.lang.php';
                         <img class="img-responsive" src="images/slides_index/IMG_3086.JPG"/>
                     </div>
                     <?php 
-                    $secondHandDAO = DAOFactory::getSecondHandDAO();
-                    $secondHandArray = $secondHandDAO->getFrontPageItems();
-                    if(count ( $secondHandArray ) != 0)
-                    {
-                    	echo '<div class="cycle-slideshow">';
-                    	foreach ($secondHandArray as $secondHand ){
-                    		echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'"><img class="img-responsive" src="images/secondhand/'.$secondHand->id.'/sm/'.$secondHand->image1.'"/></a>';
-                    	}
-                    	echo '</div>';
-                    }
+//                     $secondHandDAO = DAOFactory::getSecondHandDAO();
+//                     $secondHandArray = $secondHandDAO->getFrontPageItems();
+//                     if(count ( $secondHandArray ) != 0)
+//                     {
+//                     	echo '<div class="cycle-slideshow">';
+//                     	foreach ($secondHandArray as $secondHand ){
+//                     		echo '<img class="img-responsive thumbnail" src="images/secondhand/'.$secondHand->id.'/sm/'.$secondHand->image1.'"/>';
+//                     	}
+//                     	echo '</div>';
+//                     }
                     ?>
                	</div>
             </div><!-- content -->

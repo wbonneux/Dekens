@@ -1,9 +1,9 @@
 <?php
 //set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 include_once '../_/components/php/include_dao.php'; 
-
+include_once '_/components/lang/select.lang.php';
 	//echo 'session';
-	session_start();
+// 	session_start();
 	//echo $_SESSION['myusername'];
 	if (!isset($_SESSION['myusername'])) {
 		header("location:login.php");
@@ -33,7 +33,8 @@ include_once '../_/components/php/include_dao.php';
 	<!-- The styles -->
 	<link id="bs-css" href="../_/components/administration/css/bootstrap.css" rel="stylesheet">
 	<link id="bs-css" href="../_/components/administration/css/bootstrap-cerulean.css" rel="stylesheet">
-     
+	<script type="text/javascript" src="../_/components/ckeditor/ckeditor.js"></script>
+<!--      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -55,20 +56,10 @@ include_once '../_/components/php/include_dao.php';
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="../_/components/administration/img/favicon.ico">
-	<script type="text/javascript" src="../_/js/tinymce/tinymce.min.js"></script>
+<!-- 	<script type="text/javascript" src="../_/js/tinymce/tinymce.min.js"></script> -->
 	<script type="text/javascript" src="../_/components/js/jquery.js"></script>
 	<script type="text/javascript" src="../_/js/adminActions.js"></script>
-	<script type="text/javascript">
-	tinymce.init({
-	    selector: "textarea",
-	    plugins: [
-	        "advlist autolink lists link image charmap print preview anchor",
-	        "searchreplace visualblocks code fullscreen",
-	        "insertdatetime media table contextmenu paste"
-	    ],
-	    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-	});
-	</script>
+
 			
 </head>
 
@@ -157,15 +148,20 @@ include_once '../_/components/php/include_dao.php';
 						<!-- <li class="nav-header hidden-tablet">Sample Section</li>
 					-->
 <!-- 						<li><a class="ajax-link" href="nieuws.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Nieuws</span></a></li> -->
-						<li><a class="ajax-link" href="voorpagina.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Voorpagina</span></a></li>
-						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> 2deHands</span></a></li>
-						<li><a class="ajax-link" href="verhuur.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Verhuur</span></a></li>
+						<li><a class="ajax-link" href="voorpagina.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Voorpagina</span></a></li>
+						<li><a class="ajax-link" href="2dehands.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;2deHands</span></a></li>
+						<li><a class="ajax-link" href="verhuur.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Verhuur</span></a></li>
+						
+						<li class="nav-header hidden-tablet">Categorie/Produkt</li>
+						<li><a class="ajax-link" href="Section.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Menu</span></a></li>
+						<li><a class="ajax-link" href="Category.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Categorie</span></a></li>
+						<li><a class="ajax-link" href="Product.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Produkt</span></a></li>
 						
 						<li class="nav-header hidden-tablet">Beschikbaarheden</li>
-						<li><a class="ajax-link" href="daysHours.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Openingsuren</span></a></li>
-						<li><a class="ajax-link" href="daysClosed.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Uitzonderlijk gesloten</span></a></li>
-						<li><a class="ajax-link" href="daysOpen.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Uitzonderlijk open</span></a></li>
-						<li><a class="ajax-link" href="infoAvailability.php"><i class="icon-align-justify"></i><span class="hidden-tablet">Extra informatie</span></a></li>
+						<li><a class="ajax-link" href="daysHours.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Openingsuren</span></a></li>
+						<li><a class="ajax-link" href="daysClosed.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Uitzonderlijk gesloten</span></a></li>
+						<li><a class="ajax-link" href="daysOpen.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Uitzonderlijk open</span></a></li>
+						<li><a class="ajax-link" href="infoAvailability.php"><i class="icon-align-justify"></i><span class="hidden-tablet">&nbsp;&nbsp;Extra informatie</span></a></li>
 						<!--
 						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
 						<li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>

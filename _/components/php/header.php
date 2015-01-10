@@ -6,13 +6,13 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 	<section id="branding">
 		
 		<div class="row">
-			<div class="col-lg-10 col-md-6 hidden-xs">
+			<div class="col-xs-12 col-md-10">
 				<a href="index.php"> <img class="none-bg img-responsive"
 					style="height: 100px" src="images/misc/Logo_Trans_Header_V4.png"
 					alt="Dekens Agri Technics">
 				</a>
 			</div>
-			<div class="col-lg-2 col-md-6 hidden-sm hidden-xs"
+			<div class="hidden-sm hidden-xs col-md-2 col-lg-2 "
 				style="text-align: right">
 				<div id="languages">
 					<a href="index.php?lang=nl"><img src="images/flags/en.png" /></a> <a
@@ -52,7 +52,31 @@ set_include_path ( '.;C:\xampp\htdocs\Zend\Dekens' );
 				<!--<li><a href="overons.php">Over ons</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="merken.php">Merken</a></li>-->
 				<!--  <li class="visible-xs hidden-sm hidden-md visible-lg"><a href="service.php">Service</a></li>-->
-				<li><a href="accugereedschap.php"><?php echo  $lang ['accu_title'];?></a></li>
+				<?php
+				$dao = DAOFactory::getProductSectionDAO();
+				$array = $dao->getActiveProductSectionOrderByOrder();
+				$menuCategoryDAO = DAOFactory::getProdXSectionDAO();
+				foreach ($array as $row){
+					$menuCategories = $menuCategoryDAO->getActiveProdXSectionBySectionOrder($row->id);
+					if(isset($menuCategories) && count($menuCategories) != 0)
+					{
+						echo '<li class="dropdown">';
+						echo '<a href="Menu.php?section='.$row->id.'">'.$row->titleNed.' <span class="caret"></a>';
+						echo ' <ul class="dropdown-menu">';
+						foreach ($menuCategories as $menuCategory) {
+							$categoryInMenu = DAOFactory::getProductCategoryDAO()->load($menuCategory->category);
+							echo '<li><a href="Menu.php?section='.$row->id.'&category='.$categoryInMenu->id.'">'.$categoryInMenu->titleNed.'</a></li>';
+						}
+						echo '</ul>';
+					}else
+					{
+						echo '<li><a href="Menu.php?section='.$row->id.'">'.$row->titleNed.'</a>';
+					}
+					echo '</li>';
+				} 
+				?>
+				<!-- <li><a href="landbouw.php"><?php echo  $lang ['lb_title'];?></a></li> -->
+				
 				<li><a href="2dehands.php"><?php echo  $lang ['secondhand_title'];?></a></li>
 				<li><a href="Verhuur.php"><?php echo  $lang ['rental_title'];?></a></li>
 				<li><a href="contact.php"><?php echo  $lang ['contact_title'];?></a></li>

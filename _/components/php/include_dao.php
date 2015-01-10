@@ -11,6 +11,32 @@ set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 	require_once('_/components/core/ArrayList.class.php');
 	require_once('_/components/dao/DAOFactory.class.php');
  	
+	//product - category - section
+	require_once('_/components/dto/ProductSection.class.php');
+	require_once('_/components/dao/ProductSectionDAO.class.php');
+	require_once('_/components/mysql/ProductSectionMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/ProductSectionMySqlExtDAO.class.php');
+	
+	require_once('_/components/dto/ProdXSection.class.php');
+	require_once('_/components/dao/ProdXSectionDAO.class.php');
+	require_once('_/components/mysql/ProdXSectionMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/ProdXSectionMySqlExtDAO.class.php');
+
+	require_once('_/components/dto/Product.class.php');
+	require_once('_/components/dao/ProductDAO.class.php');
+	require_once('_/components/mysql/ProductMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/ProductMySqlExtDAO.class.php');
+	
+	require_once('_/components/dto/ProductCategory.class.php');
+	require_once('_/components/dao/ProductCategoryDAO.class.php');
+	require_once('_/components/mysql/ProductCategoryMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/ProductCategoryMySqlExtDAO.class.php');
+	
+	require_once('_/components/dto/ProdXCategory.class.php');
+	require_once('_/components/dao/ProdXCategoryDAO.class.php');
+	require_once('_/components/mysql/ProdXCategoryMySqlDAO.class.php');
+	require_once('_/components/mysql/ext/ProdXCategoryMySqlExtDAO.class.php');
+	
 	//av
 	require_once('_/components/dto/AvDaysOpen.class.php');
 	require_once('_/components/dao/AvDaysOpenDAO.class.php');
@@ -162,10 +188,6 @@ set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 	require_once('_/components/dto/Poll.class.php');
 	require_once('_/components/mysql/PollsMySqlDAO.class.php');
 	require_once('_/components/mysql/ext/PollsMySqlExtDAO.class.php');
-	require_once('_/components/dao/SectionsDAO.class.php');
-	require_once('_/components/dto/Section.class.php');
-	require_once('_/components/mysql/SectionsMySqlDAO.class.php');
-	require_once('_/components/mysql/ext/SectionsMySqlExtDAO.class.php');
 	require_once('_/components/dao/SessionDAO.class.php');
 	require_once('_/components/dto/Session.class.php');
 	require_once('_/components/mysql/SessionMySqlDAO.class.php');

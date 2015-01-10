@@ -9,6 +9,12 @@ set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 include_once '_/components/php/include_dao.php';
 $secondHandDAO = DAOFactory::getSecondHandDAO();
 $secondHand =$secondHandDAO->load($_REQUEST['id']);
+if(isset($secondHand) && $secondHand->active = true){
+	//continue
+}
+else{
+	header("location:2dehands.php");
+}
 ?>
 <html>
 	<head>	
@@ -29,23 +35,20 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 	<section class="container">
         <div class="content row container">
          	<?php include "_/components/php/header.php"; ?>
+         	<h1 class="page-header"><a href="2dehands.php"><?php echo $lang['secondhand_title'];?></a></h1>
          	<div class="row">
-         		<div class="col-lg-12">
-         			<h6 style="margin-bottom:0px">
-         				<button class="btn btn-success btn-sm" type="button">
-						    <a style="color:white" href="2dehands.php"><?php echo $lang['back_to_list'];?></a>
-						  </button>
-         			</h6>
-         		</div>
-        	</div>
-         	<div class="row">
-         		<div class="col-lg-12">
-         			<h1 class="page-header"><a href="2dehands.php"><?php echo $lang['secondhand_title'];?></a> / <?php echo $secondHand->title; if($secondHand->sold){echo " - VERKOCHT";} ?></h1>
-         		</div>
+         		<div class="col-xs-12">
+         		<ol class="breadcrumb">
+				  <li><a href="2dehands.php"><?php echo $lang['back_to_list'];?></a></li>
+				  <li class="active"><?php echo $secondHand->title; if($secondHand->sold){echo " - VERKOCHT";} ?></li></li>
+				</ol>
         	</div>
 		    <div class="row news">
 		    	<div class="col-lg-12">
 				  <div class="col-md-5"> 
+				  	<h2 style="margin-top:0px">
+				  		<?php echo $secondHand->title;?>
+				  	</h2>
 				    <h3>
 				    	<div class="description">
 				  			<?php echo $secondHand->description; ?>
@@ -73,9 +76,11 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 						  </button>
 				  </div>
 				  <div class="col-md-7"> 
-					<a href="images/secondHand/<?php echo $secondHand->id.'/'.$secondHand->image1; ?>" data-lightbox="Nieuws" title="<?php echo $secondHand->title; ?>"> 	
-						<img src="images/secondHand/<?php echo $secondHand->id.'/sm/'.$secondHand->image1; ?>" class="img-responsive img-center	">
-					</a> 
+				  	<div class="thumbnail">
+						<a href="images/secondHand/<?php echo $secondHand->id.'/sm/'.$secondHand->image1; ?>" data-lightbox="Nieuws" title="<?php echo $secondHand->title; ?>"> 	
+							<img src="images/secondHand/<?php echo $secondHand->id.'/sm/'.$secondHand->image1; ?>" class="img-responsive img-center	">
+						</a> 
+					</div>
 				  </div>
 				</div>
 			</div>
@@ -85,30 +90,38 @@ $secondHand =$secondHandDAO->load($_REQUEST['id']);
 					<?php 
 					if(isset($secondHand->image2) && $secondHand->image2 != ''){ 
 						echo '<div class="col-md-3">';
-							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image2.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
-								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image2.'" class="myImage img-responsive img-center	">';
-							echo '</a>'; 
+							echo '<div class="thumbnail">';
+								echo '<a href="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image2.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+									echo '<img src="images/secondHand/'.$secondHand->id.'/xs/'.$secondHand->image2.'" class="myImage img-responsive img-center	">';
+								echo '</a>'; 
+							echo '</div>';
 						echo '</div>';
 					}
 					if(isset($secondHand->image3) && $secondHand->image3 != ''){
 						echo '<div class="col-md-3">';
-							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image3.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
-								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image3.'" class="myImage img-responsive img-center	">';
-							echo '</a>';
+							echo '<div class="thumbnail">';
+								echo '<a href="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image3.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+									echo '<img src="images/secondHand/'.$secondHand->id.'/xs/'.$secondHand->image3.'" class="myImage img-responsive img-center	">';
+								echo '</a>';
+							echo '</div>';
 						echo '</div>';
 					}
 					if(isset($secondHand->image4) && $secondHand->image4 != ''){
 						echo '<div class="col-md-3">';
-							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image4.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
-								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image4.'" class="myImage img-responsive img-center	">';
-							echo '</a>';
+							echo '<div class="thumbnail">';
+								echo '<a href="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image4.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+									echo '<img src="images/secondHand/'.$secondHand->id.'/xs/'.$secondHand->image4.'" class="myImage img-responsive img-center	">';
+								echo '</a>';
+							echo '</div>';
 						echo '</div>';
 					}
 					if(isset($secondHand->image5) && $secondHand->image5 != ''){
 						echo '<div class="col-md-3">';
-							echo '<a href="images/secondHand/'.$secondHand->id.'/'.$secondHand->image5.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
-								echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image5.'" class="myImage img-responsive img-center	">';
-							echo '</a>';
+						echo '<div class="thumbnail">';
+								echo '<a href="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image5.'" data-lightbox="Nieuws" title="'.$secondHand->title.'">';
+									echo '<img src="images/secondHand/'.$secondHand->id.'/xs/'.$secondHand->image5.'" class="myImage img-responsive img-center	">';
+								echo '</a>';
+							echo '</div>';
 						echo '</div>';
 					}
 					?>

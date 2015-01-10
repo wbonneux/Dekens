@@ -18,7 +18,7 @@ include_once '_/components/php/include_dao.php';
   		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY-BmvO5ZBSs1KTEutG9rKqFqFxLeUXhg&sensor=false"></script>
-<script type="text/javascript" src="http://www.map-generator.org/map/iframejs/3103987c-f992-4698-a25b-460b3eaf3e49?key=AIzaSyBY-BmvO5ZBSs1KTEutG9rKqFqFxLeUXhg&width=950px&height=400px"></script>
+<script type="text/javascript" src="http://www.map-generator.org/map/iframejs/55fb8e91-2a4b-4fb9-9db2-508717418c31?key=AIzaSyBY-BmvO5ZBSs1KTEutG9rKqFqFxLeUXhg&width=1200px&height=400px"></script>
 	</head>
 
 	<body id="home">
@@ -44,11 +44,14 @@ include_once '_/components/php/include_dao.php';
                     ?>
             </div>
             <div class="col-sm-4">
-              <h2>Dekens Agri Technics</h2>
-              <p><h3>Roosbeekstraat 52<br />
-               3800 Zepperen<br />
-                </h3>
-              </p>
+              <h3>
+              		Dekens Agri Technics BVBA<br />
+              		Dekkenstraat 89<br />
+              		3800 Zepperen<br />
+              	</h3>
+               	<h5> 
+               		(voormalige terreinen van Bouwmaterialen Baldewijns)<br />
+               	</h5>
               <p><abbr title="Telefoon"><i class="fa fa-phone"></i></abbr>&nbsp;&nbsp;011/68.44.10</p>
               <p><abbr title="Fax"><i class="fa fa-print"></i></abbr>&nbsp;&nbsp;011/68.24.53</p>      
               <p><abbr title="Email"><i class="fa fa-envelope"></i></abbr>&nbsp;&nbsp;<a href="mailto:info@dekens-agritechnics.be">info@dekens-agritechnics.be</a></p>
@@ -112,9 +115,9 @@ include_once '_/components/php/include_dao.php';
             </div>
               <div class="row hidden-xs hidden-sm hidden-md">
               	<div class="col-lg-12">
-	                <div id ="mapid-3103987c-f992-4698-a25b-460b3eaf3e49" class="hidden-sm hidden-md">
-	                  <a href="http://www.map-generator.org/3103987c-f992-4698-a25b-460b3eaf3e49/large-map.aspx">Enlarge Map</a>
-	                </div>
+	                <div id ="mapid-55fb8e91-2a4b-4fb9-9db2-508717418c31"></div>
+					<br />
+					<a href="http://www.map-generator.org/55fb8e91-2a4b-4fb9-9db2-508717418c31/large-map.aspx">Enlarge Map</a>
                 </div>
               </div>
             </div><!-- content -->

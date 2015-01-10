@@ -4,6 +4,7 @@ $lang = array();
 //common
 $lang['back_to_list']			= 'Terug naar lijst';
 $lang['more_info']				= 'Meer informatie';
+$lang['pagetitle'] 		= 'Dekens Agri Technics';
 
 
 //index page
@@ -14,6 +15,10 @@ $lang['index_menutitle'] 		= 'Home';
 //Accugereedschap page
 $lang['accu_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap';
 $lang['accu_title'] 		= 'Accugereedschap';
+
+//Landbouw page
+$lang['lb_pagetitle'] 	= 'Dekens Agri Technics - Landbouwmachines';
+$lang['lb_title'] 		= 'Landbouw';
 
 //Kettingzaag page
 $lang['ketting_pagetitle'] 	= 'Dekens Agri Technics - Accugereedschap - Kettingzaag';
@@ -66,7 +71,7 @@ $lang['contact_title'] 			= 'Contacteer ons ';
 $lang['contact_introduction']	= 'Als u enige vragen hebt of een inlichting nodig hebt kan u ons altijd tijdens de kantooruren bereiken via telefoon/fax/email. U kan ook vrijblijvend het contactformulier invullen. Onze medewerkers zullen u dan zo snel mogelijk een antwoord bieden.';
 $lang['contact_name'] 			= 'Naam ';
 $lang['contact_email'] 			= 'Email ';
-$lang['contact_phone'] 			= 'Telefoon/GSM(vb: 0496753678) ';
+$lang['contact_phone'] 			= 'Tel/GSM(0496753678) ';
 $lang['contact_message'] 		= 'Bericht ';
 
 //menu
@@ -120,6 +125,21 @@ $lang['lbl_day']				= 'Dag';
 $lang['lbl_save']				= 'Opslaan';
 $lang['lbl_send']				= 'Verzenden';
 $lang['lbl_cancel']				= 'Annuleren';
+$lang['lbl_title']  			= 'Titel';
+$lang['lbl_description']  		= 'Omschrijving';
+$lang['lbl_active']				= 'Actief';
+$lang['lbl_image']				= 'Afbeelding';
+$lang['lbl_image_location']		= 'Afbeelding';
+$lang['lbl_parent']				= 'Hoofdcategorie';
+$lang['lbl_menu']				= 'Menu-item';
+$lang['lbl_select_position'] 	= 'Selecteer een positie ';
+$lang['lbl_category']			= 'Categorie';
+$lang['lbl_select_category']	= 'Selecteer een categorie';
+
+//product - Category
+$lang['SELECT_PARENT']				= 'Selecteer een hoofdcategorie';
+$lang['SELECT_MENU']				= 'Selecteer een menu-item';
+$lang['SELECT_CATEGORY']			= 'Selecteer een Category';
 
 
 //availability

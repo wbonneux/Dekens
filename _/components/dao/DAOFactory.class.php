@@ -9,6 +9,42 @@ class DAOFactory{
 	
 	
 	/*
+	 * @return SectionXCategoryDAO
+	*/
+	public static function getProdXSectionDAO(){
+		return new ProdXSectionMySqlExtDAO();
+	}
+	
+	/*
+	 * @return ProductSectionDAO
+	*/
+	public static function getProductSectionDAO(){
+		return new ProductSectionMySqlExtDAO();
+	}
+	
+	/*
+	 * @return ProdXCategoryDAO
+	*/
+	public static function getProdXCategoryDAO(){
+		return new ProdXCategoryMySqlExtDAO();
+	}
+	
+	/*
+	 * @return ProductCategoryDAO
+	*/
+	public static function getProductCategoryDAO(){
+		return new ProductCategoryMySqlExtDAO();
+	}
+	
+	/*
+	 * @return ProducDAO
+	*/
+	public static function getProductDAO(){
+		return new ProductMySqlExtDAO();
+	}
+	
+	
+	/*
 	 * @return AvInformationDAO
 	*/
 	public static function getAvInformationDAO(){
@@ -276,12 +312,6 @@ class DAOFactory{
 		return new PollsMySqlExtDAO();
 	}
 
-	/*
-	 * @return SectionsDAO
-	 */
-	public static function getSectionsDAO(){
-		return new SectionsMySqlExtDAO();
-	}
 
 	/*
 	 * @return SessionDAO

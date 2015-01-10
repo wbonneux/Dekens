@@ -1,3 +1,97 @@
+function setProductSectionActive(id){
+	 
+	  $.post('setProductSectionActive.php', {id:id},function(data){
+		  //confirm("Record set Active! "+id);
+		  $("#inactive-"+id).addClass('label-success').removeClass('label-error');
+		  $("#inactive-"+id).text('Ja');
+		 // $("#inactive-"+id).onclick("setInactive("+id+")");
+		  $("#inactive-"+id).attr('id',"active-"+id);
+		  $("#active-"+id).attr("onclick","setProductSectionInactive("+id+")");
+	  });
+}
+
+function setProductSectionUp(id,category){
+	  $.post('setProductSectionUp.php', {id:id},function(data){});
+	  location.reload();
+	  //$('#box-content').load();
+	  
+}
+
+function setProductSectionDown(id){
+	  $.post('setProductSectionDown.php', {id:id},function(data){});
+	  location.reload();
+}
+
+function setProductUp(id,category){
+	  $.post('setProductUp.php', {id:id,category:category},function(data){});
+	  location.reload();
+}
+
+function setProductDown(id,category){
+	  $.post('setProductDown.php', {id:id,category:category},function(data){});
+	  location.reload();
+}
+
+function setProductSectionInactive(id){
+	  $.post('setProductSectionInactive.php', {id:id},function(data){
+		  //confirm("Record set Inactive! "+id);
+		  $("#active-"+id).addClass('label-error').removeClass('label-success');
+		  $("#active-"+id).text('Nee');
+		  //$("#active-"+id).onclick("setActive("+id+")");
+		  $("#active-"+id).attr('id',"inactive-"+id);
+		  $("#inactive-"+id).attr("onclick","setProductSectionActive("+id+")");
+		  
+	  });
+}
+
+function setProductActive(id){
+	 
+	  $.post('setProductActive.php', {id:id},function(data){
+		  //confirm("Record set Active! "+id);
+		  $("#inactive-"+id).addClass('label-success').removeClass('label-error');
+		  $("#inactive-"+id).text('Ja');
+		 // $("#inactive-"+id).onclick("setInactive("+id+")");
+		  $("#inactive-"+id).attr('id',"active-"+id);
+		  $("#active-"+id).attr("onclick","setProductInactive("+id+")");
+	  });
+}
+
+function setProductInactive(id){
+	  $.post('setProductInactive.php', {id:id},function(data){
+		  //confirm("Record set Inactive! "+id);
+		  $("#active-"+id).addClass('label-error').removeClass('label-success');
+		  $("#active-"+id).text('Nee');
+		  //$("#active-"+id).onclick("setActive("+id+")");
+		  $("#active-"+id).attr('id',"inactive-"+id);
+		  $("#inactive-"+id).attr("onclick","setProductActive("+id+")");
+		  
+	  });
+}
+
+function setProductCategoryActive(id){
+	 
+	  $.post('setProductCategoryActive.php', {id:id},function(data){
+		  //confirm("Record set Active! "+id);
+		  $("#inactive-"+id).addClass('label-success').removeClass('label-error');
+		  $("#inactive-"+id).text('Ja');
+		 // $("#inactive-"+id).onclick("setInactive("+id+")");
+		  $("#inactive-"+id).attr('id',"active-"+id);
+		  $("#active-"+id).attr("onclick","setProductCategoryInactive("+id+")");
+	  });
+}
+
+function setProductCategoryInactive(id){
+	  $.post('setProductCategoryInactive.php', {id:id},function(data){
+		  //confirm("Record set Inactive! "+id);
+		  $("#active-"+id).addClass('label-error').removeClass('label-success');
+		  $("#active-"+id).text('Nee');
+		  //$("#active-"+id).onclick("setActive("+id+")");
+		  $("#active-"+id).attr('id',"inactive-"+id);
+		  $("#inactive-"+id).attr("onclick","setProductCategoryActive("+id+")");
+		  
+	  });
+}
+
 function setActive(id){
 	 
 	  $.post('setShActive.php', {id:id},function(data){
@@ -223,6 +317,42 @@ function deleteRt(id){
 	if(confirm('Bent u zeker om dit record te verwijderen? Klik "Ok" om te bevestigen')){
 //			alert('deleted');
 		$.post('deleteRt.php', {id:id},function(data){
+ 			$("#rowid-"+id).remove();
+ 		});
+	}else{
+		//alert('delete cancelled');
+	}
+		
+}
+
+function deleteProductCategory(id){
+	if(confirm('Bent u zeker om dit record te verwijderen? Klik "Ok" om te bevestigen')){
+//			alert('deleted');
+		$.post('deleteProductCategory.php', {id:id},function(data){
+ 			$("#rowid-"+id).remove();
+ 		});
+	}else{
+		//alert('delete cancelled');
+	}
+		
+}
+
+function deleteSection(id){
+	if(confirm('Bent u zeker om dit record te verwijderen? Klik "Ok" om te bevestigen')){
+//			alert('deleted');
+		$.post('deleteSection.php', {id:id},function(data){
+ 			$("#rowid-"+id).remove();
+ 		});
+	}else{
+		//alert('delete cancelled');
+	}
+		
+}
+
+function deleteProduct(id){
+	if(confirm('Bent u zeker om dit record te verwijderen? Klik "Ok" om te bevestigen')){
+//			alert('deleted');
+		$.post('deleteProduct.php', {id:id},function(data){
  			$("#rowid-"+id).remove();
  		});
 	}else{

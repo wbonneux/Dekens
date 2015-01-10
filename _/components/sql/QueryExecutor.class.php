@@ -39,6 +39,7 @@ class QueryExecutor{
 	
 	
 	public static function executeUpdate($sqlQuery){
+		
 		$transaction = Transaction::getCurrentTransaction();
 		if(!$transaction){
 			$connection = new Connection();
@@ -46,6 +47,7 @@ class QueryExecutor{
 			$connection = $transaction->getConnection();
 		}		
 		$query = $sqlQuery->getQuery();
+		//echo 'update: '.$query;
 		$result = $connection->executeQuery($query);
 		if(!$result){
 			throw new Exception(mysql_error());

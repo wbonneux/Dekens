@@ -39,35 +39,33 @@ include_once '_/components/lang/select.lang.php';
         			}
         			foreach ($secondHandArr as $secondHand ){
 					//todo mod function 
-						if($items == 3 || $items == 6 || $items == 9){
+						if($items == 4 || $items == 8 || $items == 12){
 							echo '</div>';
 							echo '<div class="row news">';
 						}
-						echo '<div class="col-md-4">';
+						echo '<div class="col-xs-6 col-sm-3">';
 						if($secondHand->sold){
-								
-									echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="mythumbnail myImage img-responsive img-center"></a>';
-									echo '<div class="mywrapper">';
-									echo '<div class="caption mypost-content">';
-									
-									echo '<h1 style="font-size:50px;font-style:bold;color:red">'.$lang["secondhand_sold"].'</h1>';
-									//echo '<p>Lorem ipsum dolor sit amet</p>';
-									
-									echo '</div></div>';
-									echo '<h2 style="text-align:center;">';
-								echo $secondHand->title;
-								//echo "<br/>VERKOCHT";
-							echo '</h2>';
+									echo '<div class="thumbnail" style="height:280px">';
+										echo '<a href="#">';
+										echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="myImage img-responsive img-center" height="200px" ></a>';
+										echo '<div class="caption">';
+											echo '<h3 style="margin-top:-30px;margin-bottom:5px;text-align:center;font-style:bold;color:red">'.$lang["secondhand_sold"].'</h3>';
+											echo '<h4 style="text-align:center;">'.$secondHand->title.'</h4>';
+										echo '</div>';
+									echo '</div>';
 						}
 						else
 						{
-							echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'" title="'.$secondHand->title.'">';
-							echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="myImage img-responsive img-center"></a>';
-							echo '<h2 style="text-align:center;">';
-							echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'">';
-							echo $secondHand->title;
-							echo '</a></h2>';
-							echo '</a>';
+							echo '<div class="thumbnail" style="height:280px">';
+								echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'" title="'.$secondHand->title.'">';
+									echo '<img src="images/secondHand/'.$secondHand->id.'/sm/'.$secondHand->image1.'" class="myImage img-responsive img-center"></a>';
+								echo '<div class="caption">';
+									echo '<h4 style="text-align:center;">';
+									echo '<a href="2dehandsDetail.php?id='.$secondHand->id.'">';
+										echo $secondHand->title;
+									echo '</a></h4>';
+									echo '</div>';
+									echo '</div>';
 						}
 						echo '</div>';
 						$items++;

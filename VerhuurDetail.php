@@ -9,6 +9,12 @@ set_include_path('.;C:\xampp\htdocs\Zend\Dekens');
 include_once '_/components/php/include_dao.php';
 $rentalDAO = DAOFactory::getRentalDAO();
 $rental =$rentalDAO->load($_REQUEST['id']);
+if(isset($rental) && $rental->active = true){
+	//continue
+}
+else{
+	header("location:verhuur.php");
+}
 ?>
 <html>
 	<head>	
